@@ -3,49 +3,62 @@ package ru.taksi.pro.android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import ru.taksi.pro.android.mvvm.model.api.ITaxiProAPI
-import ru.taksi.pro.android.mvvm.model.entity.agregator.Agregators
+import ru.taksi.pro.android.mvvm.model.api.IDataSource
+import ru.taksi.pro.android.mvvm.model.repo.retrofit.TaxiProRepo
+
 
 class MainActivity : AppCompatActivity() {
-    val TAG = "TaxiPro"
+    val TAG = "TaxiPro"         // Тэг для логирования
+    val api: IDataSource = TaxiProApplication().INSTANCE.apiHolder.getApi()
+    val agregator = TaxiProRepo(api)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        loadData()
+        agregatorsList()        // Пример запроса списка агрегаторов
+        agregator(1)        // Пример запроса одного агрегатора
+        car(1)              // Пример запроса автомообиля - НЕ РАБОТАЕТ (HTTP 401 Unauthorized)
     }
 
-    internal fun loadData() {
-        Log.i(TAG, "LoadData")
-        val retrofit = Retrofit.Builder()
-                .baseUrl("http://menly.1site.space/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+    // Пример запроса списка агрегаторов
+    fun agregatorsList() {
+        agregator.getAgregatorsList().observeOn(AndroidSchedulers.mainThread()).subscribe({
+            Log.i("TaxiPro", "getAgregatorsList: " + it)
+            agragatorsList.text = it.toString()
+            //TODO("Добавить обработчик успешного получения списка агрегаторов")
+        }, {
+            Log.i("TaxiPro", "getAgregatorsList: Throwable")
+            agragatorsList.text = it.toString()
+            //TODO("Добавить обработчик ошибки")
+        })
+    }
 
-        val service = retrofit.create(ITaxiProAPI::class.java)
-        val call = service.GetAgregatorsList()
+    // Пример запроса одного агрегатора
+    fun agregator(id: Int){
+        agregator.getAgregator(id).observeOn(AndroidSchedulers.mainThread()).subscribe({
+            Log.i("TaxiPro", "getAgregator: " + it)
+            agragator.text = it.toString()
+            //TODO("Добавить обработчик успешного получения агрегатора по id")
+        }, {
+            Log.i("TaxiPro", "getAgregator: Throwable " + it)
+            agragator.text = it.toString()
+            //TODO("Добавить обработчик ошибки")
+        })
+    }
 
-        call.enqueue(object : Callback<Agregators> {
-            override fun onResponse(call: Call<Agregators>,
-                                    response: Response<Agregators>) {
-                Log.i(TAG, "onResponse" + response)
-                responseBody.setText(responseBody.toString())
-                if (response.code() == 200) {
-                    responseBody.setText(response.body().toString())
-                }
-            }
-
-            override fun onFailure(call: Call<Agregators>, t: Throwable) {
-                Log.i(TAG, "onFailure: " + t)
-            }
+    // Пример запроса автомообиля  - НЕ РАБОТАЕТ (HTTP 401 Unauthorized)
+    fun car(id: Int){
+        agregator.getCar(id).observeOn(AndroidSchedulers.mainThread()).subscribe({
+            Log.i("TaxiPro", "getCar: " + it)
+            car.text = it.toString()
+            //TODO("Добавить обработчик успешного получения агрегатора по id")
+        }, {
+            Log.i("TaxiPro", "getCar: Throwable " + it)
+            car.text = it.toString()
+            //TODO("Добавить обработчик ошибки")
         })
     }
 }
