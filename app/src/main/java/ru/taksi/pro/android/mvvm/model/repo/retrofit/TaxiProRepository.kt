@@ -2,17 +2,30 @@ package ru.taksi.pro.android.mvvm.model.repo.retrofit
 
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
-import ru.taksi.pro.android.mvvm.model.api.IDataSource
+import okhttp3.RequestBody
+import ru.taksi.pro.android.mvvm.model.api.ApiService
 import ru.taksi.pro.android.mvvm.model.entity.agregator.Agregator
 import ru.taksi.pro.android.mvvm.model.entity.agregator.Agregators
+import ru.taksi.pro.android.mvvm.model.entity.authorization.AuthorizationResponse
+import ru.taksi.pro.android.mvvm.model.entity.authorization.ConfirmationCode
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
-import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepo
+import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 
-class TaxiProRepo(api: IDataSource) : ITaxiProRepo {
-    var api: IDataSource
+class TaxiProRepository(api: ApiService) : ITaxiProRepository {
+    var api: ApiService
 
     init{
         this.api = api
+    }
+
+    // Get confirmation code
+    override fun requestCode(phone: String): Single<ConfirmationCode> {
+        return api.requestCode(phone).subscribeOn(Schedulers.io())
+    }
+
+    // Login
+    override fun loginByCode(code: String): Single<AuthorizationResponse> {
+        return api.loginByCode(code).subscribeOn(Schedulers.io())
     }
 
     // Get Agregators List
