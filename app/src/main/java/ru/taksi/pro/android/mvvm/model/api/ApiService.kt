@@ -11,7 +11,7 @@ import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 
 interface ApiService {
 
-    @Headers("Content-Type: multipart/form-data; charset=UTF-8")
+//    @Headers("Content-Type: multipart/form-data; charset=UTF-8")
     @FormUrlEncoded
     @POST("sms/init")
     fun requestCode(@Field("phone") phone: String): Single<ConfirmationCode>
