@@ -1,0 +1,41 @@
+package ru.ildus.taksipro.registration
+
+import android.graphics.Color
+import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.style.ForegroundColorSpan
+import androidx.appcompat.app.AppCompatActivity
+import ru.ildus.taksipro.R
+import ru.ildus.taksipro.databinding.RegistrMainBinding
+
+class RegistrationActivity : AppCompatActivity() {
+    lateinit var binding: RegistrMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = RegistrMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        spannableTaxi((R.string.taxi_pro.toString()))
+    }
+
+    override fun onStart() {
+        super.onStart()
+        supportFragmentManager.beginTransaction()
+  //          .add(R.id.container, RegistrFragment())
+            .add(R.id.container, RegistrFragmentWelcome())
+            .commit()
+    }
+
+    fun spannableTaxi(word: String) {
+        val spannableTaxi = SpannableStringBuilder(word)
+        spannableTaxi.setSpan(
+            ForegroundColorSpan(Color.YELLOW),
+            0, // start
+            1, // end
+            Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+        )
+        binding.headerTitle.text = spannableTaxi
+    }
+}

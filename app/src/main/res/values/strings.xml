@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Taxi Pro</string>
+    <string name="three_tariffs">Три тарифа на выбор, простая регистрация, все агрегаторы в одном сервисе</string>
+    <string name="taxi_pro">Такси Про</string>
+    <string name="mobile_taxi">Мобильный таксопарк</string>
+    <string name="profitable">Выгодно. Быстро. Удобно</string>
+    <string name="choosing_a_comfortable_tariff">Выбор комфортного тарифа</string>
+    <string name="favorable_rates">Выгодные тарифы,которые были продуманы с учетом потребностей водителей.</string>
+    <string name="instant_payments">Моментальные выплаты</string>
+    <string name="instant_withdrawal">Мгновенный вывод средств на карту в тарифах Премиум и Старт</string>
+    <string name="all_aggregators_in_one_place">Все агрегаторы в одном месте</string>
+    <string name="convenient_revenue">Удобное управлене доходами</string>
+    <string name="easily_track_balance">Легко отслеживать баланс по всем агрегаторам</string>
+    <string name="our_rates">Наши тарифы</string>
+    <string name="quick_registration">Быстрая регистрация в агрегаторах</string>
+    <string name="convenient_view">Удобный просмотр баланса и опции вывода денег на карту</string>
+    <string name="login_from_any_device">Вход с любых устройств - не нужно приложение</string>
+    <string name="live_chat">Круглосуточная поддержка в чате</string>
+    <string name="gett_uber">Подключиться к любому агрегатору: Яндекс Такси, Gett, Uber, Ситимобил</string>
+    <string name="we_work_with_drivers">Работаем с водителями такси с 2016 года</string>
+    <string name="open"><u>Войти</u></string>
+    <string name="registration">Зарегистрироваться</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="enter_phone">Введите телефон</string>
+    <string name="enter_code">Введите код</string>
+    <string name="phone_call">На Ваш телефон поступит звонок</string>
+    <string name="enter_the_last_4_digits">Введите последние 4 цифры номера телефона.</string>
+    <string name="code_3555">Например, позвонил +7 999 488 3555 Код 3555</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="for_further_work">Для дальнейшей работы на платформе Вам необходимо заполнить все данные и загрузить документы.</string>
+    <string name="you_can_fill_in_the_data">Вы можете заполнить данные сейчас или вернуться к этому позже</string>
+    <string name="required_documents">Необходимые документы:</string>
+    <string name="pasport">паспорт</string>
+    <string name="drivers_license">водительское удостоверение</string>
+    <string name="vehicle_reg_certif">свидетельство регистрации автомобиля</string>
+</resources>
