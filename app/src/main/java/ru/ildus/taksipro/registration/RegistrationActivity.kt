@@ -17,13 +17,14 @@ class RegistrationActivity : AppCompatActivity() {
         binding = RegistrMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        spannableTaxi((R.string.taxi_pro.toString()))
+        spannableTaxi(getString(R.string.taxi_pro))
     }
 
     override fun onStart() {
         super.onStart()
         supportFragmentManager.beginTransaction()
   //          .add(R.id.container, RegistrFragment())
+ //           .add(R.id.container,RegistrFragmentEnterCode())
             .add(R.id.container, RegistrFragmentWelcome())
             .commit()
     }

@@ -91,7 +91,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:layout_weight="0.3"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="19dp"
                     app:srcCompat="@mipmap/round_mark" />
 
                 <TextView
@@ -103,9 +103,5 @@
                     android:text="@string/vehicle_reg_certif" />
 
             </TableRow>
-
-
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
