@@ -1,77 +1,58 @@
 package ru.taksi.pro.android
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.activity_main.*
-import okhttp3.MediaType
-import okhttp3.RequestBody
 import ru.taksi.pro.android.mvvm.model.api.ApiService
 import ru.taksi.pro.android.mvvm.model.repo.retrofit.TaxiProRepository
 
-
 class MainActivity : AppCompatActivity() {
-    val TAG = "TaxiPro"         // Тэг для логирования
-    val dataSource: ApiService = TaxiProApplication().INSTANCE.apiHolder.getApi()
-    val api = TaxiProRepository(dataSource)
+    private val dataSource: ApiService = TaxiProApplication().INSTANCE.apiHolder.getApi()
+    private val api = TaxiProRepository(dataSource)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        requestCode("79251234567")    // Отправляем номер телефона. Запрашиваем код авторизации
-        Thread.sleep(1000)             // Для последовательности
-        loginByCode("0000")            // Отправляем код авторизации
-    }
+//        requestCode("79251234567")    // Отправляем номер телефона. Запрашиваем код авторизации
+        requestCode("79257654321")    // Отправляем номер телефона. Запрашиваем код авторизации
+        Thread.sleep(500)              // Исключаем Race Condition
+        loginByCode("79257654321", "0000")    // Отправляем код авторизации
+        Thread.sleep(500)              // Исключаем Race Condition
 
+//   Примеры запросов
+        val token = "RZ9UD3iemtjn-x860ZjbwL8r167oFRq_"
+        getCar(2, token)
+        getUser(2, token)
+//        createNewCar(token, 1, "Mercedes", "600", 2000, "синий",
+//            "string", "XXXXXX1", "XXXXXX1", "XXXXXXXXX1", 2)
+    }
 
     //  Пример запроса кода подтверждения авторизации
-    fun requestCode(phone: String) {
-        api.requestCode(phone).observeOn(AndroidSchedulers.mainThread()).subscribe({
-            Log.i("TaxiPro", "requestCode Success: " + it)
-            textView.text = it.toString()
-        }, {
-            Log.i("TaxiPro", "requestCode Throwable: " + it)
-        })
-    }
+    private fun requestCode(phone: String) {
+        api.requestCode(phone).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
+    // Пример Login by code
+    private fun loginByCode(phone: String, code: String){
+        api.loginByCode(phone, code).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
-    // Login by code
-    fun loginByCode(code: String){
-        api.loginByCode(code).observeOn(AndroidSchedulers.mainThread()).subscribe({
-            Log.i("TaxiPro", "loginByCode Success: " + it)
-            textView.text = it.toString()
-        }, {
-            Log.i("TaxiPro", "loginByCode Throwable: " + it)
-        })
-    }
+    fun agregatorsList() {                  // Пример запроса списка агрегаторов
+        api.getAgregatorsList().observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
+    fun agregator(id: Int) {                // Пример запроса одного агрегатора
+        api.getAgregator(id).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
-    // Пример запроса списка агрегаторов
-    fun agregatorsList() {
-        api.getAgregatorsList().observeOn(AndroidSchedulers.mainThread()).subscribe({
-            Log.i("TaxiPro", "getAgregatorsList: " + it)
-        }, {
-            Log.i("TaxiPro", "getAgregatorsList: Throwable " + it)
-        })
-    }
+    fun getBalance(id: Int, token: String){ // Пример заапроса баланса
+        api.getBalance(id, token).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
-    // Пример запроса одного агрегатора
-    fun agregator(id: Int) {
-        api.getAgregator(id).observeOn(AndroidSchedulers.mainThread()).subscribe({
-            Log.i("TaxiPro", "getAgregator: " + it)
-        }, {
-            Log.i("TaxiPro", "getAgregator: Throwable " + it)
-        })
-    }
+    fun getCar(id: Int, token: String){
+        api.getCar(id, token).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 
-    // Пример запроса автомообиля  - НЕ РАБОТАЕТ (HTTP 401 Unauthorized)
-    fun car(id: Int) {
-        api.getCar(id).observeOn(AndroidSchedulers.mainThread()).subscribe({
-            Log.i("TaxiPro", "getCar: " + it)
-        }, {
-            Log.i("TaxiPro", "getCar: Throwable " + it)
-        })
-    }
+    fun getUser(id: Int, token: String){
+        api.getUser(id, token).observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
+
+    fun createNewCar(token: String, id: Int, brand: String, model: String, year: Int, color: String,
+                     registration: String, vin: String, sts: String, license: String, userId: Int){
+        api.createNewCar(token, id, brand, model, year, color, registration, vin, sts, license, userId)
+            .observeOn(AndroidSchedulers.mainThread()).subscribe({/*Success*/}, {/*Error*/}) }
 }
