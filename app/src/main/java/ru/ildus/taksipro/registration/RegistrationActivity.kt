@@ -16,7 +16,6 @@ class RegistrationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = RegistrMainBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(view)
         spannableTaxi(getString(R.string.taxi_pro))
     }
 
