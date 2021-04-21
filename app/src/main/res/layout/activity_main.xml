@@ -1,18 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="See result in Logs !"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/header_title"
+                        style="@style/DescriptionBodyBoldStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/taxi_pro"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/button_open"
+                        style="@style/AppButtonOpen" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/header_title1"
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/alef_bold"
+                    android:text="@string/mobile_taxi" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/profitable"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/description1"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/three_tariffs" />
+
+                <ImageView
+                    android:id="@+id/button_registration"
+                    android:layout_width="349dp"
+                    android:layout_height="342dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/car" />
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@style/AppButton" />
+
+                <ImageView
+                    android:id="@+id/steering_wheel"
+                    style="@style/Images"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@mipmap/steering_wheel" />
+
+                <TextView
+                    android:id="@+id/description2"
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/choosing_a_comfortable_tariff" />
+
+                <TextView
+                    android:id="@+id/description3"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/favorable_rates" />
+
+                <ImageView
+                    android:id="@+id/payment_card"
+                    style="@style/Images"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/payment_card" />
+
+                <TextView
+                    android:id="@+id/description4"
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/instant_payments" />
+
+                <TextView
+                    android:id="@+id/description5"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instant_withdrawal" />
+
+                <ImageView
+                    android:id="@+id/aggregators"
+                    style="@style/Images"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/aggregators" />
+
+                <TextView
+                    android:id="@+id/description6"
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/all_aggregators_in_one_place" />
+
+                <TextView
+                    android:id="@+id/description7"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gett_uber" />
+
+                <include layout="@layout/loading_aggregators" />
+
+                <ImageView
+                    android:id="@+id/income"
+                    style="@style/Images"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/income" />
+
+                <TextView
+                    android:id="@+id/description8"
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/convenient_revenue" />
+
+                <TextView
+                    android:id="@+id/description9"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/easily_track_balance" />
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/AppButton"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/button_main" />
+
+                <TextView
+                    android:id="@+id/description10"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/our_rates"
+                    android:textSize="23sp" />
+
+                <include layout="@layout/loading_rates" />
+
+                <ImageView
+                    android:id="@+id/smartphone"
+                    style="@style/Images"
+                    android:layout_width="500dp"
+                    android:layout_height="500dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@mipmap/smartphone" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:id="@+id/there_is"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="0.5"
+                        app:srcCompat="@mipmap/there_is" />
+
+                    <TextView
+                        android:id="@+id/description11"
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/quick_registration" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.3"
+                        app:srcCompat="@mipmap/there_is" />
+
+                    <TextView
+                        android:id="@+id/description12"
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/convenient_view" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.3"
+                        app:srcCompat="@mipmap/there_is" />
+
+                    <TextView
+                        android:id="@+id/description13"
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/login_from_any_device" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="0.5"
+                        app:srcCompat="@mipmap/there_is" />
+
+                    <TextView
+                        android:id="@+id/description14"
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/live_chat" />
+
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/description15"
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/we_work_with_drivers"
+                    android:textSize="20sp" />
+
+
+                <ImageView
+                    android:id="@+id/accord"
+                    style="@style/Images"
+                    android:layout_width="410dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@mipmap/accord" />
+
+                <Button
+                    android:id="@+id/button5"
+                    style="@style/AppButton"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/button_main" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="45dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.3"
+                        app:srcCompat="@mipmap/icon_vk" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.3"
+                        app:srcCompat="@mipmap/icon_telegram" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.3"
+                        app:srcCompat="@mipmap/icon_whatsapp" />
+
+                </TableRow>
+
+                <TextView
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
