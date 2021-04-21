@@ -1,15 +1,12 @@
-package ru.ildus.taksipro.registration
+package ru.taksi.pro.android.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import ru.ildus.taksipro.databinding.RegistrFragmentBinding
-import ru.ildus.taksipro.databinding.RegistrFragmentWelcomeBinding
+import ru.taksi.pro.android.databinding.RegistrFragmentWelcomeBinding
 
 class RegistrFragmentWelcome: Fragment() {
     private var binding: RegistrFragmentWelcomeBinding? = null

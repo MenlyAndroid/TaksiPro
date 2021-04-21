@@ -1,4 +1,4 @@
-package ru.ildus.taksipro.registration
+package ru.taksi.pro.android.ui.activitys
 
 import android.graphics.Color
 import android.os.Bundle
@@ -6,8 +6,9 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
-import ru.ildus.taksipro.R
-import ru.ildus.taksipro.databinding.RegistrMainBinding
+import ru.taksi.pro.android.R
+import ru.taksi.pro.android.databinding.RegistrMainBinding
+import ru.taksi.pro.android.ui.fragments.RegistrFragmentWelcome
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: RegistrMainBinding

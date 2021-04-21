@@ -1,4 +1,4 @@
-package ru.ildus.taksipro
+package ru.taksi.pro.android.ui.activitys
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,9 +7,7 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
-import ru.ildus.taksipro.databinding.ActivityMainBinding
-import ru.ildus.taksipro.registration.RegistrFragment
-import ru.ildus.taksipro.registration.RegistrationActivity
+import ru.taksi.pro.android.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(view)
 
         val spannableTaxi = SpannableStringBuilder("Такси Про")
         spannableTaxi.setSpan(
