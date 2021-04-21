@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">10dp</dimen>
+    <dimen name="default_offset_half">5dp</dimen>
+    <dimen name="margin_medium">10dp</dimen>
+</resources>

@@ -2,8 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.taksi.pro.android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<!--    <meta-data-->
+<!--        android:name="preloaded_fonts"-->
+<!--        android:resource="@array/preloaded_fonts" />-->
 
     <application
         android:name=".TaxiProApplication"
@@ -21,6 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activitys.RegistrationActivity" />
+
     </application>
 
 </manifest>
