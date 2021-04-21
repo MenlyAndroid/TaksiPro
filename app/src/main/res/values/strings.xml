@@ -1,7 +1,4 @@
 <resources>
-<<<<<<< HEAD
-    <string name="app_name">TaksiPro</string>
-=======
     <string name="app_name">Taxi Pro</string>
     <string name="three_tariffs">Три тарифа на выбор, простая регистрация, все агрегаторы в одном сервисе</string>
     <string name="taxi_pro">Такси Про</string>
@@ -49,5 +46,4 @@
     <string name="pasport">паспорт</string>
     <string name="drivers_license">водительское удостоверение</string>
     <string name="vehicle_reg_certif">свидетельство регистрации автомобиля</string>
->>>>>>> feature/view
 </resources>

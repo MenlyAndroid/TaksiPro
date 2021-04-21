@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.ui.activitys
+package ru.taksi.pro.android.ui.activities
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,6 +7,8 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.ActivityMainBinding
 
 
@@ -15,8 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val spannableTaxi = SpannableStringBuilder("Такси Про")
         spannableTaxi.setSpan(

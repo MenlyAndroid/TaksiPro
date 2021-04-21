@@ -34,7 +34,7 @@ class CameraHandler(
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
                 Log.d(TAG, "openCamera $mCameraID")
-                mCameraID.let {
+                mCameraID?.let {
                     cameraManager.openCamera(it, this, null)
                 }
             }

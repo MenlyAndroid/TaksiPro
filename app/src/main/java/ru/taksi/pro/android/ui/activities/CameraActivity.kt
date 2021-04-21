@@ -99,7 +99,7 @@ class CameraActivity : AppCompatActivity(), ICameraView {
         }
         mCameraManager = getSystemService(Context.CAMERA_SERVICE) as CameraManager
         findCameras()
-        getCameraParams()
+//        getCameraParams()
 //        Log.d(TAG, "btn: ${myCameras.size}")
 //        if (myCameras.size > 0) {
 //            myCameras[0].openCamera()
@@ -129,10 +129,12 @@ class CameraActivity : AppCompatActivity(), ICameraView {
     }
 
     private fun setupSurface(surfaceTexture: SurfaceTexture) {
-        surfaceTexture.setDefaultBufferSize(
-            mCameraParams.previewSize.getWidth(),
-            mCameraParams.previewSize.getHeight()
-        )
+        mCameraParams.previewSize?.let { it ->
+            surfaceTexture.setDefaultBufferSize(
+                it.width,
+                it.height
+            )
+        }
         Surface(surfaceTexture).also { mSurface = it }
     }
 
@@ -167,32 +169,32 @@ class CameraActivity : AppCompatActivity(), ICameraView {
     }
 
 
-    private fun initImageReader() {
-        val sizeForImageReader: Size = CameraStrategy.getStillImageSize(
-            mCameraParams.cameraCharacteristics,
-            mCameraParams.previewSize
-        )
-        mImageReader = ImageReader.newInstance(
-            sizeForImageReader.getWidth(),
-            sizeForImageReader.getHeight(),
-            ImageFormat.JPEG,
-            1
-        )
-        mCompositeDisposable.add(
-            ImageSaverRxWrapper.createOnImageAvailableObservable(mImageReader)
-                .observeOn(Schedulers.io())
-                .flatMap { imageReader ->
-                    ImageSaverRxWrapper.save(imageReader.acquireLatestImage(), mFile).toObservable()
-                }
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { file ->
-                    mCallback.onPhotoTaken(
-                        file.getAbsolutePath(),
-                        getLensFacingPhotoType()
-                    )
-                }
-        )
-    }
+//    private fun initImageReader() {
+//        val sizeForImageReader: Size = CameraStrategy.getStillImageSize(
+//            mCameraParams.cameraCharacteristics,
+//            mCameraParams.previewSize
+//        )
+//        mImageReader = ImageReader.newInstance(
+//            sizeForImageReader.getWidth(),
+//            sizeForImageReader.getHeight(),
+//            ImageFormat.JPEG,
+//            1
+//        )
+//        mCompositeDisposable.add(
+//            ImageSaverRxWrapper.createOnImageAvailableObservable(mImageReader)
+//                .observeOn(Schedulers.io())
+//                .flatMap { imageReader ->
+//                    ImageSaverRxWrapper.save(imageReader.acquireLatestImage(), mFile).toObservable()
+//                }
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe { file ->
+//                    mCallback.onPhotoTaken(
+//                        file.getAbsolutePath(),
+//                        getLensFacingPhotoType()
+//                    )
+//                }
+//        )
+//    }
 
     private fun findCameras() {
         try {
@@ -303,42 +305,42 @@ class CameraActivity : AppCompatActivity(), ICameraView {
         }
     }
 
-    var cameraDeviceObservable: Observable<Pair<CameraCreator.DeviceStateEvents, CameraDevice>> =
-        mOnSurfaceTextureAvailable
-            .firstElement()
-            .doAfterSuccess(::setupSurface)
-            .doAfterSuccess { __: SurfaceTexture? -> initImageReader() }
-            .toObservable()
-            .flatMap<Any> { __: SurfaceTexture? ->
-                mCameraManager?.let {
-                    CameraCreator.openCamera(
-                        cameraId,
-                        it
-                    )
-                }
-            }
-            .share()
+//    var cameraDeviceObservable: Observable<Pair<CameraCreator.DeviceStateEvents, CameraDevice>> =
+//        mOnSurfaceTextureAvailable
+//            .firstElement()
+//            .doAfterSuccess(::setupSurface)
+//            .doAfterSuccess { __: SurfaceTexture? -> initImageReader() }
+//            .toObservable()
+//            .flatMap<Any> { __: SurfaceTexture? ->
+//                mCameraManager?.let {
+//                    CameraCreator.openCamera(
+//                        cameraId,
+//                        it
+//                    )
+//                }
+//            }
+//            .share()
 
-    var cameraDeviceObservable: Observable<Pair<CameraCreator.DeviceStateEvents, CameraDevice>> =
-        mOnSurfaceTextureAvailable
-            .firstElement()
-            .doAfterSuccess(this::setupSurface)
-            .toObservable()
-            .flatMap(__ -> CameraCreater.openCamera(mCameraParams.cameraId, mCameraManager))
-    .filter(pair -> pair.first == CameraRxWrapper.DeviceStateEvents.ON_OPENED)
-    .map(pair -> pair.second)
-    .flatMap(cameraDevice -> CameraRxWrapper
-    .createCaptureSession(cameraDevice, Arrays.asList(mSurface, mImageReader.getSurface()))
-    )
-    .filter(pair -> pair.first == CameraRxWrapper.CaptureSessionStateEvents.ON_CONFIGURED)
-    .map(pair -> pair.second)
-    .flatMap(cameraCaptureSession ->
-    {
-        CaptureRequest.Builder previewBuilder = createPreviewBuilder (cameraCaptureSession, mSurface);
-        return CameraRxWrapper.fromSetRepeatingRequest(
-            cameraCaptureSession,
-            previewBuilder.build()
-        );
-    })
-    .subscribe();
+//    var cameraDeviceObservable: Observable<Pair<CameraCreator.DeviceStateEvents, CameraDevice>> =
+//        mOnSurfaceTextureAvailable
+//            .firstElement()
+//            .doAfterSuccess(this::setupSurface)
+//            .toObservable()
+//            .flatMap(__ -> CameraCreater.openCamera(mCameraParams.cameraId, mCameraManager))
+//    .filter(pair -> pair.first == CameraRxWrapper.DeviceStateEvents.ON_OPENED)
+//    .map(pair -> pair.second)
+//    .flatMap(cameraDevice -> CameraRxWrapper
+//    .createCaptureSession(cameraDevice, Arrays.asList(mSurface, mImageReader.getSurface()))
+//    )
+//    .filter(pair -> pair.first == CameraRxWrapper.CaptureSessionStateEvents.ON_CONFIGURED)
+//    .map(pair -> pair.second)
+//    .flatMap(cameraCaptureSession ->
+//    {
+//        CaptureRequest.Builder previewBuilder = createPreviewBuilder (cameraCaptureSession, mSurface);
+//        return CameraRxWrapper.fromSetRepeatingRequest(
+//            cameraCaptureSession,
+//            previewBuilder.build()
+//        );
+//    })
+//    .subscribe()
 }
