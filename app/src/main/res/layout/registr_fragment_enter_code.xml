@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+        android:id="@+id/textView4"
+        style="@style/DescriptionEnterCodeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/phone_call" />
+
+        <TextView
+            style="@style/DescriptionEnterCodeExampleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/enter_the_last_4_digits" />
+
+        <TextView
+            style="@style/DescriptionEnterCodeExampleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/code_3555" />
+
+        <TextView
+            style="@style/DescriptionBodyStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/enter_code" />
+
+
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="номер"
+            android:textSize="48px"
+            android:gravity="center"
+            android:inputType="phone"
+            android:maxLength="4"
+            android:maxLines="1" />
+
+        <Button
+            android:id="@+id/button_enter_cod"
+            style="@style/AppButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="@string/open"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
