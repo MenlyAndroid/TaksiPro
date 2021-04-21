@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.ui.activitys
+package ru.taksi.pro.android.ui.activities
 
 import android.graphics.Color
 import android.os.Bundle
