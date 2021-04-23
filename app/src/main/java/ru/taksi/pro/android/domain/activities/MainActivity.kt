@@ -1,15 +1,12 @@
-package ru.taksi.pro.android.ui.activities
+package ru.taksi.pro.android.domain.activities
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableStringBuilder
-import android.text.style.ForegroundColorSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.ActivityMainBinding
+import ru.taksi.pro.android.domain.helpers.SpannableHelper
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,14 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val spannableTaxi = SpannableStringBuilder("Такси Про")
-        spannableTaxi.setSpan(
-            ForegroundColorSpan(Color.YELLOW),
-            0, // start
-            1, // end
-            Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-        )
-        binding.headerTitle.text = spannableTaxi
+        binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
 
         binding.button3.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))

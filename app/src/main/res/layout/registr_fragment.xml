@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,24 +23,35 @@
                 android:text="@string/enter_phone" />
 
 
-            <EditText
+            <!--            <EditText-->
+            <!--                android:id="@+id/editTextPhone"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:autofillHints="номер"-->
+            <!--                android:gravity="center"-->
+            <!--                android:inputType="phone"-->
+            <!--                android:maxLength="11"-->
+            <!--                android:maxLines="1" />-->
+
+            <br.com.sapereaude.maskedEditText.MaskedEditText
                 android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints="номер"
-                android:gravity="center"
+                android:hint="1234567890"
                 android:inputType="phone"
-                android:maxLength="11"
-                android:maxLines="1" />
+                android:typeface="monospace"
+                mask:allowed_chars="1234567890"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                mask:mask="+7(###)###-##-##" />
 
             <Button
                 android:id="@+id/button_cod"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/AppButton"
                 android:layout_gravity="center"
+                android:enabled="false"
                 android:layout_marginTop="30dp"
                 android:text="Получить код"
-                android:textAllCaps="false"
                 android:textSize="20sp" />
 
         </LinearLayout>

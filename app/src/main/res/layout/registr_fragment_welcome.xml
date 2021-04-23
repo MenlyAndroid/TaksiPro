@@ -50,14 +50,14 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_weight="0.09"
+                    android:layout_weight="0.1"
                     app:srcCompat="@mipmap/round_mark" />
 
                 <TextView
                     style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:text="@string/pasport" />
 
@@ -71,14 +71,14 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="0.2"
+                    android:layout_weight="0.1"
                     app:srcCompat="@mipmap/round_mark" />
 
                 <TextView
                     style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:text="@string/drivers_license" />
 
@@ -92,15 +92,14 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:layout_marginLeft="19dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.1"
                     app:srcCompat="@mipmap/round_mark" />
 
                 <TextView
                     style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:text="@string/vehicle_reg_certif" />
 
