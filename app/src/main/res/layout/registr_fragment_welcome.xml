@@ -6,12 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/DescriptionEnterCodeStyle"
@@ -42,69 +47,91 @@
                 android:textSize="20sp" />
 
 
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="25dp">
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="7dp"
-                    android:layout_weight="0.09"
-                    app:srcCompat="@mipmap/round_mark" />
-
-                <TextView
-                    style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
+                <TableRow
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/pasport" />
+                    android:layout_marginTop="25dp">
 
-            </TableRow>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.1"
+                        app:srcCompat="@mipmap/round_mark" />
 
-            <TableRow
+                    <TextView
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pasport" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.1"
+                        app:srcCompat="@mipmap/round_mark" />
+
+                    <TextView
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/drivers_license" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="0.1"
+                        app:srcCompat="@mipmap/round_mark" />
+
+                    <TextView
+                        style="@style/DescriptionTableStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_weight="1"
+                        android:text="@string/vehicle_reg_certif" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/button_enter_fill"
+                style="@style/AppButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="@string/fill"
+                android:textSize="20sp" />
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp">
+                android:layout_height="20dp" />
 
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="0.2"
-                    app:srcCompat="@mipmap/round_mark" />
-
-                <TextView
-                    style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/drivers_license" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="19dp"
-                    android:layout_weight="0.3"
-                    app:srcCompat="@mipmap/round_mark" />
-
-                <TextView
-                    style="@style/DescriptionTableStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
-                    android:layout_weight="1"
-                    android:text="@string/vehicle_reg_certif" />
-
-            </TableRow>
         </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
