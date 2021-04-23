@@ -47,4 +47,7 @@
     <string name="drivers_license">водительское удостоверение</string>
     <string name="vehicle_reg_certif">свидетельство регистрации автомобиля</string>
     <string name="fill">Заполнить</string>
+    <string name="get_code">Получить код</string>
+    <string name="get_rgb">rgb(251,187,5)</string>
+
 </resources>
