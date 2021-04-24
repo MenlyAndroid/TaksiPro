@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.ui.view
+package ru.taksi.pro.android.domain.view
 
 import android.hardware.camera2.CameraDevice
 

@@ -1,15 +1,14 @@
-package ru.taksi.pro.android.ui.camera
+package ru.taksi.pro.android.domain.helpers
 
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.hardware.camera2.CameraAccessException
-import android.hardware.camera2.CameraCaptureSession
 import android.hardware.camera2.CameraDevice
 import android.hardware.camera2.CameraManager
 import android.util.Log
 import androidx.core.app.ActivityCompat
-import ru.taksi.pro.android.ui.view.ICameraView
+import ru.taksi.pro.android.domain.view.ICameraView
 
 
 class CameraHandler(

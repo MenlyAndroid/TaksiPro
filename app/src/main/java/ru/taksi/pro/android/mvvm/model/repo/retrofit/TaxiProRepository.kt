@@ -13,10 +13,11 @@ import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
+import ru.taksi.pro.android.mvvm.model.network.INetworkChecker
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 import java.util.*
 
-class TaxiProRepository(private val api: ApiService) : ITaxiProRepository {
+class TaxiProRepository(private val api: ApiService, private val networkChecker: INetworkChecker) : ITaxiProRepository {
 
     /***********************************************************************************************
      *                               Login API  -  /login/

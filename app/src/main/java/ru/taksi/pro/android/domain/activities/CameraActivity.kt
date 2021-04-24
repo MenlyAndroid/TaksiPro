@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.ui.activities
+package ru.taksi.pro.android.domain.activities
 
 import android.Manifest
 import android.content.Context
@@ -18,14 +18,12 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
-import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.PublishSubject
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.CameraLayoutBinding
-import ru.taksi.pro.android.logick.rx.CameraCreator
 import ru.taksi.pro.android.logick.states.CameraParams
-import ru.taksi.pro.android.ui.camera.CameraHandler
-import ru.taksi.pro.android.ui.view.ICameraView
+import ru.taksi.pro.android.domain.helpers.CameraHandler
+import ru.taksi.pro.android.domain.view.ICameraView
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*

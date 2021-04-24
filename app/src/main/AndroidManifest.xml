@@ -13,7 +13,7 @@
 <!--        android:resource="@array/preloaded_fonts" />-->
 
     <application
-        android:name=".TaxiProApplication"
+        android:name=".app.TaxiProApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,15 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaksiPro"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name=".domain.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.RegistrationActivity" />
-        <activity android:name=".ui.activities.CameraActivity"/>
+        <activity android:name=".domain.activities.RegistrationActivity" />
+        <activity android:name=".domain.activities.CameraActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

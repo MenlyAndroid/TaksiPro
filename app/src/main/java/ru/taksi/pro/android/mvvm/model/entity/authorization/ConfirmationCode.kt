@@ -6,5 +6,6 @@ data class ConfirmationCode(
     @Expose val deadline: Int,
     @Expose val requestTime: Int,
     @Expose val resubmitTime: Int,
-    @Expose val success: Boolean
+    @Expose val success: String,
+    @Expose val errors: Errors
 )

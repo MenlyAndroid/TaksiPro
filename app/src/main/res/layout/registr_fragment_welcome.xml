@@ -47,77 +47,69 @@
                 android:textSize="20sp" />
 
 
-            <TableLayout
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="25dp">
 
-                <TableRow
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="0.1"
+                    app:srcCompat="@mipmap/round_mark" />
+
+                <TextView
+                    style="@style/DescriptionTableStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pasport" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/round_mark" />
+            </TableRow>
 
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/pasport" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
 
-                </TableRow>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="0.1"
+                    app:srcCompat="@mipmap/round_mark" />
 
-                <TableRow
-                    android:layout_width="match_parent"
+                <TextView
+                    style="@style/DescriptionTableStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/drivers_license" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/round_mark" />
+            </TableRow>
 
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/drivers_license" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
 
-                </TableRow>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="0.1"
+                    app:srcCompat="@mipmap/round_mark" />
 
-                <TableRow
-                    android:layout_width="match_parent"
+                <TextView
+                    style="@style/DescriptionTableStyle"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp">
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/vehicle_reg_certif" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/round_mark" />
-
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_weight="1"
-                        android:text="@string/vehicle_reg_certif" />
-
-                </TableRow>
-
-            </TableLayout>
-
+            </TableRow>
+              
             <Button
                 android:id="@+id/button_enter_fill"
                 style="@style/AppButton"
@@ -129,6 +121,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+
 
         </LinearLayout>
 
