@@ -17,10 +17,10 @@ class ChoiceTariffActivity: AppCompatActivity() {
         binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
     }
 
-    override fun onStart() {
-        super.onStart()
-        supportFragmentManager.beginTransaction()
-            .add(R.id.choice_tariff_container, ChoiceTariffFragment())
-            .commit()
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        supportFragmentManager.beginTransaction()
+//            .add(R.id.choice_tariff_container, ChoiceTariffFragment())
+//            .commit()
+//    }
 }

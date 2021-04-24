@@ -30,6 +30,7 @@
         </activity>
         <activity android:name=".domain.activities.RegistrationActivity" />
         <activity android:name=".camera.CameraActivity"/>
+        <activity android:name=".domain.activities.ChoiceTariffActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
