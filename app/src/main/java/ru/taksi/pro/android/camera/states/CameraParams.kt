@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.logick.states
+package ru.taksi.pro.android.camera.states
 
 import android.hardware.camera2.CameraCharacteristics
 import android.util.Size

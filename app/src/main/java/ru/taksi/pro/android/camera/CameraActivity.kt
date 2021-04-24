@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.domain.activities
+package ru.taksi.pro.android.camera
 
 import android.Manifest
 import android.content.Context
@@ -21,7 +21,7 @@ import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.subjects.PublishSubject
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.CameraLayoutBinding
-import ru.taksi.pro.android.logick.states.CameraParams
+import ru.taksi.pro.android.camera.states.CameraParams
 import ru.taksi.pro.android.domain.helpers.CameraHandler
 import ru.taksi.pro.android.domain.view.ICameraView
 import java.io.File

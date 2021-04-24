@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.logick.rx
+package ru.taksi.pro.android.camera.rx
 
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraCaptureSession
@@ -6,7 +6,7 @@ import android.hardware.camera2.CameraCaptureSession.CaptureCallback
 import android.hardware.camera2.CaptureRequest
 import android.os.Handler
 import io.reactivex.rxjava3.core.Observable
-import ru.taksi.pro.android.logick.rx.CaptureSessionDataCreator.CaptureSessionData
+import ru.taksi.pro.android.camera.rx.CaptureSessionDataCreator.CaptureSessionData
 
 
 object ImageCreator {

@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".domain.activities.RegistrationActivity" />
-        <activity android:name=".domain.activities.CameraActivity"/>
+        <activity android:name=".camera.CameraActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

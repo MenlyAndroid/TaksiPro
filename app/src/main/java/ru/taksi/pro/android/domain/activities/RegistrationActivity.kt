@@ -21,8 +21,6 @@ class RegistrationActivity : AppCompatActivity() {
         super.onStart()
         supportFragmentManager.beginTransaction()
             .add(R.id.container, RegistrationFragment())
- //           .add(R.id.container,RegistrFragmentEnterCode())
-//            .add(R.id.container, RegistrFragmentWelcome())
             .commit()
     }
 }

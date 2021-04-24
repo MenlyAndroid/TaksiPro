@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.logick.rx
+package ru.taksi.pro.android.camera.rx
 
 import android.annotation.SuppressLint
 import android.hardware.camera2.CameraAccessException

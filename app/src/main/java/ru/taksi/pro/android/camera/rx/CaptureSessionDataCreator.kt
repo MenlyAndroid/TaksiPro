@@ -1,4 +1,4 @@
-package ru.taksi.pro.android.logick.rx
+package ru.taksi.pro.android.camera.rx
 
 import android.hardware.camera2.*
 import android.hardware.camera2.CameraCaptureSession.CaptureCallback
