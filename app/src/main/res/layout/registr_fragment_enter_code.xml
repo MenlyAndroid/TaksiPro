@@ -18,7 +18,7 @@
                 style="@style/DescriptionEnterCodeStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/phone_call" />
 
             <TextView
@@ -60,8 +60,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:enabled="false"
-                android:text="@string/open"
-                android:textSize="20sp" />
+                android:text="@string/open"/>
 
         </LinearLayout>
 

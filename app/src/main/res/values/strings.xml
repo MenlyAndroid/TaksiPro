@@ -49,5 +49,23 @@
     <string name="fill">Заполнить</string>
     <string name="get_code">Получить код</string>
     <string name="get_rgb">rgb(251,187,5)</string>
+    <string name="collapse">Свернуть</string>
+    <string name="more_details">Подробнее</string>
+    <string name="o_p_per_month">0 Р в месяц +\n3% от суммы вывода</string>
+    <string name="start">Старт</string>
+    <string name="choose">Выбрать</string>
+    <string name="personal_data_protection">Защита личных данных</string>
+    <string name="direct_connection">Прямое подключение водителей к агрегаторам</string>
+    <string name="no_percent_of_order">Никаких процентов от заказа - только абонентская плата</string>
+    <string name="choose_tariff">Выберите тариф</string>
+    <string name="comfort">Комфорт</string>
+    <string name="four_hundred_monthly_fee">490 абонентская плата +\n410 комиссия банка</string>
+    <string name="nine_hundred_monthly_fee">990 абонентская плата +\n410 комиссия банка</string>
+    <string name="premium">Премиум</string>
+    <string name="unlimited_instant_payments">Безлимитные моментальные платежи в любое время</string>
+    <string name="optimal_rate">Оптимальный тариф для активных водителей</string>
+    <string name="from_cash_orders">С наличных заказов не берём комиссию</string>
+    <string name="choose_a_tariff">Выбрать тариф</string>
+    <string name="service_is_tree">Обслуживание бесплатно, если тратить все деньги на АЗС</string>
 
 </resources>

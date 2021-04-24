@@ -42,7 +42,7 @@
                 style="@style/DescriptionBodyStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:text="@string/required_documents"
                 android:textSize="20sp" />
 
@@ -115,12 +115,11 @@
                 style="@style/AppButton"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="@string/fill"
-                android:textSize="20sp" />
+                android:text="@string/fill"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="80dp" />
 
 
         </LinearLayout>

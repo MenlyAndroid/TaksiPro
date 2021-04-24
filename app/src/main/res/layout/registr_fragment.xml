@@ -51,8 +51,7 @@
                 android:layout_gravity="center"
                 android:enabled="false"
                 android:layout_marginTop="30dp"
-                android:text="Получить код"
-                android:textSize="20sp" />
+                android:text="Получить код" />
 
         </LinearLayout>
 
