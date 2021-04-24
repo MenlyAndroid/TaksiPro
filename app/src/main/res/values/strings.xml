@@ -46,4 +46,5 @@
     <string name="pasport">паспорт</string>
     <string name="drivers_license">водительское удостоверение</string>
     <string name="vehicle_reg_certif">свидетельство регистрации автомобиля</string>
+    <string name="fill">Заполнить</string>
 </resources>
