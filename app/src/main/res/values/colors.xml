@@ -7,9 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<!--    <color name="colorPrimary">#6200EE</color>-->
-<!--    <color name="colorPrimaryDark">#3700B3</color>-->
-<!--    <color name="colorAccent">#03DAC5</color>-->
+    <!--    <color name="colorPrimary">#6200EE</color>-->
+    <!--    <color name="colorPrimaryDark">#3700B3</color>-->
+    <!--    <color name="colorAccent">#03DAC5</color>-->
     <color name="colorPrimary">#212121</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#2962FF</color>
@@ -18,5 +18,5 @@
     <color name="background">#FAFAFA</color>
     <color name="background_contrast_default_color">#FF000000</color>
     <color name="colorSkyBlue">#2fb7ca</color>
-    <color name="colorLightGrey">#E1E1E1</color>
+    <color name="colorYellow">#fc0</color>
 </resources>
