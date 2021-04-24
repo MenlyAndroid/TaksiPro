@@ -21,21 +21,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val spannableTaxi = SpannableStringBuilder("Такси Про")
+        val spannableTaxi = SpannableStringBuilder(getString(R.string.taxi_pro))
         spannableTaxi.setSpan(
             ForegroundColorSpan(Color.rgb(251,187,5)),
             0, // start
             1, // end
             Spannable.SPAN_EXCLUSIVE_INCLUSIVE
         )
-        spannableTaxi.setSpan(AbsoluteSizeSpan(60), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableTaxi.setSpan(AbsoluteSizeSpan(60), 6,7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableTaxi.setSpan(AbsoluteSizeSpan(80), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableTaxi.setSpan(AbsoluteSizeSpan(80), 6,7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableTaxi.setSpan(StyleSpan(android.graphics.Typeface.BOLD), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         binding.headerTitle.text = spannableTaxi
 
-        binding.button3.setOnClickListener {
-            startActivity(Intent(this, RegistrationActivity::class.java))
+        binding.buttonRegistration.setOnClickListener {
+   //         startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(Intent(this, ChoiceTariffActivity::class.java))
         }
     }
 

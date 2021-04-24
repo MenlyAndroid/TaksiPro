@@ -2,22 +2,17 @@ package ru.taksi.pro.android.ui.activities
 
 import android.graphics.Color
 import android.graphics.Typeface
-import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.AbsoluteSizeSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.bold
 import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrMainBinding
 import ru.taksi.pro.android.ui.fragments.RegistrFragment
-import ru.taksi.pro.android.ui.fragments.RegistrFragmentEnterCode
-import ru.taksi.pro.android.ui.fragments.RegistrFragmentWelcome
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: RegistrMainBinding

@@ -34,13 +34,11 @@
 
             <Button
                 android:id="@+id/button_cod"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/AppButton"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:text="Получить код"
-                android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:text="@string/get_code"
+                android:textAllCaps="false"/>
 
         </LinearLayout>
 
