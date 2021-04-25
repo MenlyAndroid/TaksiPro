@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrMainBinding
-import ru.taksi.pro.android.domain.fragments.RegistrationFragment
+import ru.taksi.pro.android.domain.fragments.ChoiceTariffFragment
 import ru.taksi.pro.android.domain.helpers.SpannableHelper
 
 class RegistrationActivity : AppCompatActivity() {
@@ -20,7 +20,8 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, RegistrationFragment())
+ //           .add(R.id.container, RegistrationFragment())
+            .add(R.id.container, ChoiceTariffFragment())
             .commit()
     }
 }
