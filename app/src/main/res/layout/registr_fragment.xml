@@ -22,17 +22,6 @@
                 android:layout_marginTop="60dp"
                 android:text="@string/enter_phone" />
 
-
-            <!--            <EditText-->
-            <!--                android:id="@+id/editTextPhone"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:autofillHints="номер"-->
-            <!--                android:gravity="center"-->
-            <!--                android:inputType="phone"-->
-            <!--                android:maxLength="11"-->
-            <!--                android:maxLines="1" />-->
-
             <br.com.sapereaude.maskedEditText.MaskedEditText
                 android:id="@+id/editTextPhone"
                 android:layout_width="match_parent"

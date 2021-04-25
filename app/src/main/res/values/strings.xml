@@ -67,5 +67,21 @@
     <string name="from_cash_orders">С наличных заказов не берём комиссию</string>
     <string name="choose_a_tariff">Выбрать тариф</string>
     <string name="service_is_tree">Обслуживание бесплатно, если тратить все деньги на АЗС</string>
+    <string name="input_all_field">Заполните все пустые поля</string>
+    <string name="passport_data">Паспортные данные (паспорт РФ)</string>
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="patronymic">Отчество</string>
+    <string name="data_of_birth">Дата рождения</string>
+    <string name="seria_and_number_of_passport">Серия и номер паспорта</string>
+    <string name="who_issued">Кем выдан</string>
+    <string name="when_issued">Дата выдачи</string>
+    <string name="address_of_registration">Адрес регистрации</string>
+    <string name="city">Город</string>
+    <string name="district">Район(если есть)</string>
+    <string name="street">Улица</string>
+    <string name="home">Дом</string>
+    <string name="apartments">Квартира</string>
+    <string name="next">Далее</string>
 
 </resources>

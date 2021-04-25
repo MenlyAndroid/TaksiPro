@@ -1,405 +1,404 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                style="@style/DescriptionBodyBoldStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/choose_tariff" />
-
-            <TableLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="25dp">
+                android:orientation="vertical">
 
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                <TextView
+                    style="@style/DescriptionBodyBoldStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_tariff" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/there_is" />
-
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/no_percent_of_order" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/there_is" />
-
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/direct_connection" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/there_is"/>
-
-                    <TextView
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="1"
-                        android:text="@string/personal_data_protection" />
-
-                </TableRow>
-
-            </TableLayout>
-
-            <androidx.cardview.widget.CardView
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
+                <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fff"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:padding="10dp"
-                    android:orientation="vertical">
-
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/choose" />
-
-                    <TextView
-                        style="@style/DescriptionEnterCodeStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/start" />
-
-                    <TextView
-                        style="@style/DescriptionTariffStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/o_p_per_month" />
+                    android:layout_marginTop="25dp">
 
                     <TableRow
-                        android:id="@+id/bottom_sheet"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:clickable="true"
-                        android:focusable="true">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/more_details"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginEnd="90dp"
+                            android:layout_marginStart="10dp"
                             android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
+                            app:srcCompat="@mipmap/there_is" />
+
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/no_percent_of_order" />
 
                     </TableRow>
 
-                    <include layout="@layout/bottom_sheet_start_layout" />
-
                     <TableRow
-                        android:id="@+id/roll_up"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:visibility="gone"
-                        android:clickable="true"
-                        android:focusable="true">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/collapse"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginEnd="80dp"
+                            android:layout_marginStart="10dp"
                             android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
+                            app:srcCompat="@mipmap/there_is" />
+
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/direct_connection" />
 
                     </TableRow>
 
-                </LinearLayout>
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-            </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_weight="0.1"
+                            app:srcCompat="@mipmap/there_is" />
 
-            <androidx.cardview.widget.CardView
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="10dp">
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="1"
+                            android:text="@string/personal_data_protection" />
 
-                <LinearLayout
+                    </TableRow>
+
+                </TableLayout>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/CardViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fff"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    app:cardCornerRadius="10dp">
 
-                    <CheckBox
-                        android:id="@+id/checkBox2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/choose" />
-
-                    <TextView
-                        style="@style/DescriptionEnterCodeStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/comfort" />
-
-                    <TextView
-                        style="@style/DescriptionTariffStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/four_hundred_monthly_fee" />
-
-                    <TableRow
-                        android:id="@+id/bottom_sheet_comfort"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:clickable="true"
-                        android:focusable="true">
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#fff"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/choose" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            style="@style/DescriptionEnterCodeStyle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
                             android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/more_details"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="90dp"
-                            android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
-
-                    </TableRow>
-
-                    <include layout="@layout/bottom_sheet_comfort_layout" />
-
-                    <TableRow
-                        android:id="@+id/roll_up2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:visibility="gone"
-                        android:clickable="true"
-                        android:focusable="true">
+                            android:text="@string/start" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            style="@style/DescriptionTariffStyle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/collapse"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
+                            android:layout_marginTop="10dp"
+                            android:text="@string/o_p_per_month" />
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="80dp"
-                            android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
+                        <TableRow
+                            android:id="@+id/bottom_sheet"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true">
 
-                    </TableRow>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/more_details"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
 
-                </LinearLayout>
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="90dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
 
-            </androidx.cardview.widget.CardView>
+                        </TableRow>
 
-            <androidx.cardview.widget.CardView
-                style="@style/CardViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="10dp">
+                        <include layout="@layout/bottom_sheet_start_layout" />
 
-                <LinearLayout
+                        <TableRow
+                            android:id="@+id/roll_up"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/collapse"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="80dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
+
+                        </TableRow>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/CardViewStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#fff"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:padding="10dp"
-                    android:orientation="vertical">
+                    app:cardCornerRadius="10dp">
 
-                    <CheckBox
-                        android:id="@+id/checkBox3"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:text="@string/choose" />
-
-                    <TextView
-                        style="@style/DescriptionEnterCodeStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="@string/premium" />
-
-                    <TextView
-                        style="@style/DescriptionTariffStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="@string/nine_hundred_monthly_fee" />
-
-                    <TableRow
-                        android:id="@+id/bottom_sheet_premium"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:clickable="true"
-                        android:focusable="true">
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#fff"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <CheckBox
+                            android:id="@+id/checkBox2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/choose" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            style="@style/DescriptionEnterCodeStyle"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
                             android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/more_details"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
+                            android:text="@string/comfort" />
 
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginEnd="90dp"
-                            android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
+                        <TextView
+                            style="@style/DescriptionTariffStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/four_hundred_monthly_fee" />
 
-                    </TableRow>
+                        <TableRow
+                            android:id="@+id/bottom_sheet_comfort"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true">
 
-                    <include layout="@layout/bottom_sheet_premium_layout" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/more_details"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
 
-                    <TableRow
-                        android:id="@+id/roll_up3"
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="90dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
+
+                        </TableRow>
+
+                        <include layout="@layout/bottom_sheet_comfort_layout" />
+
+                        <TableRow
+                            android:id="@+id/roll_up2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/collapse"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="80dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
+
+                        </TableRow>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/CardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:visibility="gone"
-                        android:clickable="true"
-                        android:focusable="true">
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="#fff"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="80dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_weight="1"
-                            android:text="@string/collapse"
-                            android:textColor="@color/colorSkyBlue"
-                            android:textSize="20sp" />
-
-                        <ImageView
+                        <CheckBox
+                            android:id="@+id/checkBox3"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginEnd="80dp"
-                            android:layout_weight="0.1"
-                            app:srcCompat="@mipmap/there_is"/>
+                            android:text="@string/choose" />
 
-                    </TableRow>
+                        <TextView
+                            style="@style/DescriptionEnterCodeStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/premium" />
 
-                </LinearLayout>
+                        <TextView
+                            style="@style/DescriptionTariffStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/nine_hundred_monthly_fee" />
 
-            </androidx.cardview.widget.CardView>
+                        <TableRow
+                            android:id="@+id/bottom_sheet_premium"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true">
 
-            <Button
-                android:id="@+id/button_choose_a_tariff"
-                style="@style/AppButton"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:text="@string/choose_a_tariff"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/more_details"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="80dp" />
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="90dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
 
-        </LinearLayout>
+                        </TableRow>
 
-    </androidx.core.widget.NestedScrollView>
+                        <include layout="@layout/bottom_sheet_premium_layout" />
+
+                        <TableRow
+                            android:id="@+id/roll_up3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="80dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:text="@string/collapse"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="20sp" />
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="80dp"
+                                android:layout_weight="0.1"
+                                app:srcCompat="@mipmap/there_is" />
+
+                        </TableRow>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/button_choose_a_tariff"
+                    style="@style/AppButton"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/choose_a_tariff" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
