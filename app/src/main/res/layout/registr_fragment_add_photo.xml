@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            style="@style/DescriptionHeaderStyle"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/prepare_photo" />
+
+        <TextView
+            style="@style/DescriptionTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/you_can_open_camera" />
+
+        <ImageView
+            style="@style/Images"
+            android:layout_marginTop="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_passport_1" />
+
+        <TextView
+            style="@style/DescriptionHeaderStyle"
+            android:textSize="18sp"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/required_text" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="25dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@mipmap/round_mark" />
+
+            <TextView
+                style="@style/DescriptionTableStyle"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:text="@string/passport_bullet_text" />
+        </TableRow>
+
+        <TextView
+            style="@style/DescriptionTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/passport_regulations"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="25dp"
+                android:layout_weight="0.1"
+                app:srcCompat="@mipmap/round_mark" />
+
+            <TextView
+                style="@style/DescriptionTableStyle"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:text="@string/drivers_license_bullet_text" />
+        </TableRow>
+
+        <TextView
+            style="@style/DescriptionTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="0dp"
+            android:text="@string/driver_licence_regulations"/>
+
+        <TextView
+            style="@style/DescriptionEnterCodeStyle"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/caution_make_sure" />
+
+        <Button
+            android:id="@+id/button_add_photo"
+            style="@style/AppButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:enabled="false"
+            android:text="@string/add_photo"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
