@@ -67,5 +67,12 @@
     <string name="from_cash_orders">С наличных заказов не берём комиссию</string>
     <string name="choose_a_tariff">Выбрать тариф</string>
     <string name="service_is_tree">Обслуживание бесплатно, если тратить все деньги на АЗС</string>
+    <string name="select_taxi_aggregators">Выберите агрегаторы такси, через которые Вы будете работать</string>
+    <string name="windraw_funds">Вывод средств</string>
+    <string name="balance">Баланс</string>
+    <string name="my_data">Мои данные</string>
+    <string name="constantinople_vyacheslav">Константинопольский Вячеслав Геннадьевич</string>
+    <string name="my_tariff">Мой тариф</string>
+    <string name="my_auto">Мой автомобиль</string>
 
 </resources>
