@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/step_item"/>
+
     <TextView
         android:id="@+id/add_photo_tv"
         style="@style/DescriptionHeaderStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="80dp"
         android:gravity="center"
         android:text="@string/add_photos"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/passport_tv"
@@ -39,30 +41,32 @@
         app:layout_constraintTop_toBottomOf="@id/passport_tv" />
 
     <ImageView
-        android:id="@+id/img_passport_left"
+        android:id="@+id/img_passport_first_photo"
         android:layout_width="119dp"
         android:layout_height="88dp"
         android:layout_marginStart="68dp"
-        android:src="@mipmap/ic_girl"
+        android:src="@drawable/ic_add_photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/up_left_text" />
 
     <ImageView
-        android:id="@+id/action_delete_img"
+        android:visibility="visible"
+        android:id="@+id/left_passport_delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_oval"
-        app:layout_constraintTop_toTopOf="@+id/img_passport_left"
-        app:layout_constraintStart_toEndOf="@+id/img_passport_left"/>
+        app:layout_constraintTop_toTopOf="@+id/img_passport_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"/>
 
     <ImageView
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
         android:src="@drawable/ic_path"
-        app:layout_constraintStart_toStartOf="@+id/action_delete_img"
-        app:layout_constraintTop_toTopOf="@+id/action_delete_img" />
+        app:layout_constraintStart_toStartOf="@+id/left_passport_delete_btn"
+        app:layout_constraintTop_toTopOf="@+id/left_passport_delete_btn" />
 
     <TextView
         android:id="@+id/up_right_text"
@@ -75,13 +79,30 @@
         app:layout_constraintTop_toBottomOf="@id/passport_tv" />
 
     <ImageView
-        android:id="@+id/img_passport_right"
+        android:id="@+id/img_passport_second_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/up_left_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_passport_left"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"
         android:src="@drawable/ic_add_photo"/>
+
+    <ImageView
+        android:id="@+id/right_passport_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_passport_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_second_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintStart_toStartOf="@+id/right_passport_delete_btn"
+        app:layout_constraintTop_toTopOf="@+id/right_passport_delete_btn" />
 
     <TextView
         android:id="@+id/down_right_text"
@@ -95,13 +116,30 @@
         app:layout_constraintTop_toBottomOf="@id/driver_license_tv" />
 
     <ImageView
-        android:id="@+id/img_driver_license_right"
+        android:id="@+id/img_driver_license_second_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/down_left_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img_passport_left"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"
         android:src="@drawable/ic_add_photo"/>
+
+    <ImageView
+        android:id="@+id/right_license_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_second_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_second_photo"/>
 
     <TextView
         android:id="@+id/down_left_text"
@@ -114,13 +152,30 @@
         app:layout_constraintTop_toBottomOf="@id/driver_license_tv" />
 
     <ImageView
-        android:id="@+id/img_driver_license_left"
+        android:id="@+id/img_driver_license_first_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:src="@drawable/ic_add_photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/down_left_text" />
+
+    <ImageView
+        android:id="@+id/left_license_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_first_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_first_photo"/>
 
     <TextView
         android:id="@+id/driver_license_tv"
@@ -131,7 +186,7 @@
         android:gravity="center"
         android:text="@string/driver_license_caps_first_letter"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/img_passport_left"
+        app:layout_constraintTop_toBottomOf="@id/img_passport_first_photo"
         tools:layout_editor_absoluteX="15dp" />
 
     <TextView
@@ -142,7 +197,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/caution_make_sure"
         android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/img_driver_license_left"
+        app:layout_constraintTop_toBottomOf="@id/img_driver_license_first_photo"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button

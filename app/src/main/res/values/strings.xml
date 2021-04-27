@@ -103,5 +103,8 @@
     <string name="passport_registration_page">Страница с<br/>регистрацией</string>
     <string name="drivers_license_left_side">Лицевая сторона</string>
     <string name="drivers_license_back_side">Обратная сторона</string>
+    <string name="step">Шаг</string>
+    <string name="current_step">6</string>
+    <string name="total_steps">/6</string>
 
 </resources>
