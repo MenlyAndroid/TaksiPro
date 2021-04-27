@@ -19,4 +19,5 @@
     <color name="background_contrast_default_color">#FF000000</color>
     <color name="colorSkyBlue">#2fb7ca</color>
     <color name="colorYellow">#fc0</color>
+    <color name="colorLilyWhite">#e2f7ff</color>
 </resources>

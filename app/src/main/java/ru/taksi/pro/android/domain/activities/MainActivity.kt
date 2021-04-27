@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
+      //  binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
 
         binding.button3.setOnClickListener { onButtonsClickListener() }
         binding.button4.setOnClickListener { onButtonsClickListener() }

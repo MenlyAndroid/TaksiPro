@@ -17,8 +17,8 @@ object SpannableHelper {
             1, // end
             Spannable.SPAN_EXCLUSIVE_INCLUSIVE
         )
-        spannableTaxi.setSpan(AbsoluteSizeSpan(80), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        spannableTaxi.setSpan(AbsoluteSizeSpan(80), 6,7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableTaxi.setSpan(AbsoluteSizeSpan(100), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableTaxi.setSpan(AbsoluteSizeSpan(100), 6,7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableTaxi.setSpan(StyleSpan(Typeface.BOLD), 0,1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
 
         return spannableTaxi
