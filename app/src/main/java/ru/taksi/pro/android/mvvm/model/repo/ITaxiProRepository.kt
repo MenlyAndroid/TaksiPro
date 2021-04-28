@@ -6,6 +6,7 @@ import ru.taksi.pro.android.mvvm.model.entity.agregator.AgregatorsList
 import ru.taksi.pro.android.mvvm.model.entity.authorization.AuthorizationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.ConfirmationCode
 import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
+import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
@@ -87,5 +88,5 @@ interface ITaxiProRepository {
      *                          Users API  -  api/v1/users/
      **********************************************************************************************/
     fun getAllUsers(token: String): Single<Users>
-    fun getUser(id: Int, token: String): Single<Users>
+    fun getUser(id: Int, token: String): Single<User>
 }

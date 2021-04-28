@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 import io.reactivex.rxjava3.kotlin.addTo
-import javax.inject.Inject
+import ru.taksi.pro.android.mvvm.data.UserProperties
 
 class RegistrationCodeViewModel(
     private val iuSchedulers: Scheduler,
@@ -23,6 +23,7 @@ class RegistrationCodeViewModel(
         repository.loginByCode(phone, code).observeOn(iuSchedulers).subscribe({
             if (it.success == "true") {
                 answerLiveData.value = "true"
+                UserProperties.instance.token = it.user.token
             } else {
                 answerLiveData.value = it.success
             }
@@ -32,9 +33,8 @@ class RegistrationCodeViewModel(
         }).addTo(compositeDisposable)
     }
 
-    override fun onCleared() {
+    public override fun onCleared() {
         super.onCleared()
-        Log.d("!!!", "onCleared")
         compositeDisposable.dispose()
     }
 
