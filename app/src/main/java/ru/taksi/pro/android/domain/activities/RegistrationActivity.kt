@@ -7,7 +7,6 @@ import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrMainBinding
 import ru.taksi.pro.android.domain.fragments.RegistrationFragment
 
-
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: RegistrMainBinding
 

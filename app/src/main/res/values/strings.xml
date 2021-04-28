@@ -12,6 +12,7 @@
     <string name="convenient_revenue">Удобное управлене доходами</string>
     <string name="easily_track_balance">Легко отслеживать баланс по всем агрегаторам</string>
     <string name="our_rates">Наши тарифы</string>
+    <string name="select_taxi_aggregators">Выбор агрегаторов</string>
     <string name="quick_registration">Быстрая регистрация в агрегаторах</string>
     <string name="convenient_view">Удобный просмотр баланса и опции вывода денег на карту</string>
     <string name="login_from_any_device">Вход с любых устройств - не нужно приложение</string>
@@ -43,7 +44,7 @@
     <string name="for_further_work">Для дальнейшей работы на платформе Вам необходимо заполнить все данные и загрузить документы.</string>
     <string name="you_can_fill_in_the_data">Вы можете заполнить данные сейчас или вернуться к этому позже</string>
     <string name="required_documents">Необходимые документы:</string>
-    <string name="pasport">паспорт</string>
+    <string name="passport">паспорт</string>
     <string name="drivers_license">водительское удостоверение</string>
     <string name="vehicle_reg_certif">свидетельство регистрации автомобиля</string>
     <string name="fill">Заполнить</string>
@@ -92,5 +93,27 @@
     <string name="home">Дом</string>
     <string name="apartments">Квартира</string>
     <string name="next">Далее</string>
+    <string name="send_foto">Отправить фотографии</string>
+    <string name="caution_make_sure">Убедитесь, что нет бликов, <br/>и все данные хорошо видны</string>
+    <string name="prepare_photo">Подготовьте фотографии<br/>ваших документов</string>
+    <string name="you_can_open_camera">Вы можете открыть камеру<br/>и сфотографировать документы
+        <br/>или загрузить готовые фото</string>
+    <string name="required_text">Потребуется:</string>
+    <string name="passport_bullet_text">Паспорт</string>
+    <string name="drivers_license_bullet_text">Водительское удостоверение</string>
+    <string name="passport_regulations">-разворот с фотографией<br/>-страница с регистрацией</string>
+    <string name="driver_licence_regulations">-лицевая сторона<br/>-оборотная сторона</string>
+    <string name="add_photo">Добавить фотографию</string>
+    <string name="add_photos">Добавьте фотографии</string>
+    <string name="send_photos">Отправить фотографии</string>
+    <string name="passport_caps_first_letter">Паспорт</string>
+    <string name="driver_license_caps_first_letter">Водительское удостоверение</string>
+    <string name="passport_face">Разворот с<br/>фотографией</string>
+    <string name="passport_registration_page">Страница с<br/>регистрацией</string>
+    <string name="drivers_license_left_side">Лицевая сторона</string>
+    <string name="drivers_license_back_side">Обратная сторона</string>
+    <string name="step">Шаг</string>
+    <string name="current_step">6</string>
+    <string name="total_steps">/6</string>
 
 </resources>
