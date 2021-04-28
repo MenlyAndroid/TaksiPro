@@ -8,6 +8,7 @@ import ru.taksi.pro.android.mvvm.model.entity.agregator.AgregatorsList
 import ru.taksi.pro.android.mvvm.model.entity.authorization.AuthorizationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.ConfirmationCode
 import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
+import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
@@ -119,6 +120,6 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
     override fun getAllUsers(token: String): Single<Users> {
         return api.getAllUsers("Bearer $token").subscribeOn(Schedulers.io()) }
 
-    override fun getUser(id: Int, token: String): Single<Users> {
+    override fun getUser(id: Int, token: String): Single<User> {
         return api.getUser(id, "Bearer $token").subscribeOn(Schedulers.io()) }
 }

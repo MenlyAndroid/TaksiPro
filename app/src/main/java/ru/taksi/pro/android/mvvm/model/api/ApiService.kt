@@ -7,6 +7,7 @@ import ru.taksi.pro.android.mvvm.model.entity.agregator.AgregatorsList
 import ru.taksi.pro.android.mvvm.model.entity.authorization.AuthorizationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.ConfirmationCode
 import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
+import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
@@ -139,5 +140,5 @@ interface ApiService {
 
     @GET("api/v1/users/{id}")
     fun getUser(@Path("id") id: Int,
-                @Header("Authorization") token: String): Single<Users>
+                @Header("Authorization") token: String): Single<User>
 }

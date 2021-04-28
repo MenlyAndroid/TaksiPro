@@ -93,5 +93,43 @@
     <string name="apartments">Квартира</string>
     <string name="next">Далее</string>
 
+    <string name="send_foto">Отправить фотографии</string>
+    <string name="caution_make_sure">Убедитесь, что нет бликов, <br/>и все данные хорошо видны</string>
+    <string name="prepare_photo">Подготовьте фотографии<br/>ваших документов</string>
+    <string name="you_can_open_camera">Вы можете открыть камеру<br/>и сфотографировать документы
+        <br/>или загрузить готовые фото</string>
+    <string name="required_text">Потребуется:</string>
+    <string name="passport_bullet_text">Паспорт</string>
+    <string name="drivers_license_bullet_text">Водительское удостоверение</string>
+    <string name="passport_regulations">-разворот с фотографией<br/>-страница с регистрацией</string>
+    <string name="driver_licence_regulations">-лицевая сторона<br/>-оборотная сторона</string>
+    <string name="add_photo">Добавить фотографию</string>
+    <string name="add_photos">Добавьте фотографии</string>
+    <string name="send_photos">Отправить фотографии</string>
+    <string name="passport_caps_first_letter">Паспорт</string>
+    <string name="driver_license_caps_first_letter">Водительское удостоверение</string>
+    <string name="passport_face">Разворот с<br/>фотографией</string>
+    <string name="passport_registration_page">Страница с<br/>регистрацией</string>
+    <string name="drivers_license_left_side">Лицевая сторона</string>
+    <string name="drivers_license_back_side">Обратная сторона</string>
+    <string name="step">Шаг</string>
+    <string name="current_step">6</string>
+    <string name="total_steps">/6</string>
 
+    <string name="driver_data">Данные водительского удостоверения</string>
+    <string name="driver_issued_to">Срок выдачи</string>
+    <string name="driver_numbers">Серия и номер В.У.</string>
+    <string name="date_of_birth">Дата рождения</string>
+    <string name="serial_and_number_of_passport">Серия и номер паспорта</string>
+    <string name="passport">passport</string>
+    <string name="certificate_number">Номер свидетельства Т.С.</string>
+    <string name="car_win">WIN</string>
+    <string name="car_number">Регистрационный знак</string>
+    <string name="car_color">Цвет автомобиля</string>
+    <string name="car_year">Год выпуска</string>
+    <string name="car_model">Модель автомобиля</string>
+    <string name="car_brand">Марка автомобиля</string>
+    <string name="car_data">Данные Т.С.</string>
+    <string name="car_license">Данные лицензии</string>
+    <string name="license_number">Номер лицензии</string>
 </resources>
