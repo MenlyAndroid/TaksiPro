@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginTop="10dp"
-                app:srcCompat="@drawable/ic_taxi_pro" />
+                app:srcCompat="@drawable/taxi_pro" />
 
             <View
                 android:layout_width="match_parent"

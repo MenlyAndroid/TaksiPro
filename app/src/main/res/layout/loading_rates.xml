@@ -27,25 +27,20 @@
                 android:id="@+id/start"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/start" />
-
-            <ImageView
-                android:id="@+id/economy"
-                android:layout_width="320dp"
-                android:layout_height="300dp"
-                app:srcCompat="@mipmap/economy" />
+                app:srcCompat="@drawable/start" />
 
             <ImageView
                 android:id="@+id/comfort"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                app:srcCompat="@mipmap/comfort" />
+                app:srcCompat="@drawable/comfort" />
 
             <ImageView
                 android:id="@+id/premium"
-                android:layout_width="290dp"
-                android:layout_height="290dp"
-                app:srcCompat="@mipmap/premium" />
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/premium" />
 
         </LinearLayout>
 
