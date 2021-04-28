@@ -37,6 +37,7 @@
         android:layout_marginStart="88dp"
         android:layout_marginTop="16dp"
         android:text="@string/passport_face"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passport_tv" />
 
@@ -74,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/passport_registration_page"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/up_left_text"
         app:layout_constraintTop_toBottomOf="@id/passport_tv" />

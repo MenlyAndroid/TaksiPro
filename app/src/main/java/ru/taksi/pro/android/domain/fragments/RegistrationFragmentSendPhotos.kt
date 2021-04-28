@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 
-
-class RegistrationFragmentAddPhoto: Fragment() {
+class RegistrationFragmentSendPhotos: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.registr_fragment_add_photo, container, false)
+        return inflater.inflate(R.layout.registr_fragment_send_photo, container, false)
     }
 }
