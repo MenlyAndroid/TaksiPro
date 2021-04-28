@@ -35,7 +35,7 @@ class InputDriverDataFragment : Fragment() {
 
     private fun setComponentsValue() {
         binding?.let { bind ->
-            UserProperties.instance.passportData?.let {
+            UserProperties.instance.driverNumbers?.let {
                 bind.driverNumber.setText(it)
             }
             UserProperties.instance.driverIssued?.let {
@@ -66,15 +66,15 @@ class InputDriverDataFragment : Fragment() {
         }
         binding?.driverNumber?.let {
             it.addTextChangedListener(
-                TextChangedHelper.getPassportOrDriverNumberTextWatcher(
+                TextChangedHelper.getSeriaEndNumberTextWatcher(
                     it,
                     UserProperties.DRIVER_DATA
                 )
             )
         }
-//        binding?.btnNext?.setOnClickListener {
-//            requireActivity().supportFragmentManager.beginTransaction()
-//                .replace(R.id.container, InputDriverDataFragment()).commit()
-//        }
+        binding?.btnNext?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, InputCarFragment()).commit()
+        }
     }
 }

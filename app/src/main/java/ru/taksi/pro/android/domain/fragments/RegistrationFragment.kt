@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.RegistrFragmentBinding
+import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.model.api.ApiService
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 import ru.taksi.pro.android.mvvm.model.repo.retrofit.TaxiProRepository
@@ -50,6 +51,7 @@ class RegistrationFragment : Fragment() {
                 override fun afterTextChanged(s: Editable) {
                     if (it.rawText?.length == 10) {
                         phone = "7${it.rawText}"
+                        UserProperties.instance.phone = phone
                         binding?.buttonCod?.isEnabled = true
                     } else {
                         phone = ""
