@@ -37,6 +37,8 @@ class ViewModulesModule {
         uiSchedulers: Scheduler,
         repository: ITaxiProRepository
     ) = RegistrationSendPhotoViewModel(uiSchedulers, repository)
+
+    @Provides
     fun getChoiceTariffViewModel() = ChoiceTariffViewModel()
 
     @Provides
