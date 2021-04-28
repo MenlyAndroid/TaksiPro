@@ -37,7 +37,7 @@ object TextChangedHelper {
                         } else {
                             current = it.toString()
                         }
-                        UserProperties.instance.setDate(current, field)
+                        UserProperties.instance.setData(current, field)
                     }
                 }
             }
@@ -47,7 +47,10 @@ object TextChangedHelper {
 
         }
 
-    fun getPassportTextWatcher(textInput: TextInputEditText): TextWatcher = object : TextWatcher {
+    fun getPassportOrDriverNumberTextWatcher(
+        textInput: TextInputEditText,
+        field: String
+    ): TextWatcher = object : TextWatcher {
         var current = ""
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -67,7 +70,7 @@ object TextChangedHelper {
                         textInput.setSelection(textInput.text.toString().length)
                     }
                     current = it.toString()
-                    UserProperties.instance.passportData = current
+                    UserProperties.instance.setData(current, field)
                 }
             }
         }

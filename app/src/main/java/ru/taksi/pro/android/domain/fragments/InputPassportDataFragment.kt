@@ -93,7 +93,12 @@ class InputPassportDataFragment : Fragment() {
             )
         }
         binding?.inputPassportData?.let {
-            it.addTextChangedListener(TextChangedHelper.getPassportTextWatcher(it))
+            it.addTextChangedListener(
+                TextChangedHelper.getPassportOrDriverNumberTextWatcher(
+                    it,
+                    UserProperties.PASSPORT_DATA
+                )
+            )
         }
         binding?.inputSurname?.addTextChangedListener {
             UserProperties.instance.surname = it.toString()
@@ -121,6 +126,10 @@ class InputPassportDataFragment : Fragment() {
         }
         binding?.inputApartment?.addTextChangedListener {
             UserProperties.instance.apartments = it.toString()
+        }
+        binding?.btnNext?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, InputDriverDataFragment()).commit()
         }
     }
 }

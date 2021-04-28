@@ -8,6 +8,10 @@ class UserProperties {
         val instance = UserProperties()
         val DATE_OF_BIRD = "dateOfBird"
         val DATE_OF_ISSUED = "dataOfIssued"
+        val DRIVER_ISSUED = "driverIssued"
+        val DRIVER_ISSUED_TO = "driverIssuedTo"
+        val PASSPORT_DATA = "passport"
+        val DRIVER_DATA = "driver"
     }
 
     var token: String? = null
@@ -25,10 +29,18 @@ class UserProperties {
     var home: String? = null
     var apartments: String? = null
 
-    fun setDate(value: String, field: String) {
+    var driverNumbers: String? = null
+    var driverIssued: String? = null
+    var driverIssuedTo: String? = null
+
+    fun setData(value: String, field: String) {
         when (field) {
             DATE_OF_BIRD -> dateOfBird = value
             DATE_OF_ISSUED -> dataOfIssued = value
+            DRIVER_ISSUED -> driverIssued = value
+            DRIVER_ISSUED_TO -> driverIssuedTo = value
+            PASSPORT_DATA -> passportData = value
+            DRIVER_DATA -> driverNumbers = value
         }
     }
 }

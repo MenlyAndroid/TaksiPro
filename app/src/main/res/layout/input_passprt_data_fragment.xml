@@ -61,7 +61,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/InputFieldStyle"
-                android:hint="@string/data_of_birth">
+                android:hint="@string/date_of_birth">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_date_of_birth"
