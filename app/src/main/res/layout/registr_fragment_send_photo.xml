@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/step_item"/>
+
+    <TextView
+        android:id="@+id/add_photo_tv"
+        style="@style/DescriptionHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="@string/add_photos"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/passport_tv"
+        style="@style/DescriptionHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="@string/passport_caps_first_letter"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/add_photo_tv"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <TextView
+        android:id="@+id/up_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/passport_face"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passport_tv" />
+
+    <ImageView
+        android:id="@+id/img_passport_first_photo"
+        android:layout_width="119dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="68dp"
+        android:src="@drawable/ic_add_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/up_left_text" />
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/left_passport_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_passport_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"/>
+
+    <ImageView
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintStart_toStartOf="@+id/left_passport_delete_btn"
+        app:layout_constraintTop_toTopOf="@+id/left_passport_delete_btn" />
+
+    <TextView
+        android:id="@+id/up_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/passport_registration_page"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/up_left_text"
+        app:layout_constraintTop_toBottomOf="@id/passport_tv" />
+
+    <ImageView
+        android:id="@+id/img_passport_second_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/up_left_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"
+        android:src="@drawable/ic_add_photo"/>
+
+    <ImageView
+        android:id="@+id/right_passport_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_passport_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_second_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintStart_toStartOf="@+id/right_passport_delete_btn"
+        app:layout_constraintTop_toTopOf="@+id/right_passport_delete_btn" />
+
+    <TextView
+        android:id="@+id/down_right_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/drivers_license_back_side"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toEndOf="@id/down_left_text"
+        app:layout_constraintTop_toBottomOf="@id/driver_license_tv" />
+
+    <ImageView
+        android:id="@+id/img_driver_license_second_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/down_left_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_passport_first_photo"
+        android:src="@drawable/ic_add_photo"/>
+
+    <ImageView
+        android:id="@+id/right_license_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_second_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_second_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_second_photo"/>
+
+    <TextView
+        android:id="@+id/down_left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/drivers_license_left_side"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driver_license_tv" />
+
+    <ImageView
+        android:id="@+id/img_driver_license_first_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:src="@drawable/ic_add_photo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/down_left_text" />
+
+    <ImageView
+        android:id="@+id/left_license_delete_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_oval"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_first_photo"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_path"
+        app:layout_constraintTop_toTopOf="@+id/img_driver_license_first_photo"
+        app:layout_constraintStart_toEndOf="@+id/img_driver_license_first_photo"/>
+
+    <TextView
+        android:id="@+id/driver_license_tv"
+        style="@style/DescriptionHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="@string/driver_license_caps_first_letter"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/img_passport_first_photo"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <TextView
+        android:id="@+id/caution_tv"
+        style="@style/DescriptionEnterCodeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/caution_make_sure"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/img_driver_license_first_photo"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/button_send_photos"
+        style="@style/AppButton"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:enabled="false"
+        android:text="@string/send_photos"
+        app:layout_constraintTop_toBottomOf="@id/caution_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
