@@ -12,8 +12,10 @@ class UserProperties {
         val DRIVER_ISSUED_TO = "driverIssuedTo"
         val PASSPORT_DATA = "passport"
         val DRIVER_DATA = "driver"
+        val CAR_CERTIFICATE = "certificate"
     }
 
+    var phone: String? = null
     var token: String? = null
     var tariff: String? = null
     var surname: String? = null
@@ -33,6 +35,15 @@ class UserProperties {
     var driverIssued: String? = null
     var driverIssuedTo: String? = null
 
+    var carBrand: String? = null
+    var carModel: String? = null
+    var carYear: String? = null
+    var carColor: String? = null
+    var carNumber: String? = null
+    var carWIN: String? = null
+    var carCertificate: String? = null
+    var licenseNumber: String? = null
+
     fun setData(value: String, field: String) {
         when (field) {
             DATE_OF_BIRD -> dateOfBird = value
@@ -41,6 +52,7 @@ class UserProperties {
             DRIVER_ISSUED_TO -> driverIssuedTo = value
             PASSPORT_DATA -> passportData = value
             DRIVER_DATA -> driverNumbers = value
+            CAR_CERTIFICATE -> carCertificate = value
         }
     }
 }

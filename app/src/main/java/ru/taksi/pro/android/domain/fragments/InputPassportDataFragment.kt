@@ -94,7 +94,7 @@ class InputPassportDataFragment : Fragment() {
         }
         binding?.inputPassportData?.let {
             it.addTextChangedListener(
-                TextChangedHelper.getPassportOrDriverNumberTextWatcher(
+                TextChangedHelper.getSeriaEndNumberTextWatcher(
                     it,
                     UserProperties.PASSPORT_DATA
                 )

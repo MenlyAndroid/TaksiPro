@@ -122,4 +122,14 @@
     <string name="date_of_birth">Дата рождения</string>
     <string name="serial_and_number_of_passport">Серия и номер паспорта</string>
     <string name="passport">passport</string>
+    <string name="certificate_number">Номер свидетельства Т.С.</string>
+    <string name="car_win">WIN</string>
+    <string name="car_number">Регистрационный знак</string>
+    <string name="car_color">Цвет автомобиля</string>
+    <string name="car_year">Год выпуска</string>
+    <string name="car_model">Модель автомобиля</string>
+    <string name="car_brand">Марка автомобиля</string>
+    <string name="car_data">Данные Т.С.</string>
+    <string name="car_license">Данные лицензии</string>
+    <string name="license_number">Номер лицензии</string>
 </resources>

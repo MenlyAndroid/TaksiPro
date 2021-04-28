@@ -47,7 +47,7 @@ object TextChangedHelper {
 
         }
 
-    fun getPassportOrDriverNumberTextWatcher(
+    fun getSeriaEndNumberTextWatcher(
         textInput: TextInputEditText,
         field: String
     ): TextWatcher = object : TextWatcher {
