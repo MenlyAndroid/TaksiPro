@@ -23,8 +23,8 @@ class RegistrationActivity : AppCompatActivity() {
 //            .add(R.id.container, RegistrationFragment())
 //            .add(R.id.container, ChoiceTariffFragment())
 //            .add(R.id.container, ChoiceAggregatorFragment())
-//            .add(R.id.container, RegistrationFragmentAddPhoto())
-            .add(R.id.container, RegistrationFragmentSendPhotos())
+            .add(R.id.container, RegistrationFragmentAddPhoto())
+//            .add(R.id.container, RegistrationFragmentSendPhotos())
             .commit()
     }
 }

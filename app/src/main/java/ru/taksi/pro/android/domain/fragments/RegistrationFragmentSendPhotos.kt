@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
+import ru.taksi.pro.android.databinding.RegistrFragmentSendPhotoBinding
 
 class RegistrationFragmentSendPhotos: Fragment() {
+    private var binding: RegistrFragmentSendPhotoBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.registr_fragment_send_photo, container, false)
+    ): View = RegistrFragmentSendPhotoBinding.inflate(inflater, container, false).let {
+        binding = it
+        it.root
     }
 }
