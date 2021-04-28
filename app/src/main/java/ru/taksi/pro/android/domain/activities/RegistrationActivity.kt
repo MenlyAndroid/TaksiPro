@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrMainBinding
-import ru.taksi.pro.android.domain.fragments.*
-import ru.taksi.pro.android.domain.helpers.SpannableHelper
+import ru.taksi.pro.android.domain.fragments.RegistrationFragment
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: RegistrMainBinding
@@ -14,17 +13,10 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.registr_main)
-        binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
-    }
-
-    override fun onStart() {
-        super.onStart()
-        supportFragmentManager.beginTransaction()
-//            .add(R.id.container, RegistrationFragment())
-//            .add(R.id.container, ChoiceTariffFragment())
-//            .add(R.id.container, ChoiceAggregatorFragment())
-            .add(R.id.container, RegistrationFragmentAddPhoto())
-//            .add(R.id.container, RegistrationFragmentSendPhotos())
-            .commit()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container, RegistrationFragment())
+                .commit()
+        }
     }
 }

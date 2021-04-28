@@ -6,8 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
@@ -23,13 +21,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/header_title"
-                        style="@style/DescriptionBodyStyle"
+                    <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/taxi_pro"
-                        android:textSize="24sp" />
+                        android:layout_height="35dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/ic_taxi_pro" />
 
                     <Button
                         android:id="@+id/button_open"
@@ -195,98 +191,100 @@
                 <ImageView
                     android:id="@+id/smartphone"
                     style="@style/Images"
-                    android:layout_width="500dp"
-                    android:layout_height="500dp"
+                    android:layout_width="450dp"
+                    android:layout_height="450dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     app:srcCompat="@mipmap/smartphone" />
 
-                <TableRow
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="25dp">
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/there_is"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_weight="0.5"
-                        app:srcCompat="@mipmap/there_is" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/description11"
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/quick_registration" />
-                </TableRow>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@mipmap/there_is" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp">
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/quick_registration" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.3"
-                        app:srcCompat="@mipmap/there_is" />
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/description12"
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/convenient_view" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
-                </TableRow>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@mipmap/there_is" />
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp">
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/convenient_view" />
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.3"
-                        app:srcCompat="@mipmap/there_is" />
 
-                    <TextView
-                        android:id="@+id/description13"
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/login_from_any_device" />
+                    </LinearLayout>
 
-                </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp">
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@mipmap/there_is" />
 
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_weight="0.5"
-                        app:srcCompat="@mipmap/there_is" />
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/login_from_any_device" />
 
-                    <TextView
-                        android:id="@+id/description14"
-                        style="@style/DescriptionTableStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/live_chat" />
+                    </LinearLayout>
 
-                </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            app:srcCompat="@mipmap/there_is" />
+
+                        <TextView
+                            style="@style/DescriptionTableStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/live_chat" />
+
+                    </LinearLayout>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/description15"
@@ -295,7 +293,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
                     android:text="@string/we_work_with_drivers"
-                    android:textSize="20sp" />
+                    android:textSize="25sp" />
 
 
                 <ImageView

@@ -9,10 +9,11 @@ import ru.taksi.pro.android.mvvm.vm.RegistrationCodeViewModel
 import ru.taksi.pro.android.mvvm.vm.RegistrationPhoneViewModel
 import ru.taksi.pro.android.mvvm.vm.RegistrationSendPhotoViewModel
 import javax.inject.Singleton
+import ru.taksi.pro.android.mvvm.vm.*
 
 @Module
 class ViewModulesModule {
-    @Singleton
+
     @Provides
     fun getRegistrationPhoneViewModel(
         uiSchedulers: Scheduler,
@@ -36,4 +37,8 @@ class ViewModulesModule {
         uiSchedulers: Scheduler,
         repository: ITaxiProRepository
     ) = RegistrationSendPhotoViewModel(uiSchedulers, repository)
+    fun getChoiceTariffViewModel() = ChoiceTariffViewModel()
+
+    @Provides
+    fun getChoiceAggregatorViewModel() = ChoiceAggregatorViewModel()
 }

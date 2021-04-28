@@ -19,6 +19,7 @@ import ru.taksi.pro.android.databinding.RegistrFragmentBinding
 import ru.taksi.pro.android.mvvm.model.api.ApiService
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 import ru.taksi.pro.android.mvvm.model.repo.retrofit.TaxiProRepository
+import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
 import ru.taksi.pro.android.mvvm.vm.RegistrationPhoneViewModel
 import javax.inject.Inject
 
@@ -34,6 +35,8 @@ class RegistrationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         TaxiProApplication.component.inject(this)
+        if(viewModel.getToken() != null) requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.container, ChoiceTariffFragment()).commit()
         binding =
             DataBindingUtil.inflate(inflater, R.layout.registr_fragment, container, false)
         return binding?.root
@@ -67,6 +70,8 @@ class RegistrationFragment : Fragment() {
         }
         viewModel.getAnswerLiveData().observe(requireActivity(), { value ->
             if (value == "true") {
+                Log.d("!!!", "true")
+                viewModel.onCleared()
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.container, RegistrationFragmentEnterCode.newInstance(phone)).commit()
             } else {
@@ -81,6 +86,6 @@ class RegistrationFragment : Fragment() {
         binding?.editTextPhone?.let {
             viewModel.sendPhone(phone)
         }
-        Log.d("!!!", "click: ${binding?.editTextPhone?.rawText}")
+        Log.d("!!!", "click: ${binding?.editTextPhone?.rawText} ${viewModel}")
     }
 }

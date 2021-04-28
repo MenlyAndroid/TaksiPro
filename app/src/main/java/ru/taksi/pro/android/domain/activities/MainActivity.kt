@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.ActivityMainBinding
-import ru.taksi.pro.android.domain.helpers.SpannableHelper
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,8 +14,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        binding.headerTitle.text = SpannableHelper.spannableTaxi(getString(R.string.taxi_pro))
 
         binding.button3.setOnClickListener { onButtonsClickListener() }
         binding.button4.setOnClickListener { onButtonsClickListener() }
