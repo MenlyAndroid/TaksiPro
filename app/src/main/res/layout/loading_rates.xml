@@ -33,6 +33,7 @@
                 android:id="@+id/comfort"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+                android:layout_marginStart="15dp"
                 app:srcCompat="@drawable/comfort" />
 
             <ImageView

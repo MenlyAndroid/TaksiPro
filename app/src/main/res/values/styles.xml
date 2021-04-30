@@ -27,7 +27,7 @@
 
     <style name="AppButton">
         <item name="backgroundTint">@color/colorSkyBlue</item>
-        <item name="android:background">@drawable/button_main</item>
+        <item name="android:background">@drawable/button_main_shape</item>
         <item name="android:textColor">@color/background</item>
         <item name="android:fontFamily">@font/alef</item>
         <item name="android:layout_width">270dp</item>
@@ -129,6 +129,20 @@
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginEnd">16dp</item>
         <item name="android:layout_marginTop">16dp</item>
+    </style>
+
+    <style name="MyAutoStyle">
+        <item name="android:fontFamily">@font/alef</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="MyAutoBoldStyle" parent="MyAutoStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">30dp</item>
     </style>
 
 </resources>
