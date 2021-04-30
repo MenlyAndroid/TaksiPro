@@ -78,6 +78,7 @@ class RegistrationFragmentEnterCode() : Fragment() {
         }
         viewModel.getAnswerLiveData().observe(requireActivity(), { value ->
             if (value == "true") {
+                viewModel.onCleared()
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.container, RegistrationFragmentWelcome()).commit()
             } else {
@@ -86,6 +87,7 @@ class RegistrationFragmentEnterCode() : Fragment() {
                 toast.show()
             }
         })
+
     }
 
     fun onButtonClickListener() {

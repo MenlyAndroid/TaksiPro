@@ -4,13 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrFragmentWelcomeBinding
 
-class RegistrationFragmentWelcome: Fragment() {
+class RegistrationFragmentWelcome : Fragment() {
     private var binding: RegistrFragmentWelcomeBinding? = null
 
     override fun onCreateView(
@@ -23,11 +22,9 @@ class RegistrationFragmentWelcome: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-  //      button.setOnClickListener{onButtonClickListener()}
+        binding?.buttonEnterFill?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, ChoiceTariffFragment()).commit()
+        }
     }
-
-    fun onButtonClickListener() {
-
-    }
-
 }

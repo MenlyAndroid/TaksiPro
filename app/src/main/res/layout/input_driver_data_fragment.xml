@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/DescriptionEnterCodeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/input_all_field" />
+
+            <TextView
+                style="@style/DescriptionTableStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/driver_data" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/InputFieldStyle"
+                android:hint="@string/driver_numbers">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/driver_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789 "
+                    android:inputType="numberDecimal"
+                    android:maxLength="11"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/InputFieldStyle"
+                android:hint="@string/when_issued">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date_driver_issued"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLength="10"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/InputFieldStyle"
+                android:hint="@string/driver_issued_to">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/driver_issued_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:maxLength="10"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/AppButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="@string/next" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
