@@ -15,19 +15,19 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="78dp"
                 android:layout_weight="1"
                 android:background="@color/colorLilyWhite"
                 android:orientation="horizontal"
-                android:padding="10dp">
-
+                android:padding="0dp">
 
                 <TextView
                     android:id="@+id/bottom_my_data"
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="55dp"
                     android:layout_weight="1"
+                    android:layout_marginStart="3dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="@string/my_data" />
@@ -36,8 +36,8 @@
                     android:id="@+id/bottom_balance"
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="11dp"
                     android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
@@ -47,8 +47,9 @@
                     android:id="@+id/bottom_withdraw_funds"
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="55dp"
                     android:layout_weight="1"
+                    android:layout_marginEnd="3dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="@string/windraw_funds" />
@@ -61,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="10dp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,27 +131,53 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/bottom_aggregators_all"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_height="40dp"
                         android:layout_marginTop="40dp"
-                        android:text="Агрегаторы"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="17sp" />
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="258dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Агрегаторы"
+                            android:textColor="@color/colorSkyBlue"
+                            android:textSize="17sp" />
+
+                        <ImageView
+                            android:id="@+id/my_aggregators_roll_un"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="8dp"
+                            app:srcCompat="@drawable/ic_icon_un" />
+
+                        <ImageView
+                            android:id="@+id/my_aggregators_roll_up"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginTop="8dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_icon_up" />
+
+                    </LinearLayout>
 
                     <HorizontalScrollView
+                        android:id="@+id/bottom_aggregators"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="20dp"
                             android:orientation="horizontal">
 
                             <androidx.cardview.widget.CardView
@@ -284,32 +311,52 @@
                         </LinearLayout>
                     </HorizontalScrollView>
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_margin="10dp"
+                        android:background="#000" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/bottom_my_tariff"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@drawable/my_tariff_view" />
+
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
                         android:text="@string/my_tariff"
                         android:textColor="@color/colorSkyBlue"
                         android:textSize="17sp" />
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginEnd="80dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/there_is" />
+                        android:id="@+id/my_tariff_roll_un"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/ic_icon_un" />
+
+                    <ImageView
+                        android:id="@+id/my_tariff_roll_up"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_icon_up" />
 
                 </LinearLayout>
 
@@ -319,7 +366,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="30dp"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:id="@+id/button_start"
@@ -401,32 +448,175 @@
                             layout="@layout/bottom_sheet_premium_layout"
                             android:visibility="visible" />
 
-
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/roll_up"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-
                     <TextView
-                        style="@style/DescriptionBodyStyle"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/bottom_choose_tariff_next_month"
+                        android:layout_width="165dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="80dp"
-                        android:text="@string/collapse"
-                        android:textColor="@color/colorSkyBlue" />
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="Выбрать тариф на следующий месяц"
+                        android:textColor="@color/colorSkyBlue"
+                        android:textSize="17sp"
+                        android:visibility="gone" />
 
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginEnd="80dp"
-                        app:srcCompat="@mipmap/there_is" />
+                    <LinearLayout
+                        android:id="@+id/bottom_choose_tariff_next_month_all"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_margin="0dp"
+                            android:background="#000" />
+
+                        <TextView
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Изменить текущий тариф"/>
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="*Тариф будет изменен с 1 числа следующего месяца"/>
+
+                        <LinearLayout
+                            android:id="@+id/bottom_my_tariff_start"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkBoxStart"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp" />
+
+                            <TextView
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="0dp"
+                                android:text="@string/start"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="17sp" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_start_roll_un"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@drawable/ic_icon_un" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_start_roll_up"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_icon_up" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bottom_my_tariff_comfort"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkBoxComfort"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp" />
+
+                            <TextView
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="0dp"
+                                android:text="@string/comfort"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="17sp" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_comfort_roll_un"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@drawable/ic_icon_un" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_comfort_roll_up"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_icon_up" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/bottom_my_tariff_premium"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="20dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkBoxPremium"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="10dp" />
+
+                            <TextView
+                                android:layout_width="170dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="40dp"
+                                android:layout_marginTop="0dp"
+                                android:text="@string/premium"
+                                android:textColor="@color/colorSkyBlue"
+                                android:textSize="17sp" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_premium_roll_un"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                app:srcCompat="@drawable/ic_icon_un" />
+
+                            <ImageView
+                                android:id="@+id/my_tariff_premium_roll_up"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_icon_up" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/button_enter_new_tariff"
+                            style="@style/AppButton"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:text="@string/save_new_tariff" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -439,28 +629,289 @@
                 <LinearLayout
                     android:id="@+id/bottom_my_auto"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="40dp"
                     android:layout_marginTop="20dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@drawable/ic_icon_taxi" />
+
                     <TextView
-                        android:layout_width="190dp"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
                         android:text="@string/my_auto"
                         android:textColor="@color/colorSkyBlue"
                         android:textSize="17sp" />
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginEnd="80dp"
-                        android:layout_weight="0.1"
-                        app:srcCompat="@mipmap/there_is" />
+                        android:id="@+id/my_auto_roll_un"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/ic_icon_un" />
+
+                    <ImageView
+                        android:id="@+id/my_auto_roll_up"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_icon_up" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bottom_my_auto_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="230dp"
+                            android:layout_height="wrap_content"
+                            android:text="ДАННЫЕ Т.С."
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/bottom_data_auto"
+                            style="@style/DescriptionBodyStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:text="Изменить"
+                            android:textColor="@color/colorSkyBlue" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Марка автомобиля" />
+
+                        <TextView
+                            android:id="@+id/car_type"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Renault" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Модель автомобиля" />
+
+                        <TextView
+                            android:id="@+id/car_model"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Logan" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Год производства автомобиля" />
+
+                        <TextView
+                            android:id="@+id/car_year_production"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2015" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Цвет автомобиля" />
+
+                        <TextView
+                            android:id="@+id/car_color"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Черный" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Регистрационный знак ТС" />
+
+                        <TextView
+                            android:id="@+id/car_register_sign"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="А 456 УК 799" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Регистрационный знак ТС" />
+
+                        <TextView
+                            android:id="@+id/car_vin"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ЦВВ213000 ПЕ 4321245" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Номер свидетельства ТС" />
+
+                        <TextView
+                            android:id="@+id/car_certificate_number"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7766 123456" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="40dp"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="230dp"
+                            android:layout_height="wrap_content"
+                            android:text="ДАННЫЕ ЛИЦЕНЗИИ"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/bottom_license_data"
+                            style="@style/DescriptionBodyStyle"
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:text="Изменить"
+                            android:textColor="@color/colorSkyBlue" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/MyAutoStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Номер лицензии" />
+
+                        <TextView
+                            android:id="@+id/car_license_number"
+                            style="@style/MyAutoBoldStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7766 123456" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_my_balanse_visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Balance"
+                    android:textSize="30sp" />
 
                 <View
                     android:layout_width="match_parent"
