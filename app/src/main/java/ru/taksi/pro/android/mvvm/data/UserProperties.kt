@@ -13,6 +13,10 @@ class UserProperties {
         val PASSPORT_DATA = "passport"
         val DRIVER_DATA = "driver"
         val CAR_CERTIFICATE = "certificate"
+        val GETT = "gett"
+        val UBER = "uber"
+        val CITY_MOBILE = "city mobile"
+        val YANDEX_TAXI = "yandex taxi"
     }
 
     var phone: String? = null

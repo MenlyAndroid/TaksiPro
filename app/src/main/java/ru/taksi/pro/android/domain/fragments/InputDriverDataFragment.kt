@@ -66,7 +66,7 @@ class InputDriverDataFragment : Fragment() {
         }
         binding?.driverNumber?.let {
             it.addTextChangedListener(
-                TextChangedHelper.getSeriaEndNumberTextWatcher(
+                TextChangedHelper.getSerialEndNumberTextWatcher(
                     it,
                     UserProperties.DRIVER_DATA
                 )
