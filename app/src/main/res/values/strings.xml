@@ -134,6 +134,14 @@
     <string name="car_license">Данные лицензии</string>
     <string name="license_number">Номер лицензии</string>
 
+    <string name="withdraw_money">Вывести деньги</string>
+    <string name="overall_balance">Общий баланс</string>
+    <string name="select_aggregetor">Выберите агрегатор</string>
+    <string name="choose_where_translate">Выберите, куда переводить</string>
+    <string name="back">Назад</string>
+    <string name="total_amount">Общая сумма</string>
+
+
 <!--    check_input_data_fragment-->
     <string name="change">Изменить</string>
     <string name="phone_number">Номер телефона</string>
@@ -143,4 +151,5 @@
     <string name="passport_dates">Паспортные данные</string>
     <string name="data_of_driver">Данные В.У.</string>
     <string name="data_of_car">Данные Т.С.</string>
+
 </resources>

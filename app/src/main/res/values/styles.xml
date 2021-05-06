@@ -197,13 +197,20 @@
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:layout_marginStart">10dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">30dp</item>
     </style>
 
     <style name="MyAutoBoldStyle" parent="MyAutoStyle">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="MyBalanceStyle">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">0dp</item>
     </style>
 
 </resources>
