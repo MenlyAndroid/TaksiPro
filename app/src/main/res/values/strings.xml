@@ -133,4 +133,10 @@
     <string name="car_data">Данные Т.С.</string>
     <string name="car_license">Данные лицензии</string>
     <string name="license_number">Номер лицензии</string>
+    <string name="withdraw_money">Вывести деньги</string>
+    <string name="overall_balance">Общий баланс</string>
+    <string name="select_aggregetor">Выберите агрегатор</string>
+    <string name="choose_where_translate">Выберите, куда переводить</string>
+    <string name="back">Назад</string>
+    <string name="total_amount">Общая сумма</string>
 </resources>

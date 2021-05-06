@@ -38,6 +38,9 @@ class MyDataFragment : Fragment() {
         binding?.checkBoxStart?.setOnClickListener { onButtonStartClickListener() } // выбрать тариф Старт
         binding?.checkBoxComfort?.setOnClickListener { onComfortClickListener() } // выбрать тариф Комфорт
         binding?.checkBoxPremium?.setOnClickListener { onPremiumClickListener() } // выбрать тариф Премиум
+        binding?.buttonWithdrawMoney?.setOnClickListener { withdrawFunds() } // кнопка "вывести деньги" окно "Баланс"
+        binding?.buttonWithdrawTotalAmount?.setOnClickListener { onWithdrawFunds() }  // кнопка "вывести деньги" окно "Вывод средств"
+        binding?.buttonArrowRight?.setOnClickListener { myBalance() } // назад в баланс
         binding?.animationView?.visibility = View.VISIBLE  // песочные часы
 
     }
@@ -45,7 +48,8 @@ class MyDataFragment : Fragment() {
     // мои данные
     fun myData() {
         binding?.bottomMyDataVisible?.visibility = View.VISIBLE
-        binding?.bottomMyBalanseVisible?.visibility = View.GONE
+        binding?.bottomMyBalanceVisible?.visibility = View.GONE
+        binding?.bottomOnWithdrawFunds?.visibility = View.GONE
         binding?.animationView?.visibility = View.GONE
         binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main)
         binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main_shape_pressed)
@@ -54,9 +58,12 @@ class MyDataFragment : Fragment() {
 
     // мой баланс
     fun myBalance() {
-        binding?.bottomMyBalanseVisible?.visibility = View.VISIBLE
+        binding?.bottomMyBalanceVisible?.visibility = View.VISIBLE
         binding?.bottomMyDataVisible?.visibility = View.GONE
+        binding?.bottomOnWithdrawFunds?.visibility = View.GONE
         binding?.animationView?.visibility = View.GONE
+        binding?.myBalanceAggregatorYndexTaxi?.visibility = View.GONE // не показывать агрегатор Яндекс Такси
+        binding?.myBalanceAggregatorUber?.visibility = View.GONE // не показывать агрегатор Uber
         binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main)
         binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main_shape_pressed)
         binding?.bottomWithdrawFunds?.setBackgroundResource(R.drawable.button_main_shape_pressed)
@@ -64,6 +71,12 @@ class MyDataFragment : Fragment() {
 
     // вывод средств
     fun withdrawFunds() {
+        binding?.bottomOnWithdrawFunds?.visibility = View.VISIBLE
+        binding?.bottomMyDataVisible?.visibility = View.GONE
+        binding?.bottomMyBalanceVisible?.visibility = View.GONE
+        binding?.animationView?.visibility = View.GONE
+        binding?.myAggregatorYndexTaxi?.visibility = View.GONE // не показывать агрегатор Яндекс Такси
+        binding?.myAggregatorUber?.visibility = View.GONE // не показывать агрегатор Uber
         binding?.bottomWithdrawFunds?.setBackgroundResource(R.drawable.button_main)
         binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main_shape_pressed)
         binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main_shape_pressed)
@@ -156,6 +169,14 @@ class MyDataFragment : Fragment() {
     fun onPremiumClickListener() {
         binding?.checkBoxStart?.isChecked = false
         binding?.checkBoxComfort?.isChecked = false
+    }
+
+    fun onWithdrawFunds() {
+
+    }
+    
+    fun onBack() {
+
     }
 }
 

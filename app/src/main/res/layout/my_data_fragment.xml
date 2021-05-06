@@ -26,8 +26,8 @@
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="170dp"
                     android:layout_height="55dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="3dp"
+                    android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="@string/my_data" />
@@ -48,8 +48,8 @@
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="170dp"
                     android:layout_height="55dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="3dp"
+                    android:layout_weight="1"
                     android:clickable="true"
                     android:focusable="true"
                     android:text="@string/windraw_funds" />
@@ -482,14 +482,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="Изменить текущий тариф"/>
+                            android:text="Изменить текущий тариф" />
 
                         <TextView
                             style="@style/MyAutoStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="*Тариф будет изменен с 1 числа следующего месяца"/>
+                            android:text="*Тариф будет изменен с 1 числа следующего месяца" />
 
                         <LinearLayout
                             android:id="@+id/bottom_my_tariff_start"
@@ -898,20 +898,349 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/bottom_my_balanse_visible"
+                android:id="@+id/bottom_my_balance_visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="10dp"
                 android:visibility="gone">
 
+                <androidx.cardview.widget.CardView
+                    style="@style/CardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <TextView
+                                style="@style/MyBalanceStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/overall_balance" />
+
+                            <TextView
+                                style="@style/MyBalanceStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:text="2 890 Р"
+                                android:textSize="30sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="60dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/MyBalanceStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="на модерации"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/balance_moderation"
+                                    style="@style/MyBalanceStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_weight="1"
+                                    android:text="0" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="100dp"
+                                android:padding="10dp"
+                                app:srcCompat="@drawable/ic_bank_card" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/my_balance_aggregator_gett"
+                        style="@style/CardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="20dp"
+                                app:srcCompat="@mipmap/gett" />
+
+                            <TextView
+                                android:id="@+id/button_withdraw_money_dett"
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="110dp"
+                                android:layout_marginTop="20dp"
+                                android:text="2 890 Р"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/my_balance_aggregator_yndex_taxi"
+                        style="@style/CardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="20dp"
+                                app:srcCompat="@mipmap/yndex_taxi" />
+
+                            <TextView
+                                android:id="@+id/button_withdraw_money_yandex_taxi"
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="110dp"
+                                android:layout_marginTop="20dp"
+                                android:text="2 890 Р"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/my_balance_aggregator_uber"
+                        style="@style/CardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="20dp"
+                                app:srcCompat="@mipmap/uber" />
+
+                            <TextView
+                                android:id="@+id/button_withdraw_money_uber"
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="110dp"
+                                android:layout_marginTop="20dp"
+                                android:text="2 890 Р"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/my_balance_aggregator_citimobile"
+                        style="@style/CardViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="20dp"
+                                app:srcCompat="@mipmap/citymobile" />
+
+                            <TextView
+                                android:id="@+id/button_withdraw_money_citymobile"
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="110dp"
+                                android:layout_marginTop="20dp"
+                                android:text="1000 Р"
+                                android:textSize="25sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_withdraw_money"
+                    style="@style/AppButton"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/withdraw_money" />
 
                 <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Balance"
-                    android:textSize="30sp" />
+                    android:layout_marginTop="30dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bottom_on_withdraw_funds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/button_arrow_right"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/ic_arrow_right"/>
+
+                    <TextView
+                        style="@style/MyBalanceStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/back"/>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/DescriptionEnterCodeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/select_aggregetor" />
+
+                <LinearLayout
+                    android:id="@+id/my_aggregator_gett"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@mipmap/gett" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/CardViewStyle"
+                        android:layout_width="230dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="0dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/InputFieldStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:hint="100">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/input_gett"
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Р" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -919,7 +1248,262 @@
                     android:layout_margin="10dp"
                     android:background="#000" />
 
+                <LinearLayout
+                    android:id="@+id/my_aggregator_yndex_taxi"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@mipmap/yndex_taxi" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/CardViewStyle"
+                        android:layout_width="230dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="0dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/InputFieldStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:hint="100">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/input_yndex_taxi"
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Р" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
+
+                <LinearLayout
+                    android:id="@+id/my_aggregator_uber"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@mipmap/uber" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/CardViewStyle"
+                        android:layout_width="230dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="0dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/InputFieldStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:hint="100">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/input_uber"
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Р" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
+
+                <LinearLayout
+                    android:id="@+id/my_aggregator_citimobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="20dp"
+                        app:srcCompat="@mipmap/citymobile" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/CardViewStyle"
+                        android:layout_width="230dp"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="0dp"
+                        app:cardCornerRadius="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:background="#fff"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/InputFieldStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:hint="100">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/input_citimobile"
+                                    android:layout_width="130dp"
+                                    android:layout_height="wrap_content" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                style="@style/DescriptionEnterCodeStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Р" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
+
+                <TextView
+                    style="@style/DescriptionEnterCodeStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/choose_where_translate" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp" />
+
+                    <TextView
+                        android:id="@+id/bank_card_number"
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Сбер зеленая ****9030" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="10dp"
+                        app:srcCompat="@drawable/ic_icon_un" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                <TextView
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_amount" />
+
+                <TextView
+                    style="@style/DescriptionBodyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:text="1800 Р" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_withdraw_total_amount"
+                    style="@style/AppButton"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/withdraw_money" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp" />
+
+
             </LinearLayout>
+
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animationView"
@@ -933,9 +1517,7 @@
 
         </LinearLayout>
 
-
     </androidx.core.widget.NestedScrollView>
-
 
 </layout>
 
