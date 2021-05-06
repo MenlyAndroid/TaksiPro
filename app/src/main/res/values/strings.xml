@@ -96,8 +96,8 @@
 
     <string name="send_foto">Отправить фотографии</string>
     <string name="caution_make_sure">Убедитесь, что нет бликов, <br/>и все данные хорошо видны</string>
-    <string name="prepare_photo">Подготовьте фотографии<br/>ваших документов</string>
-    <string name="you_can_open_camera">Вы можете открыть камеру<br/>и сфотографировать документы
+    <string name="prepare_photo">Подготовьте фотографии<br/> ваших документов</string>
+    <string name="you_can_open_camera">Вы можете открыть камеру<br/> и сфотографировать документы
         <br/>или загрузить готовые фото</string>
     <string name="required_text">Потребуется:</string>
     <string name="passport_bullet_text">Паспорт</string>
@@ -133,4 +133,14 @@
     <string name="car_data">Данные Т.С.</string>
     <string name="car_license">Данные лицензии</string>
     <string name="license_number">Номер лицензии</string>
+
+<!--    check_input_data_fragment-->
+    <string name="change">Изменить</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="send_data">Отправить данные</string>
+    <string name="tariff">Тариф</string>
+    <string name="aggregators">Агрегаторы</string>
+    <string name="passport_dates">Паспортные данные</string>
+    <string name="data_of_driver">Данные В.У.</string>
+    <string name="data_of_car">Данные Т.С.</string>
 </resources>

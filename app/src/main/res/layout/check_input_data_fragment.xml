@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/phone_number" />
+
+                        <TextView
+                            android:id="@+id/change_phone_number"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/phone_number"
+                        style="@style/CheckInputDataValue" />
+
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="90dp"
+                        android:layout_weight="0.1"
+                        app:srcCompat="@mipmap/there_is" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/tariff" />
+
+                        <TextView
+                            android:id="@+id/change_tariff"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tariff"
+                        style="@style/CheckInputDataValue" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/aggregators" />
+
+                        <TextView
+                            android:id="@+id/change_aggregators"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_aggregators"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/passport_dates" />
+
+                        <TextView
+                            android:id="@+id/change_passport_dates"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/surname" />
+
+                    <TextView
+                        android:id="@+id/surname"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/name" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/patronymic" />
+
+                    <TextView
+                        android:id="@+id/patronymic"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/data_of_birth" />
+
+                    <TextView
+                        android:id="@+id/data_of_birth"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/seria_and_number_of_passport" />
+
+                    <TextView
+                        android:id="@+id/seria_and_number_of_passport"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/who_issued" />
+
+                    <TextView
+                        android:id="@+id/who_issued"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/when_issued" />
+
+                    <TextView
+                        android:id="@+id/when_issued"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/address_of_registration" />
+
+                    <TextView
+                        android:id="@+id/address_of_registration"
+                        style="@style/CheckInputDataValue" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/data_of_driver" />
+
+                        <TextView
+                            android:id="@+id/change_data_of_driver"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/driver_numbers" />
+
+                    <TextView
+                        android:id="@+id/driver_numbers"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/when_issued" />
+
+                    <TextView
+                        android:id="@+id/when_driver_issued"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/driver_issued_to" />
+
+                    <TextView
+                        android:id="@+id/driver_issued_to"
+                        style="@style/CheckInputDataValue" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#fff"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/CheckInputDataTitle"
+                            android:text="@string/data_of_car" />
+
+                        <TextView
+                            android:id="@+id/change_data_of_car"
+                            style="@style/CheckInputDataChange"
+                            android:text="@string/change" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_brand" />
+
+                    <TextView
+                        android:id="@+id/car_brand"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_model" />
+
+                    <TextView
+                        android:id="@+id/car_model"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_year" />
+
+                    <TextView
+                        android:id="@+id/car_year"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_color" />
+
+                    <TextView
+                        android:id="@+id/car_color"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_number" />
+
+                    <TextView
+                        android:id="@+id/car_number"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_win" />
+
+                    <TextView
+                        android:id="@+id/car_win"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/car_license" />
+
+                    <TextView
+                        android:id="@+id/car_license"
+                        style="@style/CheckInputDataValue" />
+
+                    <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/license_number" />
+
+                    <TextView
+                        android:id="@+id/license_number"
+                        style="@style/CheckInputDataValue" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_next"
+                style="@style/AppButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="@string/send_data" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

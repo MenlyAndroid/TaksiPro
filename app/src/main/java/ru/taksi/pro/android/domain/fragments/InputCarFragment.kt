@@ -67,7 +67,7 @@ class InputCarFragment : Fragment() {
     private fun initComponents() {
         binding?.carCertificate?.let {
             it.addTextChangedListener(
-                TextChangedHelper.getSeriaEndNumberTextWatcher(
+                TextChangedHelper.getSerialEndNumberTextWatcher(
                     it,
                     UserProperties.CAR_CERTIFICATE
                 )
@@ -96,9 +96,9 @@ class InputCarFragment : Fragment() {
         }
 
 
-//        binding?.btnNext?.setOnClickListener {
-//            requireActivity().supportFragmentManager.beginTransaction()
-//                .replace(R.id.container, InputDriverDataFragment()).commit()
-//        }
+        binding?.btnNext?.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, CheckInputDataFragment()).commit()
+        }
     }
 }
