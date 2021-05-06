@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="ДАННЫЕ Т.С." />
+
+            <TextView
+                android:id="@+id/bottom_data_auto"
+                style="@style/DescriptionBodyStyle"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSkyBlue"
+                android:text="Изменить" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Марка автомобиля" />
+
+            <TextView
+                android:id="@+id/car_type"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Renault" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Модель автомобиля" />
+
+            <TextView
+                android:id="@+id/car_model"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logan" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Год производства автомобиля" />
+
+            <TextView
+                android:id="@+id/car_year_production"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2015" />
+
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/MyAutoStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Цвет автомобиля" />
+
+        <TextView
+            android:id="@+id/car_color"
+            style="@style/MyAutoBoldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Черный" />
+
+    </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/MyAutoStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Регистрационный знак ТС" />
+
+        <TextView
+            android:id="@+id/car_register_sign"
+            style="@style/MyAutoBoldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="А 456 УК 799" />
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Регистрационный знак ТС" />
+
+            <TextView
+                android:id="@+id/car_vin"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ЦВВ213000 ПЕ 4321245" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Номер свидетельства ТС" />
+
+            <TextView
+                android:id="@+id/car_certificate_number"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7766 123456" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:text="ДАННЫЕ ЛИЦЕНЗИИ" />
+
+            <TextView
+                android:id="@+id/bottom_license_data"
+                style="@style/DescriptionBodyStyle"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSkyBlue"
+                android:text="Изменить" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MyAutoStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Номер лицензии" />
+
+            <TextView
+                android:id="@+id/car_license_number"
+                style="@style/MyAutoBoldStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7766 123456" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -92,6 +92,7 @@
     <string name="home">Дом</string>
     <string name="apartments">Квартира</string>
     <string name="next">Далее</string>
+    <string name="save_new_tariff">Сохранить новый тариф</string>
 
     <string name="send_foto">Отправить фотографии</string>
     <string name="caution_make_sure">Убедитесь, что нет бликов, <br/>и все данные хорошо видны</string>
