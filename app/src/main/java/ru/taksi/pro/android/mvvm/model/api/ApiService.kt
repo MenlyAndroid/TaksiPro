@@ -10,10 +10,10 @@ import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
-import java.util.*
 
 interface ApiService {
 
@@ -61,6 +61,12 @@ interface ApiService {
 
 
     /***********************************************************************************************
+     *                          Tariffs API  -  api/v1/tariffs
+     **********************************************************************************************/
+    @GET("api/v1/tariffs")
+    fun getTariffs(): Single<List<Tariff>>
+
+    /***********************************************************************************************
      *                          Balance API  -  api/v1/balance/
      **********************************************************************************************/
     @GET("api/v1/balance/{id}")
@@ -80,19 +86,20 @@ interface ApiService {
     fun getCar(@Path("id") id: Int,
                @Header("Authorization") token: String): Single<Car>
 
-    @Multipart
+    @FormUrlEncoded
     @POST("api/v1/cars")
-    fun createNewCar(@Header("Authorization") token: String,
-                     @Part("id") id: Int,
-                     @Part("brand") brand: String,
-                     @Part("model") model: String,
-                     @Part("year") year: Int,
-                     @Part("color") color: String,
-                     @Part("registration") registration: String,
-                     @Part("vin") vin: String,
-                     @Part("sts") sts: String,
-                     @Part("license") license: String,
-                     @Part("id_users") id_users: Int): Single<Car>
+    fun createNewCar(
+        @Header("Authorization") token: String,
+        @Field("brand") brand: String,
+        @Field("model") model: String,
+        @Field("year") year: Int,
+        @Field("color") color: String,
+        @Field("registration") registration: String,
+        @Field("vin") vin: String,
+        @Field("sts") sts: String,
+        @Field("license") license: String,
+        @Field("id_users") id_users: Int
+    ): Single<Car>
 
 
     /***********************************************************************************************
@@ -102,24 +109,24 @@ interface ApiService {
     fun getProfile(@Path("id") id: Int,
                    @Header("Authorization") token: String): Single<Profile>
 
-    @Multipart
+    @FormUrlEncoded
     @POST("api/v1/profiles")
     fun createProfile(@Header("Authorization") token: String,
-                      @Part("firstname") firstName: String,
-                      @Part("secondname") secondName: String,
-                      @Part("lastname") lastName: String,
-                      @Part("birthdate") birthDate: Date,
-                      @Part("phone") phone: String,
-                      @Part("passport_series") passportSeries: String,
-                      @Part("passport_number") passportNumber: String,
-                      @Part("passport_giver") passportGiver: String,
-                      @Part("passport_date") passportDate: Date,
-                      @Part("registration_address") registrationAddress: String,
-                      @Part("license_series") licenseSeries: String,
-                      @Part("license_number") licenseNumber: String,
-                      @Part("license_date") licenseDate: Date,
-                      @Part("license_expire") licenseExpire: Date,
-                      @Part("user_id") userId: Int): Single<Profile>
+                      @Field("firstname") firstName: String,
+                      @Field("secondname") secondName: String,
+                      @Field("lastname") lastName: String,
+                      @Field("birthdate") birthDate: String,
+                      @Field("phone") phone: String,
+                      @Field("passport_series") passportSeries: String,
+                      @Field("passport_number") passportNumber: String,
+                      @Field("passport_giver") passportGiver: String,
+                      @Field("passport_date") passportDate: String,
+                      @Field("registration_address") registrationAddress: String,
+                      @Field("license_series") licenseSeries: String,
+                      @Field("license_number") licenseNumber: String,
+                      @Field("license_date") licenseDate: String,
+                      @Field("license_expire") licenseExpire: String,
+                      @Field("user_id") userId: Int): Single<Profile>
 
 
     /***********************************************************************************************

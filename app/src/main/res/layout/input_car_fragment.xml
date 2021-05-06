@@ -122,7 +122,9 @@
                     android:id="@+id/license_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:digits="0123456789 "
+                    android:inputType="numberDecimal"
+                    android:maxLength="11"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

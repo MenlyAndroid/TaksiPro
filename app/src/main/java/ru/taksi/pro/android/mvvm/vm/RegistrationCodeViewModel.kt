@@ -24,11 +24,13 @@ class RegistrationCodeViewModel(
             if (it.success == "true") {
                 answerLiveData.value = "true"
                 UserProperties.instance.token = it.user.token
+                UserProperties.instance.userId = it.user.id
             } else {
                 answerLiveData.value = it.success
             }
         }, {
             answerLiveData.value = it.message
+            it.printStackTrace()
             Log.d("!!!", "error")
         }).addTo(compositeDisposable)
     }
