@@ -18,25 +18,9 @@ object TextChangedHelper {
                 var text = textInput.text
                 text?.let {
                     if (it.toString() != current) {
-                        var clean = it.replace("[^\\d.]|\\.".toRegex(), "")
-                        if (clean.length in 3..4) {
-                            current = String.format(
-                                "%s/%s", clean.substring(0, 2),
-                                clean.substring(2, clean.length)
-                            )
-                            textInput.setText(current)
-                            textInput.setSelection(textInput.text.toString().length)
-                        } else if (clean.length > 4) {
-                            current = String.format(
-                                "%s/%s/%s", clean.substring(0, 2),
-                                clean.substring(2, 4),
-                                clean.substring(4, clean.length)
-                            )
-                            textInput.setText(current)
-                            textInput.setSelection(textInput.text.toString().length)
-                        } else {
-                            current = it.toString()
-                        }
+                        current = dateFormat(it.toString())
+                        textInput.setText(current)
+                        textInput.setSelection(textInput.text.toString().length)
                         UserProperties.instance.setData(current, field)
                     }
                 }
@@ -47,7 +31,7 @@ object TextChangedHelper {
 
         }
 
-    fun getSeriaEndNumberTextWatcher(
+    fun getSerialEndNumberTextWatcher(
         textInput: TextInputEditText,
         field: String
     ): TextWatcher = object : TextWatcher {
@@ -60,16 +44,9 @@ object TextChangedHelper {
             var text = textInput.text
             text?.let {
                 if (it.toString() != current) {
-                    var clean = it.toString().replace(" ", "")
-                    if (clean.length > 4) {
-                        current = String.format(
-                            "%s %s", clean.substring(0, 4),
-                            clean.substring(4, clean.length)
-                        )
-                        textInput.setText(current)
-                        textInput.setSelection(textInput.text.toString().length)
-                    }
-                    current = it.toString()
+                    current = serialEndNumberFormat(it.toString())
+                    textInput.setText(current)
+                    textInput.setSelection(textInput.text.toString().length)
                     UserProperties.instance.setData(current, field)
                 }
             }
@@ -78,5 +55,34 @@ object TextChangedHelper {
         override fun afterTextChanged(p0: Editable?) {
         }
 
+    }
+
+    fun dateFormat(string: String): String {
+        var clean = string.replace("[^\\d.]|\\.".toRegex(), "")
+        if (clean.length in 3..4) {
+            return String.format(
+                "%s/%s", clean.substring(0, 2),
+                clean.substring(2, clean.length)
+            )
+        } else if (clean.length > 4) {
+            return String.format(
+                "%s/%s/%s", clean.substring(0, 2),
+                clean.substring(2, 4),
+                clean.substring(4, clean.length)
+            )
+        } else {
+            return clean
+        }
+    }
+
+    fun serialEndNumberFormat(string: String): String {
+        var clean = string.replace(" ", "")
+        if (clean.length > 4) {
+            return String.format(
+                "%s %s", clean.substring(0, 4),
+                clean.substring(4, clean.length)
+            )
+        }
+        return clean
     }
 }

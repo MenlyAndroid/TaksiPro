@@ -5,14 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrFragmentAddPhotoBinding
 
 
-class RegistrationFragmentAddPhoto: Fragment() {
-    private var binding: RegistrFragmentAddPhotoBinding? = null
+class RegistrationFragmentAddPhoto : Fragment() {
+    private lateinit var binding: RegistrFragmentAddPhotoBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -23,11 +21,11 @@ class RegistrationFragmentAddPhoto: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.buttonAddPhoto?.setOnClickListener {onButtonClickListener()}
+        binding.buttonAddPhoto.setOnClickListener { onButtonClickListener() }
         Log.d("!!!", "onViewCreated: ")
     }
 
-    fun onButtonClickListener(){
+    fun onButtonClickListener() {
         Log.d("!!!", "onButtonClickListener: ")
     }
 }
