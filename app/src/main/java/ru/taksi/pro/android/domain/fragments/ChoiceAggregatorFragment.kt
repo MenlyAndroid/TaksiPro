@@ -9,16 +9,13 @@ import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.ChoiceAggregatorFragmentBinding
+import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.vm.ChoiceAggregatorViewModel
 import javax.inject.Inject
 
 
 class ChoiceAggregatorFragment : Fragment() {
     private var binding: ChoiceAggregatorFragmentBinding? = null
-    private val GETT = "gett"
-    private val UBER = "uber"
-    private val CITY_MOBILE = "city mobile"
-    private val YANDEX_TAXI = "yandex taxi"
 
     @Inject
     lateinit var viewModel: ChoiceAggregatorViewModel
@@ -37,39 +34,39 @@ class ChoiceAggregatorFragment : Fragment() {
 
         viewModel.getAggregators()?.map {
             when (it) {
-                GETT -> binding?.checkboxGett?.isChecked = true
-                UBER -> binding?.checkboxUber?.isChecked = true
-                CITY_MOBILE -> binding?.checkboxCityMobile?.isChecked = true
-                YANDEX_TAXI -> binding?.checkboxYandexTaxi?.isChecked = true
+                UserProperties.GETT -> binding?.checkboxGett?.isChecked = true
+                UserProperties.UBER -> binding?.checkboxUber?.isChecked = true
+                UserProperties.CITY_MOBILE -> binding?.checkboxCityMobile?.isChecked = true
+                UserProperties.YANDEX_TAXI -> binding?.checkboxYandexTaxi?.isChecked = true
             }
         }
 
         binding?.checkboxGett?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                onCheckBox(GETT)
+                onCheckBox(UserProperties.GETT)
             } else {
-                onUncheckBox(GETT)
+                onUncheckBox(UserProperties.GETT)
             }
         }
         binding?.checkboxUber?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                onCheckBox(UBER)
+                onCheckBox(UserProperties.UBER)
             } else {
-                onUncheckBox(UBER)
+                onUncheckBox(UserProperties.UBER)
             }
         }
         binding?.checkboxYandexTaxi?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                onCheckBox(YANDEX_TAXI)
+                onCheckBox(UserProperties.YANDEX_TAXI)
             } else {
-                onUncheckBox(YANDEX_TAXI)
+                onUncheckBox(UserProperties.YANDEX_TAXI)
             }
         }
         binding?.checkboxCityMobile?.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                onCheckBox(CITY_MOBILE)
+                onCheckBox(UserProperties.CITY_MOBILE)
             } else {
-                onUncheckBox(CITY_MOBILE)
+                onUncheckBox(UserProperties.CITY_MOBILE)
             }
         }
 

@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrMainBinding
 import ru.taksi.pro.android.domain.fragments.RegistrationFragment
+import ru.taksi.pro.android.mvvm.data.UserProperties
 
 class RegistrationActivity : AppCompatActivity() {
     lateinit var binding: RegistrMainBinding
@@ -13,7 +14,7 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.registr_main)
-        if (savedInstanceState == null) {
+        if (UserProperties.instance.token == null) {
             supportFragmentManager.beginTransaction()
                 .add(R.id.container, RegistrationFragment())
                 .commit()
