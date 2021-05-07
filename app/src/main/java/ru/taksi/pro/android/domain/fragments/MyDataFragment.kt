@@ -9,176 +9,214 @@ import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.MyDataFragmentBinding
 
-
 class MyDataFragment : Fragment() {
-    private var binding: MyDataFragmentBinding? = null
-
+    private lateinit var binding: MyDataFragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.my_data_fragment, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding?.bottomMyData?.setOnClickListener { myData() } // мои данные
-        binding?.bottomBalance?.setOnClickListener { myBalance() } // мой баланс
-        binding?.bottomWithdrawFunds?.setOnClickListener { withdrawFunds() } // вывод средств
-        binding?.bottomMyTariff?.setOnClickListener { onButtonMyTariff() } // мой тариф
-        binding?.myTariffRollUp?.setOnClickListener { onButtonMyTariffUp() } // свернуть мой тариф
-        binding?.bottomMyAuto?.setOnClickListener { onButtonMyAuto() } // мой автомобиль
-        binding?.myAutoRollUp?.setOnClickListener { onButtonMyAutoUp() } // свернуть мой автомобиль
-        binding?.bottomAggregatorsAll?.setOnClickListener { myAggregators() } // мои агрегаторы
-        binding?.myAggregatorsRollUp?.setOnClickListener { onAggregatorsUp() } // свернуть мои агрегаторы
-        binding?.bottomChooseTariffNextMonth?.setOnClickListener { onChooseTariffNextMonth() } // изменить тариф на следующий месяц
-        binding?.buttonEnterNewTariff?.setOnClickListener { onSaveNewTariffNextMonth() } // сохранить новый тариф
-        binding?.checkBoxStart?.setOnClickListener { onButtonStartClickListener() } // выбрать тариф Старт
-        binding?.checkBoxComfort?.setOnClickListener { onComfortClickListener() } // выбрать тариф Комфорт
-        binding?.checkBoxPremium?.setOnClickListener { onPremiumClickListener() } // выбрать тариф Премиум
-        binding?.buttonWithdrawMoney?.setOnClickListener { withdrawFunds() } // кнопка "вывести деньги" окно "Баланс"
-        binding?.buttonWithdrawTotalAmount?.setOnClickListener { onWithdrawFunds() }  // кнопка "вывести деньги" окно "Вывод средств"
-        binding?.buttonArrowRight?.setOnClickListener { myBalance() } // назад в баланс
-        binding?.animationView?.visibility = View.VISIBLE  // песочные часы
-
+        binding.run {
+            bottomMyData.setOnClickListener { myData() } // мои данные
+            bottomBalance.setOnClickListener { myBalance() } // мой баланс
+            bottomWithdrawFunds.setOnClickListener { withdrawFunds() } // вывод средств
+            bottomMyTariff.setOnClickListener { onButtonMyTariff() } // мой тариф
+            myTariffRollUp.setOnClickListener { onButtonMyTariffUp() } // свернуть мой тариф
+            bottomMyAuto.setOnClickListener { onButtonMyAuto() } // мой автомобиль
+            myAutoRollUp.setOnClickListener { onButtonMyAutoUp() } // свернуть мой автомобиль
+            bottomAggregatorsAll.setOnClickListener { myAggregators() } // мои агрегаторы
+            myAggregatorsRollUp.setOnClickListener { onAggregatorsUp() } // свернуть мои агрегаторы
+            bottomChooseTariffNextMonth.setOnClickListener { onChooseTariffNextMonth() } // изменить тариф на следующий месяц
+            buttonEnterNewTariff.setOnClickListener { onSaveNewTariffNextMonth() } // сохранить новый тариф
+            checkBoxStart.setOnClickListener { onButtonStartClickListener() } // выбрать тариф Старт
+            checkBoxComfort.setOnClickListener { onComfortClickListener() } // выбрать тариф Комфорт
+            checkBoxPremium.setOnClickListener { onPremiumClickListener() } // выбрать тариф Премиум
+            buttonWithdrawMoney.setOnClickListener { withdrawFunds() } // кнопка "вывести деньги" окно "Баланс"
+            buttonWithdrawTotalAmount.setOnClickListener { onWithdrawFunds() }  // кнопка "вывести деньги" окно "Вывод средств"
+            buttonArrowRight.setOnClickListener { myBalance() } // назад в баланс
+            bankCardDell1.setOnClickListener { dellBankCard1() } // удалить банк. карту 1
+            bankCardDell2.setOnClickListener { dellBankCard2() } // удалить банк. карту 2
+            animationView.visibility = View.VISIBLE  // песочные часы
+        }
     }
 
     // мои данные
     fun myData() {
-        binding?.bottomMyDataVisible?.visibility = View.VISIBLE
-        binding?.bottomMyBalanceVisible?.visibility = View.GONE
-        binding?.bottomOnWithdrawFunds?.visibility = View.GONE
-        binding?.animationView?.visibility = View.GONE
-        binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main)
-        binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main_shape_pressed)
-        binding?.bottomWithdrawFunds?.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        binding.run {
+            bottomMyDataVisible.visibility = View.VISIBLE
+            bottomMyBalanceVisible.visibility = View.GONE
+            bottomOnWithdrawFunds.visibility = View.GONE
+            animationView.visibility = View.GONE
+            bottomMyData.setBackgroundResource(R.drawable.button_main)
+            bottomBalance.setBackgroundResource(R.drawable.button_main_shape_pressed)
+            bottomWithdrawFunds.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        }
     }
 
     // мой баланс
     fun myBalance() {
-        binding?.bottomMyBalanceVisible?.visibility = View.VISIBLE
-        binding?.bottomMyDataVisible?.visibility = View.GONE
-        binding?.bottomOnWithdrawFunds?.visibility = View.GONE
-        binding?.animationView?.visibility = View.GONE
-        binding?.myBalanceAggregatorYndexTaxi?.visibility = View.GONE // не показывать агрегатор Яндекс Такси
-        binding?.myBalanceAggregatorUber?.visibility = View.GONE // не показывать агрегатор Uber
-        binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main)
-        binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main_shape_pressed)
-        binding?.bottomWithdrawFunds?.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        binding.run {
+            bottomMyBalanceVisible.visibility = View.VISIBLE
+            bottomMyDataVisible.visibility = View.GONE
+            bottomOnWithdrawFunds.visibility = View.GONE
+            animationView.visibility = View.GONE
+            myBalanceAggregatorYndexTaxi.visibility =
+                View.GONE // не показывать агрегатор яндекс “акси
+            myBalanceAggregatorUber.visibility = View.GONE // не показывать агрегатор Uber
+            bottomBalance.setBackgroundResource(R.drawable.button_main)
+            bottomMyData.setBackgroundResource(R.drawable.button_main_shape_pressed)
+            bottomWithdrawFunds.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        }
     }
 
     // вывод средств
     fun withdrawFunds() {
-        binding?.bottomOnWithdrawFunds?.visibility = View.VISIBLE
-        binding?.bottomMyDataVisible?.visibility = View.GONE
-        binding?.bottomMyBalanceVisible?.visibility = View.GONE
-        binding?.animationView?.visibility = View.GONE
-        binding?.myAggregatorYndexTaxi?.visibility = View.GONE // не показывать агрегатор Яндекс Такси
-        binding?.myAggregatorUber?.visibility = View.GONE // не показывать агрегатор Uber
-        binding?.bottomWithdrawFunds?.setBackgroundResource(R.drawable.button_main)
-        binding?.bottomMyData?.setBackgroundResource(R.drawable.button_main_shape_pressed)
-        binding?.bottomBalance?.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        binding.run {
+            bottomOnWithdrawFunds.visibility = View.VISIBLE
+            bottomMyDataVisible.visibility = View.GONE
+            bottomMyBalanceVisible.visibility = View.GONE
+            animationView.visibility = View.GONE
+            myAggregatorYndexTaxi.visibility = View.GONE // не показывать агрегатор яндекс такси
+            myAggregatorUber.visibility = View.GONE // не показывать агрегатор Uber
+            bottomWithdrawFunds.setBackgroundResource(R.drawable.button_main)
+            bottomMyData.setBackgroundResource(R.drawable.button_main_shape_pressed)
+            bottomBalance.setBackgroundResource(R.drawable.button_main_shape_pressed)
+        }
     }
 
     // мои агрегаторы
     fun myAggregators() {
-        binding?.bottomAggregators?.visibility = View.VISIBLE
-        binding?.myAggregatorsRollUp?.visibility = View.VISIBLE
-        binding?.myAggregatorsRollUn?.visibility = View.GONE
+        binding.run {
+            bottomAggregators.visibility = View.VISIBLE
+            myAggregatorsRollUp.visibility = View.VISIBLE
+            myAggregatorsRollUn.visibility = View.GONE
+        }
     }
 
     // свернуть мои агрегаторы
     fun onAggregatorsUp() {
-        binding?.bottomAggregators?.visibility = View.GONE
-        binding?.myAggregatorsRollUp?.visibility = View.GONE
-        binding?.myAggregatorsRollUn?.visibility = View.VISIBLE
+        binding.run {
+            bottomAggregators.visibility = View.GONE
+            myAggregatorsRollUp.visibility = View.GONE
+            myAggregatorsRollUn.visibility = View.VISIBLE
+        }
     }
 
     // мой тариф
     fun onButtonMyTariff() {
         var tariff = 3
-        binding?.bottomMyTariffs?.visibility = View.VISIBLE
-        binding?.myTariffRollUp?.visibility = View.VISIBLE
-        binding?.myTariffRollUn?.visibility = View.GONE
-        if (tariff == 1) {
-            binding?.buttonStart?.visibility = View.VISIBLE
-            binding?.bottomMyTariffStart?.visibility = View.GONE
-            binding?.bottomMyTariffComfort?.visibility = View.VISIBLE
-            binding?.bottomMyTariffPremium?.visibility = View.VISIBLE
-        }
-        if (tariff == 2) {
-            binding?.buttonComfort?.visibility = View.VISIBLE
-            binding?.bottomMyTariffComfort?.visibility = View.GONE
-        }
-        if (tariff == 3) {
-            binding?.buttonPremium?.visibility = View.VISIBLE
-            binding?.bottomMyTariffPremium?.visibility = View.GONE
-            binding?.bottomMyTariffStart?.visibility = View.VISIBLE
-            binding?.bottomMyTariffComfort?.visibility = View.VISIBLE
-        }
+        binding.run {
+            bottomMyTariffs.visibility = View.VISIBLE
+            myTariffRollUp.visibility = View.VISIBLE
+            myTariffRollUn.visibility = View.GONE
+            if (tariff == 1) {
+                buttonStart.visibility = View.VISIBLE
+                bottomMyTariffStart.visibility = View.GONE
+                bottomMyTariffComfort.visibility = View.VISIBLE
+                bottomMyTariffPremium.visibility = View.VISIBLE
+            }
+            if (tariff == 2) {
+                buttonComfort.visibility = View.VISIBLE
+                bottomMyTariffComfort.visibility = View.GONE
+            }
+            if (tariff == 3) {
+                buttonPremium.visibility = View.VISIBLE
+                bottomMyTariffPremium.visibility = View.GONE
+                bottomMyTariffStart.visibility = View.VISIBLE
+                bottomMyTariffComfort.visibility = View.VISIBLE
+            }
 
-        binding?.bottomChooseTariffNextMonth?.visibility = View.VISIBLE
+            bottomChooseTariffNextMonth.visibility = View.VISIBLE
+        }
     }
 
     // свернуть мой тариф
     fun onButtonMyTariffUp() {
-        binding?.bottomMyTariffs?.visibility = View.GONE
-        binding?.myTariffRollUp?.visibility = View.GONE
-        binding?.myTariffRollUn?.visibility = View.VISIBLE
-        binding?.bottomChooseTariffNextMonthAll?.visibility = View.GONE
+        binding.run {
+            bottomMyTariffs.visibility = View.GONE
+            myTariffRollUp.visibility = View.GONE
+            myTariffRollUn.visibility = View.VISIBLE
+            bottomChooseTariffNextMonthAll.visibility = View.GONE
+        }
     }
 
-    // изменить тариф на следующий месяц
+    // изменить тариф на следующий мес¤ц
     fun onChooseTariffNextMonth() {
-        binding?.bottomChooseTariffNextMonth?.visibility = View.GONE
-        binding?.bottomChooseTariffNextMonthAll?.visibility = View.VISIBLE
+        binding.run {
+            bottomChooseTariffNextMonth.visibility = View.GONE
+            bottomChooseTariffNextMonthAll.visibility = View.VISIBLE
+        }
     }
 
     // сохранить новый тариф
     fun onSaveNewTariffNextMonth() {
-        binding?.bottomChooseTariffNextMonthAll?.visibility = View.GONE
-        binding?.bottomChooseTariffNextMonth?.visibility = View.VISIBLE
+        binding.run {
+            bottomChooseTariffNextMonthAll.visibility = View.GONE
+            bottomChooseTariffNextMonth.visibility = View.VISIBLE
+        }
     }
 
     // мой автомобиль
     fun onButtonMyAuto() {
-        binding?.bottomMyAutoData?.visibility = View.VISIBLE
-        binding?.myAutoRollUp?.visibility = View.VISIBLE
-        binding?.myAutoRollUn?.visibility = View.GONE
+        binding.run {
+            bottomMyAutoData.visibility = View.VISIBLE
+            myAutoRollUp.visibility = View.VISIBLE
+            myAutoRollUn.visibility = View.GONE
+        }
     }
 
     // свернуть мой автомобиль
     fun onButtonMyAutoUp() {
-        binding?.bottomMyAutoData?.visibility = View.GONE
-        binding?.myAutoRollUp?.visibility = View.GONE
-        binding?.myAutoRollUn?.visibility = View.VISIBLE
+        binding.run {
+            bottomMyAutoData.visibility = View.GONE
+            myAutoRollUp.visibility = View.GONE
+            myAutoRollUn.visibility = View.VISIBLE
+        }
     }
 
     fun onButtonStartClickListener() {
-        binding?.checkBoxComfort?.isChecked = false
-        binding?.checkBoxPremium?.isChecked = false
+        binding.run {
+            checkBoxComfort.isChecked = false
+            checkBoxPremium.isChecked = false
+        }
     }
 
     fun onComfortClickListener() {
-        binding?.checkBoxStart?.isChecked = false
-        binding?.checkBoxPremium?.isChecked = false
+        binding.run {
+            checkBoxStart.isChecked = false
+            checkBoxPremium.isChecked = false
+        }
     }
 
     fun onPremiumClickListener() {
-        binding?.checkBoxStart?.isChecked = false
-        binding?.checkBoxComfort?.isChecked = false
+        binding.run {
+            checkBoxStart.isChecked = false
+            checkBoxComfort.isChecked = false
+        }
+    }
+
+    fun dellBankCard1() {
+        binding.run {
+            radioButton1.visibility = View.GONE
+            bankCardDell1.visibility = View.GONE
+        }
+    }
+
+    fun dellBankCard2() {
+        binding.run {
+            radioButton1.text = "Сбер зеленая 3339030"
+            radioButton2.visibility = View.GONE
+            bankCardDell2.visibility = View.GONE
+        }
     }
 
     fun onWithdrawFunds() {
 
     }
-    
-    fun onBack() {
-
-    }
 }
-
-
-
