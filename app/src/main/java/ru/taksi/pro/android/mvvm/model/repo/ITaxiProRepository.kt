@@ -9,6 +9,8 @@ import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariffs
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
@@ -32,6 +34,11 @@ interface ITaxiProRepository {
     fun getAgregatorsList(): Single<AgregatorsList>
     fun getAgregator(id: Int): Single<Agregator>
 
+    /***********************************************************************************************
+     *                       Tariffs API  -  api/v1/tariffs
+     **********************************************************************************************/
+    fun getTariffs(): Single<List<Tariff>>
+
 
     /***********************************************************************************************
      *                       Balance API  -  api/v1/balance/
@@ -45,7 +52,6 @@ interface ITaxiProRepository {
     fun getAllCars(token: String): Single<Car>
     fun getCar(id: Int, token: String): Single<Car>
     fun createNewCar(token: String,
-                     id: Int,
                      brand: String,
                      model: String,
                      year: Int,
@@ -64,17 +70,17 @@ interface ITaxiProRepository {
                       firstName: String,
                       secondName: String,
                       lastName: String,
-                      birthDate: Date,
+                      birthDate: String,
                       phone: String,
                       passportSeries: String,
                       passportNumber: String,
                       passportGiver: String,
-                      passportDate: Date,
+                      passportDate: String,
                       registrationAddress: String,
                       licenseSeries: String,
                       licenseNumber: String,
-                      licenseDate: Date,
-                      licenseExpire: Date,
+                      licenseDate: String,
+                      licenseExpire: String,
                       userId: Int): Single<Profile>
 
 

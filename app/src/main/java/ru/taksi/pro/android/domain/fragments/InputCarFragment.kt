@@ -95,6 +95,15 @@ class InputCarFragment : Fragment() {
             UserProperties.instance.licenseNumber = it.toString()
         }
 
+        binding?.licenseNumber?.let {
+            it.addTextChangedListener(
+                TextChangedHelper.getSerialEndNumberTextWatcher(
+                    it,
+                    UserProperties.LICENSE_DATA
+                )
+            )
+        }
+
 
         binding?.btnNext?.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()

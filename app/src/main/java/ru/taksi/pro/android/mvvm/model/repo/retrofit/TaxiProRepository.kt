@@ -11,6 +11,8 @@ import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariffs
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
@@ -51,6 +53,14 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
         return api.getAgregator(id).subscribeOn(Schedulers.io()) }
 
     /***********************************************************************************************
+     *                       Tariffs API  -  api/v1/tariffs
+     **********************************************************************************************/
+
+    override fun getTariffs(): Single<List<Tariff>> {
+        return api.getTariffs().subscribeOn(Schedulers.io())
+    }
+
+    /***********************************************************************************************
      *                             Balance API  -  api/v1/balance/
      **********************************************************************************************/
     override fun getBalance(id: Int, token: String): Single<Balance> {
@@ -66,7 +76,6 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
         return api.getCar(id, "Bearer $token").subscribeOn(Schedulers.io()) }
 
     override fun createNewCar(token: String,
-                              id: Int,
                               brand: String,
                               model: String,
                               year: Int,
@@ -77,7 +86,7 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
                               license: String,
                               id_users: Int): Single<Car> {
         return api.createNewCar(
-            "Bearer $token", id, brand, model, year, color,
+            "Bearer $token", brand, model, year, color,
             registration, vin, sts, license, id_users) }
 
     /***********************************************************************************************
@@ -90,17 +99,17 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
                                firstName: String,
                                secondName: String,
                                lastName: String,
-                               birthDate: Date,
+                               birthDate: String,
                                phone: String,
                                passportSeries: String,
                                passportNumber: String,
                                passportGiver: String,
-                               passportDate: Date,
+                               passportDate: String,
                                registrationAddress: String,
                                licenseSeries: String,
                                licenseNumber: String,
-                               licenseDate: Date,
-                               licenseExpire: Date,
+                               licenseDate: String,
+                               licenseExpire: String,
                                userId: Int): Single<Profile> {
         return api.createProfile("Bearer $token", firstName, secondName, lastName,
             birthDate, phone, passportSeries, passportNumber, passportGiver, passportDate,

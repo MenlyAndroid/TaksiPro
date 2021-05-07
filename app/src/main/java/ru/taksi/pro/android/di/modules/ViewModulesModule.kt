@@ -39,8 +39,17 @@ class ViewModulesModule {
     ) = RegistrationSendPhotoViewModel(uiSchedulers, repository)
 
     @Provides
-    fun getChoiceTariffViewModel() = ChoiceTariffViewModel()
+    fun getChoiceTariffViewModel(
+        uiSchedulers: Scheduler,
+        repository: ITaxiProRepository
+    ) = ChoiceTariffViewModel(uiSchedulers, repository)
 
     @Provides
     fun getChoiceAggregatorViewModel() = ChoiceAggregatorViewModel()
+
+    @Provides
+    fun getCheckInputDataViewModule(
+        uiSchedulers: Scheduler,
+        repository: ITaxiProRepository
+    ) = CheckInputDataViewModel(uiSchedulers, repository)
 }

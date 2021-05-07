@@ -11,6 +11,7 @@ class UserProperties {
         val DRIVER_ISSUED = "driverIssued"
         val DRIVER_ISSUED_TO = "driverIssuedTo"
         val PASSPORT_DATA = "passport"
+        val LICENSE_DATA = "license_data"
         val DRIVER_DATA = "driver"
         val CAR_CERTIFICATE = "certificate"
         val GETT = "gett"
@@ -20,6 +21,7 @@ class UserProperties {
     }
 
     var phone: String? = null
+    var userId: Int? = null
     var token: String? = null
     var tariff: String? = null
     var surname: String? = null
@@ -57,6 +59,7 @@ class UserProperties {
             PASSPORT_DATA -> passportData = value
             DRIVER_DATA -> driverNumbers = value
             CAR_CERTIFICATE -> carCertificate = value
+            LICENSE_DATA -> licenseNumber = value
         }
     }
 }
