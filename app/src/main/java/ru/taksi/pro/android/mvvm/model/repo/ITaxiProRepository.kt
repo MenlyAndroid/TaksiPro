@@ -10,11 +10,10 @@ import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
-import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariffs
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
-import java.util.*
+import kotlin.collections.HashMap
 
 interface ITaxiProRepository {
 
@@ -24,7 +23,12 @@ interface ITaxiProRepository {
     // Get SMS confirmation code
     fun requestCode(phone: String): Single<ConfirmationCode>
     fun loginByCode(phone: String, smsCode: String): Single<AuthorizationResponse>
-    fun registration(phone: String, password: String, passwordRepeat: String): Single<RegistrationResponse>
+    fun registration(
+        phone: String,
+        password: String,
+        passwordRepeat: String
+    ): Single<RegistrationResponse>
+
     fun authentication(phone: String, password: String): Single<RegistrationResponse>
 
 
@@ -51,37 +55,20 @@ interface ITaxiProRepository {
      **********************************************************************************************/
     fun getAllCars(token: String): Single<Car>
     fun getCar(id: Int, token: String): Single<Car>
-    fun createNewCar(token: String,
-                     brand: String,
-                     model: String,
-                     year: Int,
-                     color: String,
-                     registration: String,
-                     vin: String,
-                     sts: String,
-                     license: String,
-                     id_users: Int): Single<Car>
+    fun createNewCar(
+        token: String,
+        car: HashMap<String, Any>
+    ): Single<Car>
 
     /***********************************************************************************************
      *                        Profile API  -  api/v1/profiles/{id}
      **********************************************************************************************/
     fun getProfile(id: Int, token: String): Single<Profile>
-    fun createProfile(token: String,
-                      firstName: String,
-                      secondName: String,
-                      lastName: String,
-                      birthDate: String,
-                      phone: String,
-                      passportSeries: String,
-                      passportNumber: String,
-                      passportGiver: String,
-                      passportDate: String,
-                      registrationAddress: String,
-                      licenseSeries: String,
-                      licenseNumber: String,
-                      licenseDate: String,
-                      licenseExpire: String,
-                      userId: Int): Single<Profile>
+
+    fun createProfile(
+        token: String,
+        profile: HashMap<String, Any>
+    ): Single<Profile>
 
 
     /***********************************************************************************************

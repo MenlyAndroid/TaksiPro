@@ -15,6 +15,7 @@ import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
 
+
 interface ApiService {
 
     /***********************************************************************************************
@@ -83,22 +84,15 @@ interface ApiService {
     fun getAllCars(@Header("Authorization") token: String): Single<Car>
 
     @GET("api/v1/cars/{id}")
-    fun getCar(@Path("id") id: Int,
-               @Header("Authorization") token: String): Single<Car>
+    fun getCar(
+        @Path("id") id: Int,
+        @Header("Authorization") token: String
+    ): Single<Car>
 
-    @FormUrlEncoded
     @POST("api/v1/cars")
     fun createNewCar(
         @Header("Authorization") token: String,
-        @Field("brand") brand: String,
-        @Field("model") model: String,
-        @Field("year") year: Int,
-        @Field("color") color: String,
-        @Field("registration") registration: String,
-        @Field("vin") vin: String,
-        @Field("sts") sts: String,
-        @Field("license") license: String,
-        @Field("id_users") id_users: Int
+        @Body body: HashMap<String, Any>
     ): Single<Car>
 
 
@@ -106,27 +100,16 @@ interface ApiService {
      *                        Profile API  -  api/v1/profiles/{id}
      **********************************************************************************************/
     @GET("api/v1/profiles")
-    fun getProfile(@Path("id") id: Int,
-                   @Header("Authorization") token: String): Single<Profile>
+    fun getProfile(
+        @Path("id") id: Int,
+        @Header("Authorization") token: String
+    ): Single<Profile>
 
-    @FormUrlEncoded
     @POST("api/v1/profiles")
-    fun createProfile(@Header("Authorization") token: String,
-                      @Field("firstname") firstName: String,
-                      @Field("secondname") secondName: String,
-                      @Field("lastname") lastName: String,
-                      @Field("birthdate") birthDate: String,
-                      @Field("phone") phone: String,
-                      @Field("passport_series") passportSeries: String,
-                      @Field("passport_number") passportNumber: String,
-                      @Field("passport_giver") passportGiver: String,
-                      @Field("passport_date") passportDate: String,
-                      @Field("registration_address") registrationAddress: String,
-                      @Field("license_series") licenseSeries: String,
-                      @Field("license_number") licenseNumber: String,
-                      @Field("license_date") licenseDate: String,
-                      @Field("license_expire") licenseExpire: String,
-                      @Field("user_id") userId: Int): Single<Profile>
+    fun createProfile(
+        @Header("Authorization") token: String,
+        @Body body: HashMap<String, Any>
+    ): Single<Profile>
 
 
     /***********************************************************************************************
@@ -146,6 +129,8 @@ interface ApiService {
     fun getAllUsers(@Header("Authorization") token: String): Single<Users>
 
     @GET("api/v1/users/{id}")
-    fun getUser(@Path("id") id: Int,
-                @Header("Authorization") token: String): Single<User>
+    fun getUser(
+        @Path("id") id: Int,
+        @Header("Authorization") token: String
+    ): Single<User>
 }

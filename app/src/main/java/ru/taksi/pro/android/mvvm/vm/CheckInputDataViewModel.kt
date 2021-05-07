@@ -23,42 +23,49 @@ class CheckInputDataViewModel(
 
     fun sendRegistrationData() {
         UserProperties.instance.let { property ->
-            repository.createProfile(
-                property.token ?: "",
-                property.name ?: "",
-                property.surname ?: "",
-                property.patronymic ?: "",
-                TextFormatHelper.createDateForApi(property.dateOfBird),
-                property.phone ?: "",
-                TextFormatHelper.getSeriesFromPassportData(property.passportData),
-                TextFormatHelper.getNumberFromPassportData(property.passportData),
-                property.whoIssued ?: "",
-                TextFormatHelper.createDateForApi(property.dataOfIssued),
-                TextFormatHelper.createStringAddress(
+            val profile: HashMap<String, Any> = hashMapOf(
+                "firstname" to (property.name ?: ""),
+                "secondname" to (property.surname ?: ""),
+                "lastname" to (property.patronymic ?: ""),
+                "birthdate" to (TextFormatHelper.createDateForApi(property.dateOfBird)),
+                "phone" to (property.phone ?: ""),
+                "passport_series" to (TextFormatHelper.getSeriesFromPassportData(property.passportData)),
+                "passport_number" to (TextFormatHelper.getNumberFromPassportData(property.passportData)),
+                "passport_giver" to (property.whoIssued ?: ""),
+                "passport_date" to (TextFormatHelper.createDateForApi(property.dataOfIssued)),
+                "registration_address" to (TextFormatHelper.createStringAddress(
                     property.city,
                     property.district,
                     property.street,
                     property.home,
                     property.apartments
-                ),
-                TextFormatHelper.getSeriesFromPassportData(property.licenseNumber),
-                TextFormatHelper.getNumberFromPassportData(property.licenseNumber),
-                TextFormatHelper.createDateForApi(property.driverIssued),
-                TextFormatHelper.createDateForApi(property.driverIssuedTo),
-                property.userId ?: 0
+                )),
+                "license_series" to (TextFormatHelper.getSeriesFromPassportData(property.licenseNumber)),
+                "license_number" to (TextFormatHelper.getNumberFromPassportData(property.licenseNumber)),
+                "license_date" to (TextFormatHelper.createDateForApi(property.driverIssued)),
+                "license_expire" to (TextFormatHelper.createDateForApi(property.driverIssuedTo)),
+                "user_id" to (property.userId ?: 0)
+            )
+            repository.createProfile(
+                property.token ?: "",
+                profile
             ).flatMap {
-                property.userId = it.id
+                val newCar: HashMap<String, Any> = hashMapOf(
+                    "id" to 0,
+                    "brand" to (property.carBrand ?: ""),
+                    "model" to (property.carModel ?: ""),
+                    "year" to (property.carYear ?: ""),
+                    "color" to (property.carColor ?: ""),
+                    "registration" to (property.carNumber ?: ""),
+                    "vin" to (property.carWIN ?: ""),
+                    "sts" to (property.carCertificate ?: ""),
+                    "license" to (property.licenseNumber ?: ""),
+                    "id_users" to (property.userId ?: 0)
+                )
+
                 repository.createNewCar(
                     property.token ?: "",
-                    property.carBrand?: "",
-                    property.carModel?: "",
-                    property.carYear?.toInt()?: 0,
-                    property.carColor?: "",
-                    property.carNumber?: "",
-                    property.carWIN?: "",
-                    property.carCertificate?: "",
-                    property.licenseNumber?: "",
-                    it.id
+                    newCar
                 )
             }.doOnSuccess {
                 answerLiveData.postValue("true")
