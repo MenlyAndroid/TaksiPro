@@ -1,8 +1,16 @@
 package ru.taksi.pro.android.domain.helpers
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Typeface
 import android.text.Editable
+import android.text.Spannable
+import android.text.SpannableStringBuilder
 import android.text.TextWatcher
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.webkit.WebSettings
 import com.google.android.material.textfield.TextInputEditText
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.mvvm.data.UserProperties
@@ -60,11 +68,17 @@ object TextChangedHelper {
         }
     }
 
-//    fun stepStringBuilder(value: String, context: Context): String {
-//        if (value == "0") {
-//            return context.getString(R.string.ChoiceData)
-//        }
-//        val sb = StringBuilder()
-//        sb.append(context.getString(R.string.step)).
-//    }
+
+
+    fun stepStringBuilder(value: String, context: Context): String {
+        if (value == "0") {
+            return context.getString(R.string.ChoiceData)
+        }
+        val sb = StringBuilder()
+        sb.append(context.getString(R.string.step)).append(" ").append(value)
+            .append(context.getString(R.string.total_steps))
+//        val spannableText = SpannableStringBuilder(sb.toString())
+//        spannableText.setSpan(RelativeSizeSpan(2f), 6, 7, 0)
+        return sb.toString()
+    }
 }

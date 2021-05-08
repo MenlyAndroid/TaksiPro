@@ -12,7 +12,7 @@ import ru.taksi.pro.android.databinding.InputPassprtDataFragmentBinding
 import ru.taksi.pro.android.domain.helpers.TextChangedHelper
 import ru.taksi.pro.android.mvvm.data.UserProperties
 
-class InputPassportDataFragment : Fragment() {
+class RegistrationFragmentInputPassportData : Fragment() {
     private var binding: InputPassprtDataFragmentBinding? = null
 
     override fun onCreateView(
@@ -30,6 +30,7 @@ class InputPassportDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         setComponentsValue()
         initComponents()
     }
@@ -129,7 +130,7 @@ class InputPassportDataFragment : Fragment() {
         }
         binding?.btnNext?.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputDriverDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputDriverData()).commit()
         }
     }
 }

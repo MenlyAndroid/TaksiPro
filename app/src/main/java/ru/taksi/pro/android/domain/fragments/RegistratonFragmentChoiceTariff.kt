@@ -15,7 +15,7 @@ import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
 import javax.inject.Inject
 
-class ChoiceTariffFragment : Fragment() {
+class RegistratonFragmentChoiceTariff : Fragment() {
     private lateinit var binding: ChoiceTariffFragmentBinding
     private var adapter: RVAdapterChoiceTariff? = null
 
@@ -33,6 +33,7 @@ class ChoiceTariffFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         initRV()
         initViewModule()
         initComponent()
@@ -45,7 +46,7 @@ class ChoiceTariffFragment : Fragment() {
                     viewModel.setTariff(it)
                     viewModel.onCleared()
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.container, ChoiceAggregatorFragment()).commit()
+                        .replace(R.id.container, RegistrationFragmentChoiceAggregator()).commit()
                 }
             }
         }

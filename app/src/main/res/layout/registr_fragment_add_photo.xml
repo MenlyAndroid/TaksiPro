@@ -116,7 +116,6 @@
             style="@style/AppButton"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:enabled="false"
             android:text="@string/add_photo"/>
 
     </LinearLayout>
