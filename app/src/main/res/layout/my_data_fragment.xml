@@ -1169,15 +1169,15 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        app:srcCompat="@drawable/ic_arrow_right"/>
+                        app:srcCompat="@drawable/ic_arrow_right" />
 
                     <TextView
                         style="@style/MyBalanceStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorPrimary"
                         android:layout_marginTop="5dp"
-                        android:text="@string/back"/>
+                        android:text="@string/back"
+                        android:textColor="@color/colorPrimary" />
 
                 </LinearLayout>
 
@@ -1404,6 +1404,7 @@
                                 android:layout_marginTop="10dp"
                                 android:hint="100">
 
+
                                 <com.google.android.material.textfield.TextInputEditText
                                     android:id="@+id/input_citimobile"
                                     android:layout_width="130dp"
@@ -1439,27 +1440,62 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radioButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/bank_card_number"
-                        style="@style/DescriptionBodyStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Сбер зеленая ****9030" />
+                        <RadioGroup
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/ic_icon_un" />
+                            <RadioButton
+                                android:id="@+id/radioButton1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="20dp"
+                                android:textSize="17sp"
+                                android:visibility="visible"
+                                android:text="Сбер зеленая ****9030" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="20dp"
+                                android:textSize="17sp"
+                                android:visibility="visible"
+                                android:text="ВТБ кредитка ****7878" />
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bank_card_dell1"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="8dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_no" />
+
+                            <ImageView
+                                android:id="@+id/bank_card_dell2"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginTop="12dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_no" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -1475,18 +1511,18 @@
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
-                <TextView
-                    style="@style/DescriptionBodyStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/total_amount" />
+                    <TextView
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_amount" />
 
-                <TextView
-                    style="@style/DescriptionBodyStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
-                    android:text="1800 Р" />
+                    <TextView
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:text="1800 Р" />
 
                 </LinearLayout>
 
