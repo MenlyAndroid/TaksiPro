@@ -151,5 +151,6 @@
     <string name="passport_dates">Паспортные данные</string>
     <string name="data_of_driver">Данные В.У.</string>
     <string name="data_of_car">Данные Т.С.</string>
+    <string name="ChoiceData">Проверьте данные</string>
 
 </resources>

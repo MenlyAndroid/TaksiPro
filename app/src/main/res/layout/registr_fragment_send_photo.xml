@@ -7,8 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/step_item"/>
-
     <TextView
         android:id="@+id/add_photo_tv"
         style="@style/DescriptionHeaderStyle"

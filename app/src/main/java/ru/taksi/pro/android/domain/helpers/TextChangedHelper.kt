@@ -1,10 +1,13 @@
 package ru.taksi.pro.android.domain.helpers
 
+import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
 import com.google.android.material.textfield.TextInputEditText
+import ru.taksi.pro.android.R
 import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.helpers.TextFormatHelper
+import java.lang.StringBuilder
 
 object TextChangedHelper {
 
@@ -56,4 +59,12 @@ object TextChangedHelper {
         override fun afterTextChanged(p0: Editable?) {
         }
     }
+
+//    fun stepStringBuilder(value: String, context: Context): String {
+//        if (value == "0") {
+//            return context.getString(R.string.ChoiceData)
+//        }
+//        val sb = StringBuilder()
+//        sb.append(context.getString(R.string.step)).
+//    }
 }
