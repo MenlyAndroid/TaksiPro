@@ -11,7 +11,7 @@ import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.InputCarFragmentBinding
 import ru.taksi.pro.android.mvvm.data.UserProperties
 
-class InputCarFragment : Fragment() {
+class RegistrationFragmentInputCar : Fragment() {
     private lateinit var binding: InputCarFragmentBinding
 
     override fun onCreateView(
@@ -29,6 +29,7 @@ class InputCarFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         setComponentsValue()
         initComponents()
     }
@@ -88,7 +89,7 @@ class InputCarFragment : Fragment() {
         }
         binding.btnNext.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, CheckInputDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentCheckInputData()).commit()
         }
     }
 }

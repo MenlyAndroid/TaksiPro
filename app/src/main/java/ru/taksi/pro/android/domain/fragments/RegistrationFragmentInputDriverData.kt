@@ -11,7 +11,7 @@ import ru.taksi.pro.android.databinding.InputDriverDataFragmentBinding
 import ru.taksi.pro.android.domain.helpers.TextChangedHelper
 import ru.taksi.pro.android.mvvm.data.UserProperties
 
-class InputDriverDataFragment : Fragment() {
+class RegistrationFragmentInputDriverData : Fragment() {
     private var binding: InputDriverDataFragmentBinding? = null
 
     override fun onCreateView(
@@ -29,6 +29,7 @@ class InputDriverDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         setComponentsValue()
         initComponents()
     }
@@ -74,7 +75,7 @@ class InputDriverDataFragment : Fragment() {
         }
         binding?.btnNext?.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputCarFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputCar()).commit()
         }
     }
 }

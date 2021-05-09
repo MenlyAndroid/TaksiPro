@@ -13,15 +13,13 @@ import ru.taksi.pro.android.R
 import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.CheckInputDataFragmentBinding
 import ru.taksi.pro.android.domain.adapters.RVAdapterCheckInputData
-import ru.taksi.pro.android.domain.helpers.TextChangedHelper
 import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.helpers.TextFormatHelper
 import ru.taksi.pro.android.mvvm.vm.CheckInputDataViewModel
-import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
 import javax.inject.Inject
 
 
-class CheckInputDataFragment : Fragment() {
+class RegistrationFragmentCheckInputData : Fragment() {
     lateinit var binding: CheckInputDataFragmentBinding
 
     @Inject
@@ -43,6 +41,7 @@ class CheckInputDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         setComponentsValue()
         initComponents()
         initRV()
@@ -71,23 +70,23 @@ class CheckInputDataFragment : Fragment() {
         }
         binding.changeTariff.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ChoiceTariffFragment()).commit()
+                .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
         }
         binding.changeAggregators.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ChoiceAggregatorFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentChoiceAggregator()).commit()
         }
         binding.changePassportDates.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputPassportDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputPassportData()).commit()
         }
         binding.changeDataOfCar.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputCarFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputCar()).commit()
         }
         binding.changeDataOfDriver.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputDriverDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputDriverData()).commit()
         }
         binding.btnNext.setOnClickListener {
             viewModel.sendRegistrationData()
