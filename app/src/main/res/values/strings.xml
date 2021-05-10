@@ -151,5 +151,9 @@
     <string name="passport_dates">Паспортные данные</string>
     <string name="data_of_driver">Данные В.У.</string>
     <string name="data_of_car">Данные Т.С.</string>
+    <string name="choose_tariff_start">Выбрать тариф Старт</string>
+    <string name="choose_tariff_comfort">Выбрать тариф Комфорт</string>
+    <string name="choose_tariff_premium">Выбрать тариф Премиум</string>
+    <string name="data_sent_verification">Данные отправлены на проверку</string>
 
 </resources>
