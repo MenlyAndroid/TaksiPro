@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/taxi_pro" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorLilyWhite">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/bottom_my_data"
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="170dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/my_data" />
+
+                    <TextView
+                        android:id="@+id/bottom_balance"
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="150dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/balance" />
+
+                    <TextView
+                        android:id="@+id/bottom_withdraw_funds"
+                        style="@style/DescriptionBodyStyle"
+                        android:layout_width="170dp"
+                        android:layout_height="55dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:text="@string/windraw_funds" />
+                </TableRow>
+
+            </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_data_sent_verification"
+                style="@style/DescriptionBodyStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:text="@string/data_sent_verification"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/animation" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp" />
+
+    </LinearLayout>
+</layout>
