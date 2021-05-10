@@ -1,9 +1,21 @@
 package ru.taksi.pro.android.domain.helpers
 
+import android.content.Context
+import android.graphics.Color
+import android.graphics.Typeface
 import android.text.Editable
+import android.text.Spannable
+import android.text.SpannableStringBuilder
 import android.text.TextWatcher
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.webkit.WebSettings
 import com.google.android.material.textfield.TextInputEditText
+import ru.taksi.pro.android.R
 import ru.taksi.pro.android.mvvm.data.UserProperties
+import ru.taksi.pro.android.mvvm.helpers.TextFormatHelper
+import java.lang.StringBuilder
 
 object TextChangedHelper {
 
@@ -18,7 +30,7 @@ object TextChangedHelper {
                 var text = textInput.text
                 text?.let {
                     if (it.toString() != current) {
-                        current = dateFormat(it.toString())
+                        current = TextFormatHelper.dateFormat(it.toString())
                         textInput.setText(current)
                         textInput.setSelection(textInput.text.toString().length)
                         UserProperties.instance.setData(current, field)
@@ -44,7 +56,7 @@ object TextChangedHelper {
             var text = textInput.text
             text?.let {
                 if (it.toString() != current) {
-                    current = serialEndNumberFormat(it.toString())
+                    current = TextFormatHelper.serialEndNumberFormat(it.toString())
                     textInput.setText(current)
                     textInput.setSelection(textInput.text.toString().length)
                     UserProperties.instance.setData(current, field)
@@ -54,35 +66,19 @@ object TextChangedHelper {
 
         override fun afterTextChanged(p0: Editable?) {
         }
-
     }
 
-    fun dateFormat(string: String): String {
-        var clean = string.replace("[^\\d.]|\\.".toRegex(), "")
-        if (clean.length in 3..4) {
-            return String.format(
-                "%s/%s", clean.substring(0, 2),
-                clean.substring(2, clean.length)
-            )
-        } else if (clean.length > 4) {
-            return String.format(
-                "%s/%s/%s", clean.substring(0, 2),
-                clean.substring(2, 4),
-                clean.substring(4, clean.length)
-            )
-        } else {
-            return clean
-        }
-    }
 
-    fun serialEndNumberFormat(string: String): String {
-        var clean = string.replace(" ", "")
-        if (clean.length > 4) {
-            return String.format(
-                "%s %s", clean.substring(0, 4),
-                clean.substring(4, clean.length)
-            )
+
+    fun stepStringBuilder(value: String, context: Context): String {
+        if (value == "0") {
+            return context.getString(R.string.ChoiceData)
         }
-        return clean
+        val sb = StringBuilder()
+        sb.append(context.getString(R.string.step)).append(" ").append(value)
+            .append(context.getString(R.string.total_steps))
+//        val spannableText = SpannableStringBuilder(sb.toString())
+//        spannableText.setSpan(RelativeSizeSpan(2f), 6, 7, 0)
+        return sb.toString()
     }
 }

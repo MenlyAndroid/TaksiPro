@@ -66,7 +66,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/car_number"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:maxLength="9"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -77,7 +78,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/car_win"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:maxLength="17"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:digits="0123456789 "
                     android:inputType="numberDecimal"
-                    android:maxLength="11"/>
+                    android:maxLength="10"/>
             </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -122,11 +124,11 @@
                     android:id="@+id/license_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"/>
+                    android:digits="0123456789 "
+                    android:inputType="numberDecimal"
+                    android:maxLength="10"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-
-
 
             <Button
                 android:id="@+id/btn_next"

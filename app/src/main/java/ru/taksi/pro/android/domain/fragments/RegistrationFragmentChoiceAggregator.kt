@@ -14,7 +14,7 @@ import ru.taksi.pro.android.mvvm.vm.ChoiceAggregatorViewModel
 import javax.inject.Inject
 
 
-class ChoiceAggregatorFragment : Fragment() {
+class RegistrationFragmentChoiceAggregator : Fragment() {
     private var binding: ChoiceAggregatorFragmentBinding? = null
 
     @Inject
@@ -31,6 +31,7 @@ class ChoiceAggregatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
 
         viewModel.getAggregators()?.map {
             when (it) {
@@ -73,7 +74,7 @@ class ChoiceAggregatorFragment : Fragment() {
         binding?.buttonChoose?.setOnClickListener {
             viewModel.onCleared()
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputPassportDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputPassportData()).commit()
         }
     }
 

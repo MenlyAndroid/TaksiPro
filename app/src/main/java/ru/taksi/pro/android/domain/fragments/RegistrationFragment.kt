@@ -11,22 +11,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.RegistrFragmentBinding
 import ru.taksi.pro.android.mvvm.data.UserProperties
-import ru.taksi.pro.android.mvvm.model.api.ApiService
-import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
-import ru.taksi.pro.android.mvvm.model.repo.retrofit.TaxiProRepository
-import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
 import ru.taksi.pro.android.mvvm.vm.RegistrationPhoneViewModel
 import javax.inject.Inject
 
 
 class RegistrationFragment : Fragment() {
-    private var binding: RegistrFragmentBinding? = null
+    private lateinit var binding: RegistrFragmentBinding
     private var phone: String = ""
 
     @Inject
@@ -34,28 +28,29 @@ class RegistrationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         TaxiProApplication.component.inject(this)
         if(viewModel.getToken() != null) requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.container, ChoiceTariffFragment()).commit()
+            .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
         binding =
             DataBindingUtil.inflate(inflater, R.layout.registr_fragment, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.buttonCod?.setOnClickListener { onButtonClickListener() }
-        binding?.editTextPhone?.let {
+        requireActivity().onContentChanged()
+        binding.buttonCod.setOnClickListener { onButtonClickListener() }
+        binding.editTextPhone.let {
             it.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable) {
                     if (it.rawText?.length == 10) {
                         phone = "7${it.rawText}"
                         UserProperties.instance.phone = phone
-                        binding?.buttonCod?.isEnabled = true
+                        binding.buttonCod.isEnabled = true
                     } else {
                         phone = ""
-                        binding?.buttonCod?.isEnabled = false
+                        binding.buttonCod.isEnabled = false
                     }
                 }
 
@@ -85,9 +80,9 @@ class RegistrationFragment : Fragment() {
     }
 
     private fun onButtonClickListener() {
-        binding?.editTextPhone?.let {
+        binding.editTextPhone.let {
             viewModel.sendPhone(phone)
         }
-        Log.d("!!!", "click: ${binding?.editTextPhone?.rawText} ${viewModel}")
+        Log.d("!!!", "click: ${binding.editTextPhone.rawText} ${viewModel}")
     }
 }

@@ -11,12 +11,13 @@ import ru.taksi.pro.android.mvvm.model.entity.authorization.RegistrationResponse
 import ru.taksi.pro.android.mvvm.model.entity.authorization.User
 import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
+import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
 import ru.taksi.pro.android.mvvm.model.entity.user.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
 import ru.taksi.pro.android.mvvm.model.network.INetworkChecker
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
-import java.util.*
+import kotlin.collections.HashMap
 
 class TaxiProRepository(private val api: ApiService, private val networkChecker: INetworkChecker) : ITaxiProRepository {
 
@@ -51,6 +52,14 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
         return api.getAgregator(id).subscribeOn(Schedulers.io()) }
 
     /***********************************************************************************************
+     *                       Tariffs API  -  api/v1/tariffs
+     **********************************************************************************************/
+
+    override fun getTariffs(): Single<List<Tariff>> {
+        return api.getTariffs().subscribeOn(Schedulers.io())
+    }
+
+    /***********************************************************************************************
      *                             Balance API  -  api/v1/balance/
      **********************************************************************************************/
     override fun getBalance(id: Int, token: String): Single<Balance> {
@@ -66,19 +75,10 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
         return api.getCar(id, "Bearer $token").subscribeOn(Schedulers.io()) }
 
     override fun createNewCar(token: String,
-                              id: Int,
-                              brand: String,
-                              model: String,
-                              year: Int,
-                              color: String,
-                              registration: String,
-                              vin: String,
-                              sts: String,
-                              license: String,
-                              id_users: Int): Single<Car> {
+                              car: HashMap<String, Any>
+    ): Single<Car> {
         return api.createNewCar(
-            "Bearer $token", id, brand, model, year, color,
-            registration, vin, sts, license, id_users) }
+            "Bearer $token", car) }
 
     /***********************************************************************************************
      *                        Profile API  -  api/v1/profiles/{id}
@@ -86,25 +86,11 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
     override fun getProfile(id: Int, token: String): Single<Profile> {
         return api.getProfile(id, token).subscribeOn(Schedulers.io()) }
 
-    override fun createProfile(token: String,
-                               firstName: String,
-                               secondName: String,
-                               lastName: String,
-                               birthDate: Date,
-                               phone: String,
-                               passportSeries: String,
-                               passportNumber: String,
-                               passportGiver: String,
-                               passportDate: Date,
-                               registrationAddress: String,
-                               licenseSeries: String,
-                               licenseNumber: String,
-                               licenseDate: Date,
-                               licenseExpire: Date,
-                               userId: Int): Single<Profile> {
-        return api.createProfile("Bearer $token", firstName, secondName, lastName,
-            birthDate, phone, passportSeries, passportNumber, passportGiver, passportDate,
-            registrationAddress, licenseSeries, licenseNumber, licenseDate, licenseExpire, userId)
+    override fun createProfile(
+        token: String,
+        profile: HashMap<String, Any>
+    ): Single<Profile> {
+        return api.createProfile("Bearer $token", profile)
             .subscribeOn(Schedulers.io())}
 
     /***********************************************************************************************

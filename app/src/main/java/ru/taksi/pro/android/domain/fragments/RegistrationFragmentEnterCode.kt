@@ -26,7 +26,8 @@ class RegistrationFragmentEnterCode() : Fragment() {
             }
         }
     }
-    private var binding: RegistrFragmentEnterCodeBinding? = null
+
+    private lateinit var binding: RegistrFragmentEnterCodeBinding
     private var phone: String = ""
     private var code: String = ""
 
@@ -35,7 +36,7 @@ class RegistrationFragmentEnterCode() : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         TaxiProApplication.component.inject(this)
         arguments?.let {
             phone = it.getString(PHONE).toString()
@@ -47,21 +48,22 @@ class RegistrationFragmentEnterCode() : Fragment() {
                 container,
                 false
             )
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.buttonEnterCod?.setOnClickListener { onButtonClickListener() }
-        binding?.editTextCode?.let {
+        requireActivity().onContentChanged()
+        binding.buttonEnterCod.setOnClickListener { onButtonClickListener() }
+        binding.editTextCode.let {
             it.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable) {
                     if (it.text?.length == 4) {
                         code = it.text.toString()
-                        binding?.buttonEnterCod?.isEnabled = true
+                        binding.buttonEnterCod.isEnabled = true
                     } else {
                         code = ""
-                        binding?.buttonEnterCod?.isEnabled = false
+                        binding.buttonEnterCod.isEnabled = false
                     }
                 }
 

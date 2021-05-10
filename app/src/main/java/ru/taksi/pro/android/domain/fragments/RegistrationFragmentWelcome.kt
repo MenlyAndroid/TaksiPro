@@ -10,21 +10,22 @@ import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrFragmentWelcomeBinding
 
 class RegistrationFragmentWelcome : Fragment() {
-    private var binding: RegistrFragmentWelcomeBinding? = null
+    private lateinit var binding: RegistrFragmentWelcomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.registr_fragment_welcome, container, false)
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding?.buttonEnterFill?.setOnClickListener {
+        requireActivity().onContentChanged()
+        binding.buttonEnterFill.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ChoiceTariffFragment()).commit()
+                .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
         }
     }
 }

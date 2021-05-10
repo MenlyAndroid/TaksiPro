@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrFragmentAddPhotoBinding
 
 
@@ -21,11 +22,14 @@ class RegistrationFragmentAddPhoto : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonAddPhoto.setOnClickListener { onButtonClickListener() }
-        Log.d("!!!", "onViewCreated: ")
+        requireActivity().onContentChanged()
+        initComponent()
     }
 
-    fun onButtonClickListener() {
-        Log.d("!!!", "onButtonClickListener: ")
+    private fun initComponent() {
+        binding.buttonAddPhoto.setOnClickListener {
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container, RegistrationFragmentSendPhotos(null)).commit()
+        }
     }
 }

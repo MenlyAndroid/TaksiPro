@@ -24,6 +24,7 @@ interface AppComponent {
     fun inject(registrationFragment: RegistrationFragment)
     fun inject(registrationFragmentEnterCode: RegistrationFragmentEnterCode)
     fun inject(registrationAddPhotoViewModel: RegistrationAddPhotoViewModel)
-    fun inject(choiceTariffFragment: ChoiceTariffFragment)
-    fun inject(choiceAggregatorFragment: ChoiceAggregatorFragment)
+    fun inject(registratonFragmentChoiceTariff: RegistratonFragmentChoiceTariff)
+    fun inject(registrationFragmentChoiceAggregator: RegistrationFragmentChoiceAggregator)
+    fun inject(registrationFragmentCheckInputData: RegistrationFragmentCheckInputData)
 }

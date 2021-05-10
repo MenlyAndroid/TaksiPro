@@ -1,30 +1,34 @@
 package ru.taksi.pro.android.domain.fragments
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.taksi.pro.android.R
+import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.CheckInputDataFragmentBinding
 import ru.taksi.pro.android.domain.adapters.RVAdapterCheckInputData
-import ru.taksi.pro.android.domain.helpers.TextChangedHelper
 import ru.taksi.pro.android.mvvm.data.UserProperties
-import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
+import ru.taksi.pro.android.mvvm.helpers.TextFormatHelper
+import ru.taksi.pro.android.mvvm.vm.CheckInputDataViewModel
 import javax.inject.Inject
 
 
-class CheckInputDataFragment : Fragment() {
+class RegistrationFragmentCheckInputData : Fragment() {
     lateinit var binding: CheckInputDataFragmentBinding
 
-//    @Inject
-//    lateinit var viewModel: ChoiceTariffViewModel
+    @Inject
+    lateinit var viewModel: CheckInputDataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+        TaxiProApplication.component.inject(this)
         binding =
             DataBindingUtil.inflate(
                 inflater,
@@ -37,9 +41,25 @@ class CheckInputDataFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireActivity().onContentChanged()
         setComponentsValue()
         initComponents()
         initRV()
+        initViewModel()
+    }
+
+    private fun initViewModel() {
+        viewModel.getAnswerLiveData().observe(requireActivity(), { value ->
+            if (value == "true") {
+                viewModel.onCleared()
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, RegistrationFragmentAddPhoto()).commit()
+            } else {
+                val toast = Toast.makeText(requireActivity(), value, Toast.LENGTH_SHORT)
+                toast.setGravity(Gravity.TOP, 0, 0)
+                toast.show()
+            }
+        })
     }
 
     private fun initComponents() {
@@ -50,27 +70,26 @@ class CheckInputDataFragment : Fragment() {
         }
         binding.changeTariff.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ChoiceTariffFragment()).commit()
+                .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
         }
         binding.changeAggregators.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ChoiceAggregatorFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentChoiceAggregator()).commit()
         }
         binding.changePassportDates.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputPassportDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputPassportData()).commit()
         }
         binding.changeDataOfCar.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputCarFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputCar()).commit()
         }
         binding.changeDataOfDriver.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, InputDriverDataFragment()).commit()
+                .replace(R.id.container, RegistrationFragmentInputDriverData()).commit()
         }
         binding.btnNext.setOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, RegistrationFragmentAddPhoto()).commit()
+            viewModel.sendRegistrationData()
         }
     }
 
@@ -110,30 +129,31 @@ class CheckInputDataFragment : Fragment() {
             binding.patronymic.text = it
         }
         UserProperties.instance.dateOfBird?.let {
-            binding.dataOfBirth.text = TextChangedHelper.dateFormat(it)
+            binding.dataOfBirth.text = TextFormatHelper.dateFormat(it)
         }
         UserProperties.instance.passportData?.let {
-            binding.seriaAndNumberOfPassport.text = TextChangedHelper.serialEndNumberFormat(it)
+            binding.seriaAndNumberOfPassport.text = TextFormatHelper.serialEndNumberFormat(it)
         }
         UserProperties.instance.whoIssued?.let {
             binding.whoIssued.text = it
         }
         UserProperties.instance.dataOfIssued?.let {
-            binding.whenIssued.text = TextChangedHelper.dateFormat(it)
+            binding.whenIssued.text = TextFormatHelper.dateFormat(it)
         }
         UserProperties.instance.let {
-            val address =
-                "${it.city}, ${it.district}, ул. ${it.street}, ${it.home}, ${it.apartments}"
+            val address = TextFormatHelper.createStringAddress(
+                it.city, it.district, it.street, it.home, it.apartments
+            )
             binding.addressOfRegistration.text = address
         }
         UserProperties.instance.driverNumbers?.let {
-            binding.driverNumbers.text = TextChangedHelper.serialEndNumberFormat(it)
+            binding.driverNumbers.text = TextFormatHelper.serialEndNumberFormat(it)
         }
         UserProperties.instance.driverIssued?.let {
-            binding.whenDriverIssued.text = TextChangedHelper.dateFormat(it)
+            binding.whenDriverIssued.text = TextFormatHelper.dateFormat(it)
         }
         UserProperties.instance.driverIssuedTo?.let {
-            binding.driverIssuedTo.text = TextChangedHelper.dateFormat(it)
+            binding.driverIssuedTo.text = TextFormatHelper.dateFormat(it)
         }
         UserProperties.instance.carBrand?.let {
             binding.carBrand.text = it
@@ -154,7 +174,7 @@ class CheckInputDataFragment : Fragment() {
             binding.carWin.text = it
         }
         UserProperties.instance.carCertificate?.let {
-            binding.carLicense.text = TextChangedHelper.serialEndNumberFormat(it)
+            binding.carLicense.text = TextFormatHelper.serialEndNumberFormat(it)
         }
         UserProperties.instance.licenseNumber?.let {
             binding.licenseNumber.text = it
