@@ -52,4 +52,10 @@ class ViewModulesModule {
         uiSchedulers: Scheduler,
         repository: ITaxiProRepository
     ) = CheckInputDataViewModel(uiSchedulers, repository)
+
+    @Provides
+    fun getMainViewModel(
+        uiSchedulers: Scheduler,
+        repository: ITaxiProRepository
+    ) = MainViewModel(uiSchedulers, repository)
 }

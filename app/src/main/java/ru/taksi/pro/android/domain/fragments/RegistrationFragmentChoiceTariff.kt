@@ -15,7 +15,7 @@ import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.vm.ChoiceTariffViewModel
 import javax.inject.Inject
 
-class RegistratonFragmentChoiceTariff : Fragment() {
+class RegistrationFragmentChoiceTariff : Fragment() {
     private lateinit var binding: ChoiceTariffFragmentBinding
     private var adapter: RVAdapterChoiceTariff? = null
 

@@ -29,9 +29,9 @@ class DataBalanceActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.data_balance_activity)
         if (UserProperties.instance.token == null) {
             binding.animationView.visibility = View.VISIBLE
-//            supportFragmentManager.beginTransaction()
-//                .add(R.id.container, ScreenMyDetailsFragment())
-//                .commit()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container, ScreenMyDetailsFragment())
+                .commit()
         }
 
         binding.run {
@@ -58,7 +58,7 @@ class DataBalanceActivity : AppCompatActivity() {
     // мой баланс
     fun screenBalance() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, ScreenBalanceFragment())
+            .replace(R.id.container, ScreenBalanceFragment())
             .commit()
 
         if (screenMyDetailsFragment != null) {
@@ -79,7 +79,7 @@ class DataBalanceActivity : AppCompatActivity() {
     // вывод средств
     fun screenWithdrawFunds() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, ScreenWithdrawFunds())
+            .replace(R.id.container, ScreenWithdrawFunds())
             .commit()
 
         binding.run {

@@ -1,9 +1,9 @@
 package ru.taksi.pro.android.domain.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.RegistrFragmentEnterCodeBinding
+import ru.taksi.pro.android.domain.activities.DataBalanceActivity
+import ru.taksi.pro.android.domain.activities.RegistrationActivity
 import ru.taksi.pro.android.mvvm.vm.RegistrationCodeViewModel
 import javax.inject.Inject
 
@@ -54,7 +56,35 @@ class RegistrationFragmentEnterCode() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().onContentChanged()
-        binding.buttonEnterCod.setOnClickListener { onButtonClickListener() }
+        initComponent()
+        initViewModel()
+    }
+
+    private fun initViewModel() {
+        requireActivity().let{
+            viewModel.getAnswerLiveData().observe(it, { value ->
+                when (value) {
+                    RegistrationCodeViewModel.CODE_NEW_USER -> {
+                        viewModel.onCleared()
+                        it.supportFragmentManager.beginTransaction()
+                            .replace(R.id.container, RegistrationFragmentWelcome()).commit()
+                    }
+                    RegistrationCodeViewModel.CODE_AUTHORISED_USER -> {
+                            it.startActivity(Intent(it, DataBalanceActivity::class.java))
+                            it.finish()
+                    }
+                    else -> {
+                        val toast = Toast.makeText(requireActivity(), value, Toast.LENGTH_SHORT)
+                        toast.setGravity(Gravity.TOP, 0, 0)
+                        toast.show()
+                    }
+                }
+            })
+        }
+    }
+
+    private fun initComponent() {
+        binding.buttonEnterCod.setOnClickListener { viewModel.sendCode(phone, code) }
         binding.editTextCode.let {
             it.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable) {
@@ -78,22 +108,5 @@ class RegistrationFragmentEnterCode() : Fragment() {
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
             })
         }
-        viewModel.getAnswerLiveData().observe(requireActivity(), { value ->
-            if (value == "true") {
-                viewModel.onCleared()
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, RegistrationFragmentWelcome()).commit()
-            } else {
-                val toast = Toast.makeText(requireActivity(), value, Toast.LENGTH_SHORT)
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-            }
-        })
-
-    }
-
-    fun onButtonClickListener() {
-        Log.d("!!!", "click: $phone $code")
-        viewModel.sendCode(phone, code)
     }
 }

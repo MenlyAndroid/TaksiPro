@@ -186,7 +186,10 @@
                     android:text="@string/our_rates"
                     android:textSize="23sp" />
 
-                <include layout="@layout/loading_rates" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_tariffs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
                 <ImageView
                     android:id="@+id/smartphone"

@@ -1,21 +1,12 @@
 package ru.taksi.pro.android.domain.helpers
 
 import android.content.Context
-import android.graphics.Color
-import android.graphics.Typeface
 import android.text.Editable
-import android.text.Spannable
-import android.text.SpannableStringBuilder
 import android.text.TextWatcher
-import android.text.style.ForegroundColorSpan
-import android.text.style.RelativeSizeSpan
-import android.text.style.StyleSpan
-import android.webkit.WebSettings
 import com.google.android.material.textfield.TextInputEditText
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.helpers.TextFormatHelper
-import java.lang.StringBuilder
 
 object TextChangedHelper {
 

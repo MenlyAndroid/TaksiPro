@@ -70,7 +70,7 @@ class RegistrationFragmentCheckInputData : Fragment() {
         }
         binding.changeTariff.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
+                .replace(R.id.container, RegistrationFragmentChoiceTariff()).commit()
         }
         binding.changeAggregators.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()

@@ -31,7 +31,7 @@ class RegistrationFragment : Fragment() {
     ): View {
         TaxiProApplication.component.inject(this)
         if(viewModel.getToken() != null) requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
+            .replace(R.id.container, RegistrationFragmentChoiceTariff()).commit()
         binding =
             DataBindingUtil.inflate(inflater, R.layout.registr_fragment, container, false)
         return binding.root

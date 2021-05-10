@@ -25,7 +25,7 @@ class RegistrationFragmentWelcome : Fragment() {
         requireActivity().onContentChanged()
         binding.buttonEnterFill.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.container, RegistratonFragmentChoiceTariff()).commit()
+                .replace(R.id.container, RegistrationFragmentChoiceTariff()).commit()
         }
     }
 }

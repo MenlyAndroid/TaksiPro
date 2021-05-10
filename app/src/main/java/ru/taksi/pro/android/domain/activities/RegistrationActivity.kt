@@ -27,7 +27,7 @@ class RegistrationActivity : AppCompatActivity() {
                 .commit()
         } else {
             supportFragmentManager.beginTransaction()
-                .add(R.id.container, RegistratonFragmentChoiceTariff())
+                .add(R.id.container, RegistrationFragmentChoiceTariff())
                 .commit()
         }
     }
@@ -43,7 +43,7 @@ class RegistrationActivity : AppCompatActivity() {
         if (myFragment != null && myFragment.isVisible) {
             binding?.let { bind ->
                 when (myFragment) {
-                    is RegistratonFragmentChoiceTariff -> {
+                    is RegistrationFragmentChoiceTariff -> {
                         bind.stepView.visibility = View.VISIBLE
                         bind.stepTv.text = TextChangedHelper.stepStringBuilder("1", this)
                     }
