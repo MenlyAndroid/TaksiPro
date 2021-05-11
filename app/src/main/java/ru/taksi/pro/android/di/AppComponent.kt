@@ -6,11 +6,8 @@ import ru.taksi.pro.android.di.modules.AppModule
 import ru.taksi.pro.android.di.modules.RepoModule
 import ru.taksi.pro.android.di.modules.ViewModulesModule
 import ru.taksi.pro.android.domain.activities.MainActivity
-import ru.taksi.pro.android.domain.fragments.RegistrationFragment
-import ru.taksi.pro.android.domain.fragments.RegistrationFragmentEnterCode
-import ru.taksi.pro.android.mvvm.vm.RegistrationAddPhotoViewModel
 import ru.taksi.pro.android.domain.fragments.*
-import ru.taksi.pro.android.mvvm.vm.MainViewModel
+import ru.taksi.pro.android.mvvm.vm.RegistrationAddPhotoViewModel
 import javax.inject.Singleton
 
 @Singleton

@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.RegistrFragmentSendPhotoBinding
-import ru.taksi.pro.android.domain.activities.MainActivity
+import ru.taksi.pro.android.domain.activities.DataBalanceActivity
 import ru.taksi.pro.android.domain.activities.RegistrationActivity
 import ru.taksi.pro.android.mvvm.data.PhotoSaver
 import java.io.FileNotFoundException
@@ -102,19 +102,19 @@ class RegistrationFragmentSendPhotos(private val intent: Intent?) : Fragment() {
             getImageFromAlbum(PhotoSaver.SECOND_DRIVERS_LICENSE_PHOTO)
         }
 
-        binding.leftPassportDeleteBtn.setOnClickListener{
+        binding.leftPassportDeleteBtn.setOnClickListener {
             binding.imgPassportFirstPhoto.setImageResource(R.drawable.ic_add_photo)
             PhotoSaver.instance.firstPassportPhotoUri = null
             binding.buttonSendPhotos.isEnabled = false
         }
-        binding.rightPassportDeleteBtn.setOnClickListener{
+        binding.rightPassportDeleteBtn.setOnClickListener {
             binding.imgPassportSecondPhoto.setImageResource(R.drawable.ic_add_photo)
         }
-        binding.leftLicenseDeleteBtn.setOnClickListener{
+        binding.leftLicenseDeleteBtn.setOnClickListener {
             binding.imgDriverLicenseFirstPhoto.setImageResource(R.drawable.ic_add_photo)
             PhotoSaver.instance.firstDriversLicensePhotoUri = null
         }
-        binding.rightLicenseDeleteBtn.setOnClickListener{
+        binding.rightLicenseDeleteBtn.setOnClickListener {
             binding.imgDriverLicenseSecondPhoto.setImageResource(R.drawable.ic_add_photo)
             PhotoSaver.instance.secondDriversLicensePhotoUri = null
         }
@@ -123,8 +123,9 @@ class RegistrationFragmentSendPhotos(private val intent: Intent?) : Fragment() {
             if (PhotoSaver.instance.firstPassportPhotoUri != null &&
                 PhotoSaver.instance.secondPassportPhotoUri != null &&
                 PhotoSaver.instance.firstDriversLicensePhotoUri != null &&
-                PhotoSaver.instance.secondDriversLicensePhotoUri != null) {
-                startActivity(Intent(requireActivity(), MainActivity::class.java))
+                PhotoSaver.instance.secondDriversLicensePhotoUri != null
+            ) {
+                startActivity(Intent(requireActivity(), DataBalanceActivity::class.java))
             }
         }
     }
