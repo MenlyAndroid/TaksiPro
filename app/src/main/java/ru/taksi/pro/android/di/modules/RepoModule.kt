@@ -3,7 +3,7 @@ package ru.taksi.pro.android.di.modules
 import dagger.Module
 import dagger.Provides
 import ru.taksi.pro.android.app.TaxiProApplication
-import ru.taksi.pro.android.domain.network.NetworkChecker
+import ru.taksi.pro.android.ui.network.NetworkChecker
 import ru.taksi.pro.android.mvvm.model.api.ApiService
 import ru.taksi.pro.android.mvvm.model.network.INetworkChecker
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository

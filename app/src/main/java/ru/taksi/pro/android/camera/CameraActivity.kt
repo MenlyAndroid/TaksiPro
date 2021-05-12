@@ -22,8 +22,8 @@ import io.reactivex.rxjava3.subjects.PublishSubject
 import ru.taksi.pro.android.R
 import ru.taksi.pro.android.databinding.CameraLayoutBinding
 import ru.taksi.pro.android.camera.states.CameraParams
-import ru.taksi.pro.android.domain.helpers.CameraHandler
-import ru.taksi.pro.android.domain.view.ICameraView
+import ru.taksi.pro.android.ui.helpers.CameraHandler
+import ru.taksi.pro.android.ui.view.ICameraView
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*

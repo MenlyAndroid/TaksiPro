@@ -11,7 +11,7 @@ import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
-import ru.taksi.pro.android.mvvm.model.entity.user.Profile
+import ru.taksi.pro.android.mvvm.model.entity.authorization.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
 import kotlin.collections.HashMap
 

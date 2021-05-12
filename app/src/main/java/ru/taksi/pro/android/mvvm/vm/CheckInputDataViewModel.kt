@@ -50,6 +50,7 @@ class CheckInputDataViewModel(
                 property.token ?: "",
                 profile
             ).flatMap {
+                UserProperties.instance.profile = it
                 val newCar: HashMap<String, Any> = hashMapOf(
                     "id" to 0,
                     "brand" to (property.carBrand ?: ""),

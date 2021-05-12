@@ -644,7 +644,7 @@
                         style="@style/DescriptionBodyStyle"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Изменить"
+                        android:text="@string/change"
                         android:textColor="@color/colorSkyBlue" />
 
                 </LinearLayout>
@@ -658,14 +658,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Марка автомобиля" />
+                        android:text="@string/car_data_model" />
 
                     <TextView
                         android:id="@+id/car_type"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Renault" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -678,14 +677,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Модель автомобиля" />
+                        android:text="@string/car_data_type" />
 
                     <TextView
                         android:id="@+id/car_model"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Logan" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -698,14 +696,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Год производства автомобиля" />
+                        android:text="@string/car_data_year" />
 
                     <TextView
                         android:id="@+id/car_year_production"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="2015" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -718,14 +715,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Цвет автомобиля" />
+                        android:text="@string/car_data_color" />
 
                     <TextView
                         android:id="@+id/car_color"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Черный" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -738,14 +734,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Регистрационный знак ТС" />
+                        android:text="@string/car_data_number" />
 
                     <TextView
                         android:id="@+id/car_register_sign"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="А 456 УК 799" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -758,14 +753,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Регистрационный знак ТС" />
+                        android:text="@string/car_number_pts" />
 
                     <TextView
                         android:id="@+id/car_vin"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ЦВВ213000 ПЕ 4321245" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -778,14 +772,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Номер свидетельства ТС" />
+                        android:text="@string/car_data_vin" />
 
                     <TextView
                         android:id="@+id/car_certificate_number"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="7766 123456" />
+                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -799,7 +792,7 @@
                     <TextView
                         android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:text="ДАННЫЕ ЛИЦЕНЗИИ"
+                        android:text="@string/car_data_license"
                         android:textColor="@color/colorPrimary"
                         android:textSize="17sp" />
 
@@ -808,7 +801,7 @@
                         style="@style/DescriptionBodyStyle"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
-                        android:text="Изменить"
+                        android:text="@string/change"
                         android:textColor="@color/colorSkyBlue" />
 
                 </LinearLayout>
@@ -822,14 +815,13 @@
                         style="@style/MyAutoStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Номер лицензии" />
+                        android:text="@string/car_data_license_number" />
 
                     <TextView
                         android:id="@+id/car_license_number"
                         style="@style/MyAutoBoldStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="7766 123456" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
