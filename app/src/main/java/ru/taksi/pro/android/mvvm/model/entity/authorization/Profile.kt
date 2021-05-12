@@ -9,6 +9,7 @@ data class Profile(
     @SerializedName("firstname")
     @Expose val firstName: String,
     @Expose val id: Int,
+    @Expose val fio: String,
     @SerializedName("lastname")
     @Expose val lastName: String,
     @Expose val license: License,

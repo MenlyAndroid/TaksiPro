@@ -25,10 +25,9 @@
 
                     <TextView
                         android:id="@+id/bottom_my_data"
-                        style="@style/DescriptionBodyStyle"
-                        android:layout_width="170dp"
+                        style="@style/TableRowStyle"
+                        android:layout_width="0dp"
                         android:layout_height="55dp"
-                        android:layout_marginStart="3dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
@@ -36,10 +35,9 @@
 
                     <TextView
                         android:id="@+id/bottom_balance"
-                        style="@style/DescriptionBodyStyle"
-                        android:layout_width="150dp"
+                        style="@style/TableRowStyle"
+                        android:layout_width="0dp"
                         android:layout_height="55dp"
-                        android:layout_marginTop="11dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
@@ -47,10 +45,9 @@
 
                     <TextView
                         android:id="@+id/bottom_withdraw_funds"
-                        style="@style/DescriptionBodyStyle"
-                        android:layout_width="170dp"
+                        style="@style/TableRowStyle"
+                        android:layout_width="0dp"
                         android:layout_height="55dp"
-                        android:layout_marginEnd="3dp"
                         android:layout_weight="1"
                         android:clickable="true"
                         android:focusable="true"
@@ -64,7 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/text_data_sent_verification"

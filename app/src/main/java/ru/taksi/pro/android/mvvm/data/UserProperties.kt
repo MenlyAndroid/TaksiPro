@@ -1,5 +1,8 @@
 package ru.taksi.pro.android.mvvm.data
 
+import ru.taksi.pro.android.mvvm.model.entity.authorization.Profile
+import ru.taksi.pro.android.mvvm.model.entity.cars.Car
+
 class UserProperties {
 
     val aggregators: MutableSet<String> = mutableSetOf()
@@ -50,6 +53,9 @@ class UserProperties {
     var carCertificate: String? = null
     var licenseNumber: String? = null
 
+    var profile: Profile? = null
+    var car: Car? = null
+
     fun setData(value: String, field: String) {
         when (field) {
             DATE_OF_BIRD -> dateOfBird = value
@@ -61,5 +67,10 @@ class UserProperties {
             CAR_CERTIFICATE -> carCertificate = value
             LICENSE_DATA -> licenseNumber = value
         }
+    }
+
+    fun toDestroy() {
+        token = null
+        userId = null
     }
 }

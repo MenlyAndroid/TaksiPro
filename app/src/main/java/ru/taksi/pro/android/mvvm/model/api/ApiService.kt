@@ -12,7 +12,7 @@ import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
-import ru.taksi.pro.android.mvvm.model.entity.user.Profile
+import ru.taksi.pro.android.mvvm.model.entity.authorization.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
 
 
@@ -99,7 +99,7 @@ interface ApiService {
     /***********************************************************************************************
      *                        Profile API  -  api/v1/profiles/{id}
      **********************************************************************************************/
-    @GET("api/v1/profiles")
+    @GET("api/v1/profiles/{id}")
     fun getProfile(
         @Path("id") id: Int,
         @Header("Authorization") token: String

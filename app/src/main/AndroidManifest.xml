@@ -22,15 +22,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaksiPro"
         android:usesCleartextTraffic="true">
-        <activity android:name=".domain.activities.MainActivity">
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".domain.activities.RegistrationActivity" />
-        <activity android:name=".domain.activities.DataBalanceActivity" />
+        <activity android:name=".ui.activities.RegistrationActivity" />
+        <activity android:name=".ui.activities.DataBalanceActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

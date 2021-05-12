@@ -159,5 +159,21 @@
 
     <string name="ChoiceData">Проверьте данные</string>
 
+<!--    Exit dialog-->
+    <string name="exit_dialog">Вы действительно желаете выйти?</string>
+    <string name="Yes">Да</string>
+    <string name="No">Нет</string>
+    <string name="car_data_model">Марка автомобиля</string>
+    <string name="car_data_type">Модель автомобиля</string>
+    <string name="car_data_year">Год производства автомобиля</string>
+    <string name="car_data_color">Цвет автомобиля</string>
+    <string name="car_data_number">Регистрационный знак ТС</string>
+    <string name="car_number_pts">Регистрационный знак ТС</string>
+    <string name="car_data_vin">Номер свидетельства ТС</string>
+    <string name="car_data_license">ДАННЫЕ ЛИЦЕНЗИИ</string>
+    <string name="car_data_license_number">Номер лицензии</string>
+
+    <!--    Car data-->
+
 
 </resources>

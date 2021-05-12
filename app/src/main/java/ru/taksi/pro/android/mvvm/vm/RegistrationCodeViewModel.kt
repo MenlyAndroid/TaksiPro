@@ -34,6 +34,8 @@ class RegistrationCodeViewModel(
                     answerLiveData.value = CODE_AUTHORISED_USER
                     UserProperties.instance.token = it.user.token
                     UserProperties.instance.userId = it.user.id
+                    UserProperties.instance.profile = it.user.profile
+                    UserProperties.instance.car = it.user.car
                 }
             } else {
                 answerLiveData.value = it.success

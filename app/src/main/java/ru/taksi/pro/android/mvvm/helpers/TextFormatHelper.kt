@@ -3,7 +3,6 @@ package ru.taksi.pro.android.mvvm.helpers
 import android.annotation.SuppressLint
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.*
 
 object TextFormatHelper {
     fun dateFormat(string: String): String {
@@ -22,6 +21,10 @@ object TextFormatHelper {
         } else {
             return clean
         }
+    }
+
+    fun phoneFormat(string: String): String {
+        return String.format("+7 (${string.substring(1, 4)}) ${string.substring(4, 7)} ${string.substring(7, 9)} ${string.substring(9, 11)}")
     }
 
     fun serialEndNumberFormat(string: String): String {

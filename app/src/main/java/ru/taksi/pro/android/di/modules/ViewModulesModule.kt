@@ -58,4 +58,16 @@ class ViewModulesModule {
         uiSchedulers: Scheduler,
         repository: ITaxiProRepository
     ) = MainViewModel(uiSchedulers, repository)
+
+    @Provides
+    fun getDataBalanceViewModel(
+        uiSchedulers: Scheduler,
+        repository: ITaxiProRepository
+    ) = DataBalanceViewModel(uiSchedulers, repository)
+
+    @Provides
+    fun getInputCarViewModel(
+        uiSchedulers: Scheduler,
+        repository: ITaxiProRepository
+    ) = InputCarViewModel(uiSchedulers, repository)
 }

@@ -13,7 +13,7 @@ import ru.taksi.pro.android.mvvm.model.entity.balance.Balance
 import ru.taksi.pro.android.mvvm.model.entity.cars.Car
 import ru.taksi.pro.android.mvvm.model.entity.tariffs.Tariff
 import ru.taksi.pro.android.mvvm.model.entity.transaction.Transaction
-import ru.taksi.pro.android.mvvm.model.entity.user.Profile
+import ru.taksi.pro.android.mvvm.model.entity.authorization.Profile
 import ru.taksi.pro.android.mvvm.model.entity.user.Users
 import ru.taksi.pro.android.mvvm.model.network.INetworkChecker
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
@@ -84,7 +84,7 @@ class TaxiProRepository(private val api: ApiService, private val networkChecker:
      *                        Profile API  -  api/v1/profiles/{id}
      **********************************************************************************************/
     override fun getProfile(id: Int, token: String): Single<Profile> {
-        return api.getProfile(id, token).subscribeOn(Schedulers.io()) }
+        return api.getProfile(id, "Bearer $token").subscribeOn(Schedulers.io()) }
 
     override fun createProfile(
         token: String,
