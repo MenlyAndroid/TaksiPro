@@ -22,15 +22,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaksiPro"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name=".ui.activities.MainActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.RegistrationActivity" />
-        <activity android:name=".ui.activities.DataBalanceActivity" />
+        <activity android:name=".ui.activities.RegistrationActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name=".ui.activities.DataBalanceActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
