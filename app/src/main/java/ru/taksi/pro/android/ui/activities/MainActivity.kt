@@ -38,9 +38,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initComponents() {
-        binding.button3.setOnClickListener { onButtonsClickListener() }
-        binding.button4.setOnClickListener { onButtonsClickListener() }
-        binding.button5.setOnClickListener { onButtonsClickListener() }
+        binding.buttonRegistration.setOnClickListener { onButtonsClickListener() }
+        binding.buttonRegistration2.setOnClickListener { onButtonsClickListener() }
+        binding.buttonRegistration3.setOnClickListener { onButtonsClickListener() }
         binding.buttonOpen.setOnClickListener { onButtonsClickListener() }
     }
 

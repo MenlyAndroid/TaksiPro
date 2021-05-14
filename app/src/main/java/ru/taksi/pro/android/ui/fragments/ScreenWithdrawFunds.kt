@@ -33,6 +33,9 @@ class ScreenWithdrawFunds : Fragment() {
             textTotalAmount.setOnClickListener {
                 totalAmount()
             }
+            buttonArrowRight.setOnClickListener { myBalance() } // назад в баланс
+            bankCardDell1.setOnClickListener { dellBankCard1() } // удалить банк. карту 1
+            bankCardDell2.setOnClickListener { dellBankCard2() } // удалить банк. карту 2
         }
     }
 
@@ -67,5 +70,25 @@ class ScreenWithdrawFunds : Fragment() {
         }
         val sum = a + b + c + d
         binding.totalAmount.text = sum.toString()
+    }
+
+    fun myBalance() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.container, ScreenBalanceFragment()).commit()
+    }
+
+    fun dellBankCard1() {
+        binding.run {
+            radioButton1.visibility = View.GONE
+            bankCardDell1.visibility = View.GONE
+        }
+    }
+
+    fun dellBankCard2() {
+        binding.run {
+            radioButton1.text = "Сбер зеленая 3339030"
+            radioButton2.visibility = View.GONE
+            bankCardDell2.visibility = View.GONE
+        }
     }
 }

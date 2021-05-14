@@ -60,7 +60,6 @@
                     android:text="@string/three_tariffs" />
 
                 <ImageView
-                    android:id="@+id/button_registration"
                     android:layout_width="349dp"
                     android:layout_height="342dp"
                     android:layout_marginTop="0dp"
@@ -68,7 +67,7 @@
                     app:srcCompat="@mipmap/car" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/button_registration"
                     style="@style/AppButton" />
 
                 <ImageView
@@ -77,6 +76,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
                     app:srcCompat="@mipmap/steering_wheel" />
 
                 <TextView
@@ -170,7 +170,7 @@
                     android:text="@string/easily_track_balance" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/button_registration2"
                     style="@style/AppButton"
                     android:layout_gravity="center"
                     android:layout_marginTop="25dp"
@@ -308,7 +308,7 @@
                     app:srcCompat="@mipmap/accord" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/button_registration3"
                     style="@style/AppButton"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
