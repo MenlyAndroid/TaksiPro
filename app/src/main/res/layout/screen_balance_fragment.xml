@@ -127,7 +127,7 @@
                             style="@style/DescriptionEnterCodeStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="110dp"
+                            android:layout_marginStart="90dp"
                             android:layout_marginTop="20dp"
                             android:text="2 890 Р"
                             android:textSize="25sp" />
@@ -164,7 +164,7 @@
                             style="@style/DescriptionEnterCodeStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="110dp"
+                            android:layout_marginStart="90dp"
                             android:layout_marginTop="20dp"
                             android:text="2 890 Р"
                             android:textSize="25sp" />
@@ -201,7 +201,7 @@
                             style="@style/DescriptionEnterCodeStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="110dp"
+                            android:layout_marginStart="90dp"
                             android:layout_marginTop="20dp"
                             android:text="2 890 Р"
                             android:textSize="25sp" />
@@ -237,7 +237,7 @@
                             style="@style/DescriptionEnterCodeStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="110dp"
+                            android:layout_marginStart="90dp"
                             android:layout_marginTop="20dp"
                             android:text="1000 Р"
                             android:textSize="25sp" />

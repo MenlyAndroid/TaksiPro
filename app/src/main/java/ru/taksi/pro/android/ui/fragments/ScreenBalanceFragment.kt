@@ -23,8 +23,15 @@ class ScreenBalanceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.run {
             myBalanceAggregatorYndexTaxi.visibility =
-                View.GONE // не показывать агрегатор яндекс “акси
+                View.GONE // не показывать агрегатор яндекс такси
             myBalanceAggregatorUber.visibility = View.GONE // не показывать агрегатор Uber
+            buttonWithdrawMoney.setOnClickListener { withdrawFunds() }
         }
+    }
+
+    fun withdrawFunds() {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.container, ScreenWithdrawFunds())
+            .commit()
     }
 }

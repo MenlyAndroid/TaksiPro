@@ -26,9 +26,10 @@
                     <TextView
                         android:id="@+id/bottom_my_data"
                         style="@style/TableRowStyle"
-                        android:layout_width="0dp"
+                        android:layout_width="170dp"
                         android:layout_height="55dp"
                         android:layout_weight="1"
+                        android:layout_marginStart="3dp"
                         android:clickable="true"
                         android:focusable="true"
                         android:text="@string/my_data" />
@@ -36,7 +37,7 @@
                     <TextView
                         android:id="@+id/bottom_balance"
                         style="@style/TableRowStyle"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="55dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -46,9 +47,10 @@
                     <TextView
                         android:id="@+id/bottom_withdraw_funds"
                         style="@style/TableRowStyle"
-                        android:layout_width="0dp"
+                        android:layout_width="170dp"
                         android:layout_height="55dp"
                         android:layout_weight="1"
+                        android:layout_marginEnd="3dp"
                         android:clickable="true"
                         android:focusable="true"
                         android:text="@string/windraw_funds" />

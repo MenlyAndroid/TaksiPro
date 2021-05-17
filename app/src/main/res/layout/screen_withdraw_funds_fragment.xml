@@ -99,13 +99,13 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_margin="10dp"
-                android:background="#000" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/my_aggregator_yndex_taxi"
@@ -160,13 +160,13 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_margin="10dp"
-                android:background="#000" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/my_aggregator_uber"
@@ -221,13 +221,13 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_margin="10dp"
-                android:background="#000" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/my_aggregator_citimobile"
@@ -283,13 +283,13 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_margin="10dp"
+                    android:background="#000" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_margin="10dp"
-                android:background="#000" />
+            </LinearLayout>
 
             <TextView
                 style="@style/DescriptionEnterCodeStyle"
