@@ -122,7 +122,7 @@
     <string name="driver_numbers">Серия и номер В.У.</string>
     <string name="date_of_birth">Дата рождения</string>
     <string name="serial_and_number_of_passport">Серия и номер паспорта</string>
-    <string name="passport">passport</string>
+    <string name="passport">Паспорт</string>
     <string name="certificate_number">Номер свидетельства Т.С.</string>
     <string name="car_win">WIN</string>
     <string name="car_number">Регистрационный знак</string>
