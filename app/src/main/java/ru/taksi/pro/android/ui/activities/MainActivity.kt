@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onButtonsClickListener() {
-        if (UserProperties.instance.token == null) {
+        if (UserProperties.instance.profile == null) {
             startActivity(Intent(this, RegistrationActivity::class.java))
         } else {
             startActivity(Intent(this, DataBalanceActivity::class.java))
