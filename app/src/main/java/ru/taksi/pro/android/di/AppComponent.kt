@@ -30,4 +30,5 @@ interface AppComponent {
     fun inject(mainActivity: MainActivity)
     fun inject(dataBalanceActivity: DataBalanceActivity)
     fun inject(registrationFragmentInputCar: RegistrationFragmentInputCar)
+    fun inject(registrationFragmentInputPassportData: RegistrationFragmentInputPassportData)
 }

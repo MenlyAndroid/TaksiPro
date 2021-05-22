@@ -3,6 +3,7 @@ package ru.taksi.pro.android.di.modules
 import dagger.Module
 import dagger.Provides
 import io.reactivex.rxjava3.core.Scheduler
+import ru.taksi.pro.android.mvvm.model.repo.IAddressRepository
 import ru.taksi.pro.android.mvvm.model.repo.ITaxiProRepository
 import ru.taksi.pro.android.mvvm.vm.RegistrationAddPhotoViewModel
 import ru.taksi.pro.android.mvvm.vm.RegistrationCodeViewModel
@@ -70,4 +71,10 @@ class ViewModulesModule {
         uiSchedulers: Scheduler,
         repository: ITaxiProRepository
     ) = InputCarViewModel(uiSchedulers, repository)
+
+    @Provides
+    fun getInputPassportDataViewModel(
+        uiSchedulers: Scheduler,
+        repository: IAddressRepository
+    ) = InputPassportDataViewModel(uiSchedulers, repository)
 }

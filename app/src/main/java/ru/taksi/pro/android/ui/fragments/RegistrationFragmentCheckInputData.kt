@@ -141,10 +141,7 @@ class RegistrationFragmentCheckInputData : Fragment() {
             binding.whenIssued.text = TextFormatHelper.dateFormat(it)
         }
         UserProperties.instance.let {
-            val address = TextFormatHelper.createStringAddress(
-                it.city, it.district, it.street, it.home, it.apartments
-            )
-            binding.addressOfRegistration.text = address
+            binding.addressOfRegistration.text = it.address
         }
         UserProperties.instance.driverNumbers?.let {
             binding.driverNumbers.text = TextFormatHelper.serialEndNumberFormat(it)

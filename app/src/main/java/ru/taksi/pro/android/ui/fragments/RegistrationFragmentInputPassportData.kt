@@ -7,17 +7,29 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import ru.taksi.pro.android.R
+import ru.taksi.pro.android.app.TaxiProApplication
 import ru.taksi.pro.android.databinding.InputPassprtDataFragmentBinding
-import ru.taksi.pro.android.ui.helpers.TextChangedHelper
 import ru.taksi.pro.android.mvvm.data.UserProperties
+import ru.taksi.pro.android.mvvm.vm.InputPassportDataViewModel
+import ru.taksi.pro.android.ui.adapters.RVAdapterAddress
+import ru.taksi.pro.android.ui.helpers.TextChangedHelper
+import ru.taksi.pro.android.ui.view.IAddressChanger
+import javax.inject.Inject
 
-class RegistrationFragmentInputPassportData : Fragment() {
-    private var binding: InputPassprtDataFragmentBinding? = null
+class RegistrationFragmentInputPassportData : IAddressChanger, Fragment() {
+    private lateinit var binding: InputPassprtDataFragmentBinding
+    private var adapter: RVAdapterAddress? = null
+    private var isChanger = true
+
+    @Inject
+    lateinit var viewModel: InputPassportDataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        TaxiProApplication.component.inject(this)
         binding =
             DataBindingUtil.inflate(
                 inflater,
@@ -25,59 +37,62 @@ class RegistrationFragmentInputPassportData : Fragment() {
                 container,
                 false
             )
-        return binding?.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().onContentChanged()
+        initRV()
         setComponentsValue()
         initComponents()
+        initViewModule()
+    }
+
+    private fun initRV() {
+        adapter = RVAdapterAddress(requireContext(), this)
+        binding.rvAddresses.layoutManager =
+            LinearLayoutManager(requireContext())
+        binding.rvAddresses.adapter = adapter
+    }
+
+    private fun initViewModule() {
+        requireActivity().let {
+            viewModel.getAnswerLiveData().observe(it, { value ->
+                adapter?.setData(value as MutableList<String>)
+            })
+        }
     }
 
     private fun setComponentsValue() {
-        binding?.let { bind ->
-            UserProperties.instance.name?.let {
-                bind.inputName.setText(it)
-            }
-            UserProperties.instance.surname?.let {
-                bind.inputSurname.setText(it)
-            }
-            UserProperties.instance.patronymic?.let {
-                bind.inputPatronymic.setText(it)
-            }
-            UserProperties.instance.dateOfBird?.let {
-                bind.inputDateOfBirth.setText(it)
-            }
-            UserProperties.instance.passportData?.let {
-                bind.inputPassportData.setText(it)
-            }
-            UserProperties.instance.whoIssued?.let {
-                bind.inputIssued.setText(it)
-            }
-            UserProperties.instance.dataOfIssued?.let {
-                bind.inputDateOfIssued.setText(it)
-            }
-            UserProperties.instance.city?.let {
-                bind.inputCity.setText(it)
-            }
-            UserProperties.instance.district?.let {
-                bind.inputDistrict.setText(it)
-            }
-            UserProperties.instance.street?.let {
-                bind.inputStreet.setText(it)
-            }
-            UserProperties.instance.home?.let {
-                bind.inputHome.setText(it)
-            }
-            UserProperties.instance.apartments?.let {
-                bind.inputApartment.setText(it)
-            }
+        UserProperties.instance.name?.let {
+            binding.inputName.setText(it)
+        }
+        UserProperties.instance.surname?.let {
+            binding.inputSurname.setText(it)
+        }
+        UserProperties.instance.patronymic?.let {
+            binding.inputPatronymic.setText(it)
+        }
+        UserProperties.instance.dateOfBird?.let {
+            binding.inputDateOfBirth.setText(it)
+        }
+        UserProperties.instance.passportData?.let {
+            binding.inputPassportData.setText(it)
+        }
+        UserProperties.instance.whoIssued?.let {
+            binding.inputIssued.setText(it)
+        }
+        UserProperties.instance.dataOfIssued?.let {
+            binding.inputDateOfIssued.setText(it)
+        }
+        UserProperties.instance.address?.let {
+            binding.inputAddress.setText(it)
         }
     }
 
     private fun initComponents() {
-        binding?.inputDateOfBirth?.let {
+        binding.inputDateOfBirth.let {
             it.addTextChangedListener(
                 TextChangedHelper.getDateTextWatcher(
                     it,
@@ -85,7 +100,7 @@ class RegistrationFragmentInputPassportData : Fragment() {
                 )
             )
         }
-        binding?.inputDateOfIssued?.let {
+        binding.inputDateOfIssued.let {
             it.addTextChangedListener(
                 TextChangedHelper.getDateTextWatcher(
                     it,
@@ -93,7 +108,7 @@ class RegistrationFragmentInputPassportData : Fragment() {
                 )
             )
         }
-        binding?.inputPassportData?.let {
+        binding.inputPassportData.let {
             it.addTextChangedListener(
                 TextChangedHelper.getSerialEndNumberTextWatcher(
                     it,
@@ -101,36 +116,34 @@ class RegistrationFragmentInputPassportData : Fragment() {
                 )
             )
         }
-        binding?.inputSurname?.addTextChangedListener {
+        binding.inputSurname.addTextChangedListener {
             UserProperties.instance.surname = it.toString()
         }
-        binding?.inputName?.addTextChangedListener {
+        binding.inputName.addTextChangedListener {
             UserProperties.instance.name = it.toString()
         }
-        binding?.inputPatronymic?.addTextChangedListener {
+        binding.inputPatronymic.addTextChangedListener {
             UserProperties.instance.patronymic = it.toString()
         }
-        binding?.inputIssued?.addTextChangedListener {
+        binding.inputIssued.addTextChangedListener {
             UserProperties.instance.whoIssued = it.toString()
         }
-        binding?.inputCity?.addTextChangedListener {
-            UserProperties.instance.city = it.toString()
+        binding.inputAddress.addTextChangedListener {
+            UserProperties.instance.address = it.toString()
+            if (isChanger) {
+                viewModel.getVariants(it.toString())
+            }
+            isChanger = true
         }
-        binding?.inputDistrict?.addTextChangedListener {
-            UserProperties.instance.district = it.toString()
-        }
-        binding?.inputStreet?.addTextChangedListener {
-            UserProperties.instance.street = it.toString()
-        }
-        binding?.inputHome?.addTextChangedListener {
-            UserProperties.instance.home = it.toString()
-        }
-        binding?.inputApartment?.addTextChangedListener {
-            UserProperties.instance.apartments = it.toString()
-        }
-        binding?.btnNext?.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.container, RegistrationFragmentInputDriverData()).commit()
         }
+    }
+
+    override fun changeAddress(address: String) {
+        adapter?.setData(mutableListOf())
+        isChanger = false
+        binding.inputAddress.setText(address)
     }
 }

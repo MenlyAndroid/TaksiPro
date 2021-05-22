@@ -11,15 +11,18 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
+import ru.taksi.pro.android.mvvm.model.api.AddressApiService
 import ru.taksi.pro.android.mvvm.model.api.ApiService
 import java.net.CookieHandler
 import java.net.CookieManager
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 class ApiModule {
     private val baseUrl = "http://89.108.71.31:8000"
+    private val addressUrl = "https://suggestions.dadata.ru"
     @Singleton
     @Provides
     fun gson() = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
@@ -55,4 +58,15 @@ class ApiModule {
         .client(client)
         .build()
         .create(ApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun addressApi(gson: Gson, client: OkHttpClient) = Retrofit.Builder()
+        .baseUrl(addressUrl)
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .addConverterFactory(ScalarsConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        .client(client)
+        .build()
+        .create(AddressApiService::class.java)
 }

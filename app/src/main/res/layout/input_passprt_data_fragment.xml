@@ -119,75 +119,20 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/InputFieldStyle"
-                android:hint="@string/city">
+                android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_city"
+                    android:id="@+id/input_address"
                     android:inputType="textMultiLine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/InputFieldStyle"
-                android:hint="@string/district">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_district"
-                    android:inputType="textImeMultiLine"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/InputFieldStyle"
-                android:hint="@string/street">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/input_street"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_addresses"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/InputFieldStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:hint="@string/home">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_home"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/InputFieldStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:hint="@string/apartments">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/input_apartment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
+                android:layout_height="wrap_content"/>
 
             <Button
                 android:id="@+id/btn_next"

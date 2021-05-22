@@ -172,6 +172,7 @@
     <string name="car_data_vin">Номер свидетельства ТС</string>
     <string name="car_data_license">ДАННЫЕ ЛИЦЕНЗИИ</string>
     <string name="car_data_license_number">Номер лицензии</string>
+    <string name="address">Адрес регистрации</string>
 
     <!--    Car data-->
 

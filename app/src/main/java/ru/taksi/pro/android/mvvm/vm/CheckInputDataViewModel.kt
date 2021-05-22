@@ -33,13 +33,7 @@ class CheckInputDataViewModel(
                 "passport_number" to (TextFormatHelper.getNumberFromPassportData(property.passportData)),
                 "passport_giver" to (property.whoIssued ?: ""),
                 "passport_date" to (TextFormatHelper.createDateForApi(property.dataOfIssued)),
-                "registration_address" to (TextFormatHelper.createStringAddress(
-                    property.city,
-                    property.district,
-                    property.street,
-                    property.home,
-                    property.apartments
-                )),
+                "registration_address" to (property.address ?: ""),
                 "license_series" to (TextFormatHelper.getSeriesFromPassportData(property.licenseNumber)),
                 "license_number" to (TextFormatHelper.getNumberFromPassportData(property.licenseNumber)),
                 "license_date" to (TextFormatHelper.createDateForApi(property.driverIssued)),

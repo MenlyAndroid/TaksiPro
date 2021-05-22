@@ -34,11 +34,12 @@ class UserProperties {
     var passportData: String? = null
     var whoIssued: String? = null
     var dataOfIssued: String? = null
-    var city: String? = null
-    var district: String? = null
-    var street: String? = null
-    var home: String? = null
-    var apartments: String? = null
+    var address: String? = null
+//    var city: String? = null
+//    var district: String? = null
+//    var street: String? = null
+//    var home: String? = null
+//    var apartments: String? = null
 
     var driverNumbers: String? = null
     var driverIssued: String? = null
