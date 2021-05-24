@@ -27,6 +27,7 @@
                 android:text="@string/car_data" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_brand_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/car_brand">
 
@@ -38,6 +39,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_model_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/car_model">
 
@@ -49,6 +51,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_color_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/car_color">
 
@@ -60,6 +63,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_number_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/car_number">
 
@@ -72,6 +76,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_win_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/car_win">
 
@@ -84,6 +89,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/car_certificate_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/certificate_number">
 
@@ -97,6 +103,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/car_year_layout"
                     style="@style/InputFieldStyle"
                     android:hint="@string/car_year">
 
@@ -117,6 +124,7 @@
                 android:text="@string/car_license" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/license_number_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/license_number">
 

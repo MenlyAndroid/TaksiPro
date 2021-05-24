@@ -27,6 +27,7 @@
                 android:text="@string/driver_data" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/driver_number_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/driver_numbers">
 
@@ -41,6 +42,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/date_driver_issued_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/when_issued">
 
@@ -54,6 +56,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/driver_issued_to_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/driver_issued_to">
 

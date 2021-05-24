@@ -1,5 +1,6 @@
 package ru.taksi.pro.android.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -15,6 +16,9 @@ import ru.taksi.pro.android.databinding.InputCarFragmentBinding
 import ru.taksi.pro.android.mvvm.data.EventArgs
 import ru.taksi.pro.android.mvvm.data.UserProperties
 import ru.taksi.pro.android.mvvm.vm.InputCarViewModel
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
 
 class RegistrationFragmentInputCar : Fragment() {
@@ -107,37 +111,129 @@ class RegistrationFragmentInputCar : Fragment() {
 
     private fun initComponents() {
         binding.carBrand.addTextChangedListener {
-            UserProperties.instance.carBrand = it.toString()
+            binding.carBrandLayout.isErrorEnabled = false
+            UserProperties.instance.carBrand = it.toString().trim()
         }
         binding.carModel.addTextChangedListener {
-            UserProperties.instance.carModel = it.toString()
+            binding.carModelLayout.isErrorEnabled = false
+            UserProperties.instance.carModel = it.toString().trim()
         }
         binding.carYear.addTextChangedListener {
-            UserProperties.instance.carYear = it.toString()
+            binding.carYearLayout.isErrorEnabled = false
+            UserProperties.instance.carYear = it.toString().trim()
         }
         binding.carColor.addTextChangedListener {
-            UserProperties.instance.carColor = it.toString()
+            binding.carColorLayout.isErrorEnabled = false
+            UserProperties.instance.carColor = it.toString().trim()
         }
         binding.carNumber.addTextChangedListener {
-            UserProperties.instance.carNumber = it.toString()
+            binding.carNumberLayout.isErrorEnabled = false
+            UserProperties.instance.carNumber = it.toString().trim()
         }
         binding.carWin.addTextChangedListener {
-            UserProperties.instance.carWIN = it.toString()
+            binding.carWinLayout.isErrorEnabled = false
+            UserProperties.instance.carWIN = it.toString().trim()
         }
 
         binding.carCertificate.addTextChangedListener {
-            UserProperties.instance.carCertificate = it.toString()
+            binding.carCertificateLayout.isErrorEnabled = false
+            UserProperties.instance.carCertificate = it.toString().trim()
         }
         binding.licenseNumber.addTextChangedListener {
-            UserProperties.instance.licenseNumber = it.toString()
+            binding.licenseNumberLayout.isErrorEnabled = false
+            UserProperties.instance.licenseNumber = it.toString().trim()
         }
         binding.btnNext.setOnClickListener {
             if (!isRegistration) {
                 viewModel.sendRegistrationData()
-            } else {
+            } else if (checkEmptyInputFields() && checkDates()) {
                 requireActivity().supportFragmentManager.beginTransaction()
                     .replace(R.id.container, RegistrationFragmentCheckInputData()).commit()
             }
         }
+    }
+
+    private fun checkEmptyInputFields(): Boolean {
+        var isNotEmptyInputFields = true
+        binding.carBrand.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carBrandLayout.error = getString(R.string.error_empty_field)
+                binding.carBrandLayout.isErrorEnabled = true
+            }
+        }
+        binding.carModel.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carModelLayout.error = getString(R.string.error_empty_field)
+                binding.carModelLayout.isErrorEnabled = true
+            }
+        }
+        binding.carColor.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carColorLayout.error = getString(R.string.error_empty_field)
+                binding.carColorLayout.isErrorEnabled = true
+            }
+        }
+        binding.carNumber.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carNumberLayout.error = getString(R.string.error_empty_field)
+                binding.carNumberLayout.isErrorEnabled = true
+            }
+        }
+        binding.carWin.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carWinLayout.error = getString(R.string.error_empty_field)
+                binding.carWinLayout.isErrorEnabled = true
+            }
+        }
+        binding.carCertificate.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carCertificateLayout.error = getString(R.string.error_empty_field)
+                binding.carCertificateLayout.isErrorEnabled = true
+            }
+        }
+        binding.carYear.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.carYearLayout.error = getString(R.string.error_empty_field)
+                binding.carYearLayout.isErrorEnabled = true
+            }
+        }
+        binding.licenseNumber.let {
+            if (it.text.toString() == "") {
+                isNotEmptyInputFields = false
+                binding.licenseNumberLayout.error = getString(R.string.error_empty_field)
+                binding.licenseNumberLayout.isErrorEnabled = true
+            }
+        }
+        return isNotEmptyInputFields
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun checkDates(): Boolean {
+        var isCurrentDates = true
+        val dateFormat = SimpleDateFormat("yyyy")
+        val currentDate = Date()
+        binding.carYear.text?.toString()?.let {
+            try {
+                val date: Date = dateFormat.parse(it)
+                if (date > currentDate) {
+                    isCurrentDates = false
+                    binding.carYearLayout.error = getString(R.string.error_current_date)
+                    binding.carYearLayout.isErrorEnabled = true
+                }
+            } catch (e: ParseException) {
+                e.printStackTrace()
+                isCurrentDates = false
+                binding.carYearLayout.error = getString(R.string.error_current_date)
+                binding.carYearLayout.isErrorEnabled = true
+            }
+        }
+        return isCurrentDates
     }
 }

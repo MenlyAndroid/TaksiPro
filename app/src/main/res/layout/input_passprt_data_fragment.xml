@@ -27,6 +27,7 @@
                 android:text="@string/passport_data" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_surname_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/surname">
 
@@ -38,8 +39,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_name_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/name">
+                <!--                app:boxStrokeErrorColor="@color/colorRedAlert"-->
+                <!--                app:errorTextColor="@color/colorRedAlert"-->
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_name"
@@ -49,6 +53,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_patronymic_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/patronymic">
 
@@ -60,6 +65,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_date_of_birth_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/date_of_birth">
 
@@ -73,6 +79,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_passport_data_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/serial_and_number_of_passport">
 
@@ -87,6 +94,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_issued_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/who_issued">
 
@@ -98,6 +106,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_date_of_issued_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/when_issued">
 
@@ -118,21 +127,22 @@
                 android:text="@string/address_of_registration" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_address_layout"
                 style="@style/InputFieldStyle"
                 android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/input_address"
-                    android:inputType="textMultiLine"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_addresses"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/btn_next"

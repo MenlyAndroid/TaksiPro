@@ -173,6 +173,8 @@
     <string name="car_data_license">ДАННЫЕ ЛИЦЕНЗИИ</string>
     <string name="car_data_license_number">Номер лицензии</string>
     <string name="address">Адрес регистрации</string>
+    <string name="error_empty_field">Пожалуйста, заполните поле.</string>
+    <string name="error_current_date">Пожалуйста, введите корректную дату.</string>
 
     <!--    Car data-->
 
