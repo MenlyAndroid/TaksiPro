@@ -374,7 +374,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/text_total_amount"
                     style="@style/DescriptionBodyStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
