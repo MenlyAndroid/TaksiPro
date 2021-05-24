@@ -211,6 +211,10 @@
                         style="@style/CheckInputDataValue" />
 
                     <TextView
+                        style="@style/CheckInputData"
+                        android:text="@string/serial_and_number_of_passport" />
+
+                    <TextView
                         android:id="@+id/seria_and_number_of_passport"
                         style="@style/CheckInputDataValue" />
 
